@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://lgtvpksns5vx"]
+
+[ext_resource type="PackedScene" uid="uid://dqeu2j55klbsa" path="res://scenes/player/player.tscn" id="1_a1f82"]
+[ext_resource type="Texture2D" uid="uid://dp3ahihn3qc0h" path="res://assets/enviroment/prototype-texture-with-size.png" id="1_d4eq0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d8uri"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_lvjyo"]
+sky_material = SubResource("ProceduralSkyMaterial_d8uri")
+
+[sub_resource type="Environment" id="Environment_lrn32"]
+background_mode = 2
+sky = SubResource("Sky_lvjyo")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwisl"]
+albedo_texture = ExtResource("1_d4eq0")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[node name="Sandbox" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lrn32")
+
+[node name="LevelContent" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="LevelContent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_overlay = SubResource("StandardMaterial3D_fwisl")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="wall" type="CSGBox3D" parent="LevelContent/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, 0.5)
+size = Vector3(1, 3, 6)
+
+[node name="wall2" type="CSGBox3D" parent="LevelContent/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, -8)
+size = Vector3(1, 3, 6)
+
+[node name="passage" type="CSGBox3D" parent="LevelContent/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9896, 2.49757, -3.74)
+size = Vector3(1, 1, 2.5)
+
+[node name="passage2" type="CSGBox3D" parent="LevelContent/Floor"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.9652, 2.49757, -3.854)
+size = Vector3(3, 1, 3)
+
+[node name="Player" parent="." instance=ExtResource("1_a1f82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mouse_sens = 0.5
+current_speed = 5.0

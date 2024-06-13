@@ -1,2 +1,13 @@
+RayCast3D
 CollisionShape3D
+Node3D
+Camera3D
 CharacterBody3D
+CSGBox3D
+NavigationRegion3D
+Button
+Label
+Panel
+Control
+CanvasLayer
+Node

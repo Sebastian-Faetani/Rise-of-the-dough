@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0qyy4ojwvyel"]
+
+[ext_resource type="PackedScene" uid="uid://csjuw3gpkr6sf" path="res://assets/maps/Reception.glb" id="1_a3m2c"]
+[ext_resource type="PackedScene" uid="uid://dqeu2j55klbsa" path="res://scenes/player/player.tscn" id="2_vrtl2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qkceo"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_p6v0e"]
+sky_material = SubResource("ProceduralSkyMaterial_qkceo")
+
+[sub_resource type="Environment" id="Environment_8w8us"]
+background_mode = 2
+sky = SubResource("Sky_p6v0e")
+tonemap_mode = 2
+
+[node name="lvl_1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8w8us")
+
+[node name="Reception" parent="." instance=ExtResource("1_a3m2c")]
+
+[node name="Player" parent="." instance=ExtResource("2_vrtl2")]
+transform = Transform3D(-0.99988, 0, 0.0155154, 0, 1, 0, -0.0155154, 0, -0.99988, 0, 1, -13.308)

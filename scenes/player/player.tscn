@@ -1,8 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqeu2j55klbsa"]
+[gd_scene load_steps=6 format=3 uid="uid://dqeu2j55klbsa"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rj53q"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_ipl5t"]
+[ext_resource type="Script" path="res://scripts/player/SmoothCamera.gd" id="2_quloi"]
+[ext_resource type="PackedScene" uid="uid://80tse0fem85b" path="res://scenes/weapons/w_mop.tscn" id="3_4qcfl"]
 
-[node name="player" type="CharacterBody3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s4lsa"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_rj53q")
+[sub_resource type="SphereShape3D" id="SphereShape3D_vf3wu"]
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_ipl5t")
+
+[node name="Standing_collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_s4lsa")
+
+[node name="crouching_collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("SphereShape3D_vf3wu")
+disabled = true
+
+[node name="head_bump_check" type="RayCast3D" parent="."]
+target_position = Vector3(0, 1, 0)
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="SmoothCamera" type="Camera3D" parent="Head"]
+top_level = true
+script = ExtResource("2_quloi")
+
+[node name="mop" parent="Head/SmoothCamera" instance=ExtResource("3_4qcfl")]

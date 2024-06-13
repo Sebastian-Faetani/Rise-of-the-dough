@@ -1,1 +1,4 @@
+res://scenes/maps/lvl_1.tscn
 res://scenes/player/player.tscn
+res://scenes/maps/sandbox.tscn
+res://scenes/weapons/w_mop.tscn

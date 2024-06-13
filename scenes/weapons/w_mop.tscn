@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=3 uid="uid://80tse0fem85b"]
+
+[ext_resource type="Script" path="res://scripts/weapons/Hitscan_weapon.gd" id="1_u1k55"]
+[ext_resource type="Texture2D" uid="uid://ct2sgukdthlfn" path="res://assets/weapons/MopSpriteSheetLonger.png" id="2_el81f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts7vi"]
+atlas = ExtResource("2_el81f")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yibdr"]
+atlas = ExtResource("2_el81f")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f55qi"]
+atlas = ExtResource("2_el81f")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pyqb"]
+atlas = ExtResource("2_el81f")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld76y"]
+atlas = ExtResource("2_el81f")
+region = Rect2(2048, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txmkt"]
+atlas = ExtResource("2_el81f")
+region = Rect2(2560, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhiro"]
+atlas = ExtResource("2_el81f")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hkejt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts7vi")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yibdr")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_f55qi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_6pyqb")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_ld76y")
+}, {
+"duration": 1.4,
+"texture": SubResource("AtlasTexture_txmkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhiro")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}]
+
+[node name="mop" type="Node3D"]
+script = ExtResource("1_u1k55")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GunAnim" type="AnimatedSprite2D" parent="CanvasLayer/Control"]
+texture_filter = 1
+position = Vector2(798, 293)
+scale = Vector2(1.385, 1.385)
+sprite_frames = SubResource("SpriteFrames_hkejt")
+animation = &"attack"
+autoplay = "Idle"
+frame = 5
+frame_progress = 1.0
+
+[node name="PistolCross" type="TextureRect" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+offset_left = 568.0
+offset_top = 316.0
+offset_right = 584.0
+offset_bottom = 332.0
+expand_mode = 1
+
+[node name="GunRays" type="Node3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="GunRays"]
+target_position = Vector3(0, 0, -2)
+collision_mask = 3
+
+[node name="RayCast3D5" type="RayCast3D" parent="GunRays"]
+transform = Transform3D(0.990268, -0.0289357, 0.136132, 0, 0.978148, 0.207912, -0.139173, -0.205888, 0.968628, 0, 0, 0)
+target_position = Vector3(0, 0, -2)
+collision_mask = 3
+
+[node name="RayCast3D4" type="RayCast3D" parent="GunRays"]
+transform = Transform3D(0.994522, -0.0163519, 0.103242, 0, 0.987688, 0.156434, -0.104528, -0.155578, 0.982278, 0.00617981, 0, 6.50883e-05)
+target_position = Vector3(0, 0, -2)
+collision_mask = 3
+
+[node name="RayCast3D3" type="RayCast3D" parent="GunRays"]
+transform = Transform3D(0.997564, -0.00729154, 0.0693743, 0, 0.994522, 0.104528, -0.0697565, -0.104274, 0.992099, 0, 0, 0)
+target_position = Vector3(0, 0, -2)
+collision_mask = 3
+
+[node name="RayCast3D2" type="RayCast3D" parent="GunRays"]
+transform = Transform3D(0.999391, -0.0018265, 0.0348517, 0, 0.99863, 0.052336, -0.0348995, -0.0523041, 0.998021, 0, 0, 0)
+target_position = Vector3(0, 0, -2)
+collision_mask = 3
