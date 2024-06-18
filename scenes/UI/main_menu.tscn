@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://b311qc0ldm0ij"]
+
+[ext_resource type="Texture2D" uid="uid://d2nt5ggekraiy" path="res://assets/interfaz/fabrica-y-oficinas-coatresa-denys-and-von-arend_4.jpg" id="1_0ojx0"]
+[ext_resource type="Script" path="res://scenes/UI/main_menu.gd" id="1_1gr01"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1gr01")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(580, 323)
+scale = Vector2(1.53867, 1.27705)
+texture = ExtResource("1_0ojx0")
+
+[node name="start_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 755.0
+offset_top = 347.0
+offset_right = 885.0
+offset_bottom = 423.0
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.694713, 0, 0, 1)
+theme_override_font_sizes/font_size = 49
+text = "Jugar"
+
+[node name="options_button" type="Button" parent="."]
+offset_left = 704.0
+offset_top = 441.0
+offset_right = 933.0
+offset_bottom = 517.0
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.694713, 0, 0, 1)
+theme_override_font_sizes/font_size = 49
+text = "Opciones"
+
+[node name="quit_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 767.0
+offset_top = 530.0
+offset_right = 879.0
+offset_bottom = 606.0
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.658911, 1.22733e-06, 9.62615e-08, 1)
+theme_override_font_sizes/font_size = 49
+text = "Salir"
+
+[connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]

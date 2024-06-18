@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://7mdwnbpmckxe"]
+
+[ext_resource type="Texture2D" uid="uid://d2nt5ggekraiy" path="res://assets/interfaz/fabrica-y-oficinas-coatresa-denys-and-von-arend_4.jpg" id="1_mtekn"]
+
+[node name="Play_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 330)
+scale = Vector2(1.49975, 1.3048)
+texture = ExtResource("1_mtekn")
+
+[node name="story-button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 703.0
+offset_top = 350.0
+offset_right = 898.0
+offset_bottom = 426.0
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.641106, 0, 0, 1)
+theme_override_font_sizes/font_size = 49
+text = "Historia"
+
+[node name="sandbox-button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 694.0
+offset_top = 442.0
+offset_right = 908.0
+offset_bottom = 518.0
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.596853, 1.62441e-06, 4.33177e-07, 1)
+theme_override_font_sizes/font_size = 49
+text = "SandBox"
+
+[node name="back-button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 538.0
+offset_right = 883.0
+offset_bottom = 614.0
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.56173, 0, 0, 1)
+theme_override_font_sizes/font_size = 49
+text = "Volver"
+
+[connection signal="pressed" from="story-button" to="." method="_on_storybutton_pressed"]
+[connection signal="pressed" from="sandbox-button" to="." method="_on_sandboxbutton_pressed"]
+[connection signal="pressed" from="back-button" to="." method="_on_backbutton_pressed"]
