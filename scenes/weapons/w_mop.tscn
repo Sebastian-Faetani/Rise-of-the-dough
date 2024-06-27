@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://80tse0fem85b"]
+[gd_scene load_steps=12 format=3 uid="uid://80tse0fem85b"]
 
 [ext_resource type="Script" path="res://scripts/weapons/Hitscan_weapon.gd" id="1_u1k55"]
 [ext_resource type="Texture2D" uid="uid://cg2nq265cvg36" path="res://assets/weapons/MopSpriteSheetLonger.png" id="2_el81f"]
+[ext_resource type="Texture2D" uid="uid://damk0cdacun0a" path="res://assets/ui/mira.png" id="3_fvc74"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c74di"]
 atlas = ExtResource("2_el81f")
@@ -45,10 +46,10 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8f622")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_q0qro")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_pccw8")
 }, {
 "duration": 1.0,
@@ -87,12 +88,21 @@ frame = 5
 frame_progress = 1.0
 
 [node name="PistolCross" type="TextureRect" parent="CanvasLayer"]
-visible = false
 texture_filter = 1
-offset_left = 568.0
-offset_top = 316.0
-offset_right = 584.0
-offset_bottom = 332.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -23.5
+offset_right = 21.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_fvc74")
 expand_mode = 1
 
 [node name="GunRays" type="Node3D" parent="."]

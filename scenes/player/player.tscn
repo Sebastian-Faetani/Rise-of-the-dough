@@ -36,6 +36,9 @@ script = ExtResource("2_quloi")
 
 [node name="mop" parent="Head/SmoothCamera" instance=ExtResource("3_4qcfl")]
 
+[node name="interact" type="RayCast3D" parent="Head/SmoothCamera"]
+transform = Transform3D(0.6539, 0, 0, 0, -0.00600092, -0.929248, 0, 0.929248, -0.00600092, 0, 0, -0.325511)
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" type="TextureProgressBar" parent="UI" node_paths=PackedStringArray("player")]

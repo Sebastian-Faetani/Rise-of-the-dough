@@ -1,3 +1,4 @@
+RayCast3D
 AnimationTree
 AnimationPlayer
 TextureProgressBar
@@ -12,4 +13,3 @@ Button
 Label
 Panel
 Control
-CanvasLayer

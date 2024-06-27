@@ -10,6 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var standing_collision = $Standing_collision
 @onready var crouching_collision = $crouching_collision
 @onready var head_bump_check = $head_bump_check
+@onready var interact = $Head/SmoothCamera/interact
 
 
 #player variables
@@ -136,6 +137,11 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
+	if Input.is_action_just_pressed("interact"):
+		var collider = interact.get_collider()
+		if collider != null:
+			if collider.is_in_group("interactuable"):
+				collider.interact()
 
 	move_and_slide()
 	
