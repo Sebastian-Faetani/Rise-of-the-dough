@@ -29,6 +29,7 @@ theme_override_font_sizes/font_size = 49
 text = "Jugar"
 
 [node name="options_button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 704.0
 offset_top = 441.0
 offset_right = 933.0

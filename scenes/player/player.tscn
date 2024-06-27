@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqeu2j55klbsa"]
+[gd_scene load_steps=9 format=3 uid="uid://dqeu2j55klbsa"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_ipl5t"]
 [ext_resource type="Script" path="res://scripts/player/SmoothCamera.gd" id="2_quloi"]
 [ext_resource type="PackedScene" uid="uid://80tse0fem85b" path="res://scenes/weapons/w_mop.tscn" id="3_4qcfl"]
+[ext_resource type="Texture2D" uid="uid://dfattamrv2qrl" path="res://assets/ui/HealthBarBelow.png" id="4_4mgkg"]
+[ext_resource type="Script" path="res://scenes/player/HealthBar.gd" id="4_jqa03"]
+[ext_resource type="Texture2D" uid="uid://b34mwlxirwu2g" path="res://assets/ui/HealthBarOverPart.png" id="5_02ugg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s4lsa"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vf3wu"]
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(0.735737, 0, 0, 0, 0.735737, 0, 0, 0, 0.735737, 0, 0, 0)
 script = ExtResource("1_ipl5t")
 
 [node name="Standing_collision" type="CollisionShape3D" parent="."]
@@ -27,6 +31,77 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="SmoothCamera" type="Camera3D" parent="Head"]
 top_level = true
+current = true
 script = ExtResource("2_quloi")
 
 [node name="mop" parent="Head/SmoothCamera" instance=ExtResource("3_4qcfl")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="TextureProgressBar" parent="UI" node_paths=PackedStringArray("player")]
+texture_filter = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 151.0
+offset_top = 148.0
+offset_right = 215.0
+offset_bottom = 212.0
+grow_vertical = 2
+scale = Vector2(1.90899, 1.80509)
+fill_mode = 3
+texture_under = ExtResource("4_4mgkg")
+texture_progress = ExtResource("5_02ugg")
+script = ExtResource("4_jqa03")
+player = NodePath("../..")
+
+[node name="DeathScreen" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI/DeathScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -20.0
+offset_right = 62.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/DeathScreen/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = 5.0
+offset_right = 40.0
+offset_bottom = 28.0
+grow_horizontal = 2
+text = "MORISTE"
+
+[node name="Button" type="Button" parent="UI/DeathScreen/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -37.0
+offset_right = 41.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "REINICIAR
+"

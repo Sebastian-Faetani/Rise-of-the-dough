@@ -1,41 +1,41 @@
 [gd_scene load_steps=11 format=3 uid="uid://80tse0fem85b"]
 
 [ext_resource type="Script" path="res://scripts/weapons/Hitscan_weapon.gd" id="1_u1k55"]
-[ext_resource type="Texture2D" uid="uid://ct2sgukdthlfn" path="res://assets/weapons/MopSpriteSheetLonger.png" id="2_el81f"]
+[ext_resource type="Texture2D" uid="uid://cg2nq265cvg36" path="res://assets/weapons/MopSpriteSheetLonger.png" id="2_el81f"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ts7vi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c74di"]
 atlas = ExtResource("2_el81f")
-region = Rect2(0, 0, 512, 512)
+region = Rect2(0, 0, 1424, 1112)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yibdr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f622"]
 atlas = ExtResource("2_el81f")
-region = Rect2(512, 0, 512, 512)
+region = Rect2(1424, 0, 1424, 1112)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f55qi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0qro"]
 atlas = ExtResource("2_el81f")
-region = Rect2(1024, 0, 512, 512)
+region = Rect2(2848, 0, 1424, 1112)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6pyqb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pccw8"]
 atlas = ExtResource("2_el81f")
-region = Rect2(1536, 0, 512, 512)
+region = Rect2(4272, 0, 1424, 1112)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ld76y"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8obqp"]
 atlas = ExtResource("2_el81f")
-region = Rect2(2048, 0, 512, 512)
+region = Rect2(5696, 0, 1424, 1112)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_txmkt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vqaj"]
 atlas = ExtResource("2_el81f")
-region = Rect2(2560, 0, 512, 512)
+region = Rect2(7120, 0, 1424, 1112)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fhiro"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5ow8"]
 atlas = ExtResource("2_el81f")
-region = Rect2(0, 0, 512, 512)
+region = Rect2(0, 0, 1424, 1112)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hkejt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ts7vi")
+"texture": SubResource("AtlasTexture_c74di")
 }],
 "loop": true,
 "name": &"Idle",
@@ -43,22 +43,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yibdr")
-}, {
-"duration": 0.7,
-"texture": SubResource("AtlasTexture_f55qi")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_6pyqb")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_ld76y")
-}, {
-"duration": 1.4,
-"texture": SubResource("AtlasTexture_txmkt")
+"texture": SubResource("AtlasTexture_8f622")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fhiro")
+"texture": SubResource("AtlasTexture_q0qro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pccw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8obqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vqaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5ow8")
 }],
 "loop": false,
 "name": &"attack",
@@ -78,8 +78,8 @@ offset_bottom = 40.0
 
 [node name="GunAnim" type="AnimatedSprite2D" parent="CanvasLayer/Control"]
 texture_filter = 1
-position = Vector2(798, 293)
-scale = Vector2(1.385, 1.385)
+position = Vector2(710, 301)
+scale = Vector2(0.621815, 0.621815)
 sprite_frames = SubResource("SpriteFrames_hkejt")
 animation = &"attack"
 autoplay = "Idle"

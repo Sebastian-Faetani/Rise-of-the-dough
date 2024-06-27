@@ -1,7 +1,10 @@
-res://scenes/UI
+res://assets/maps/Reception
+res://assets/ui
+res://assets/weapons
+res://assets/enemies/BaguetteEnemy
+res://scenes/enemies
 res://scenes/maps
 res://scripts/player
-res://assets/weapons
 res://scripts/weapons
 res://assets/maps
 res://scenes/player

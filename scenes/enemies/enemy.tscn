@@ -1,0 +1,344 @@
+[gd_scene load_steps=32 format=3 uid="uid://byehn0yp68wve"]
+
+[ext_resource type="Script" path="res://scripts/enemies/Enemy.gd" id="1_iun2x"]
+[ext_resource type="Texture2D" uid="uid://ckbfcn02nos5x" path="res://assets/enemies/BaguetteEnemy/Enemy_spritesheet_baguette.png" id="2_j0vnn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_61jgw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m71d"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(1824, 0, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wkhh"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(2736, 0, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fm3d"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(3648, 0, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn5so"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(0, 2568, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvp7b"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(912, 2568, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yihw8"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(1824, 2568, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22mlj"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(2736, 2568, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywavk"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(0, 0, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8yy8"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(0, 642, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4by8"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(912, 642, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upku3"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(1824, 642, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxuok"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(2736, 642, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3mpn"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(3648, 642, 912, 642)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_11voo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m71d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wkhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fm3d")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rn5so")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvp7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yihw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22mlj")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywavk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8yy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4by8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upku3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxuok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3mpn")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_73duu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3yoah"]
+resource_name = "attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_vmqf5"]
+resource_name = "death"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_xgp2b"]
+resource_name = "idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nlxwc"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wnrix"]
+_data = {
+"RESET": SubResource("Animation_73duu"),
+"attack": SubResource("Animation_3yoah"),
+"death": SubResource("Animation_vmqf5"),
+"idle": SubResource("Animation_xgp2b"),
+"walk": SubResource("Animation_nlxwc")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bracc"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e2vlx"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x6ub2"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_28656"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_50gq2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iyl63"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2r3d5"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_83di8"]
+states/Start/position = Vector2(109, 82)
+states/attack/node = SubResource("AnimationNodeAnimation_bracc")
+states/attack/position = Vector2(619, 48)
+states/death/node = SubResource("AnimationNodeAnimation_e2vlx")
+states/death/position = Vector2(783, 163)
+states/walk/node = SubResource("AnimationNodeAnimation_x6ub2")
+states/walk/position = Vector2(420, 54)
+transitions = ["death", "End", SubResource("AnimationNodeStateMachineTransition_28656"), "walk", "attack", SubResource("AnimationNodeStateMachineTransition_50gq2"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_iyl63"), "Start", "walk", SubResource("AnimationNodeStateMachineTransition_2r3d5")]
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
+script = ExtResource("1_iun2x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_61jgw")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.271503, 0, 0, 0, 0.271503, 0, 0, 0, 0.271503, 0, 0.869329, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_11voo")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AttackCooldown" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wnrix")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_83di8")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
+
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

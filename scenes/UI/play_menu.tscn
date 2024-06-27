@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://7mdwnbpmckxe"]
+[gd_scene load_steps=3 format=3 uid="uid://7mdwnbpmckxe"]
 
+[ext_resource type="Script" path="res://scenes/UI/play_menu.gd" id="1_72jbf"]
 [ext_resource type="Texture2D" uid="uid://d2nt5ggekraiy" path="res://assets/interfaz/fabrica-y-oficinas-coatresa-denys-and-von-arend_4.jpg" id="1_mtekn"]
 
 [node name="Play_Menu" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_72jbf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(578, 330)

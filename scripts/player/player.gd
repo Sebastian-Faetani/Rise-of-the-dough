@@ -1,6 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
+signal healthChanged
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -33,10 +34,44 @@ var running = false
 var crouching = false
 var sliding = false
 
+#Life and death
+var dead = false
+@export var max_player_health = 100
+@onready var current_player_health: int = max_player_health:
+	set(value):
+		current_player_health = value
+		healthChanged.emit()
+		if current_player_health <= 0:
+				dead = true
+				$UI/DeathScreen.show()
+				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	$UI/DeathScreen/Panel/Button.button_up.connect(restart)
+
+func _input(event: InputEvent):
+	if dead:
+		return
+	
+	if event is InputEventMouseMotion:
+		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
+		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
+		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-50), deg_to_rad(89))
+
+func _process(_delta):
+	if dead:
+		return
+	healthChanged.emit()
+	if Input.is_action_just_pressed("exit"):
+		get_tree().quit()
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
 
 func _physics_process(delta):
+	if dead:
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -104,17 +139,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-func _input(event: InputEvent):
-	
-	if event is InputEventMouseMotion:
-		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
-		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
-		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
-
-func _process(_delta):
-	if Input.is_action_just_pressed("exit"):
-		get_tree().quit()
-	if Input.is_action_just_pressed("restart"):
-		get_tree().reload_current_scene()
 
 
+func restart():
+	get_tree().reload_current_scene()
