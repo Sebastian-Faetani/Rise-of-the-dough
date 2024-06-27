@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvftx12mel54j"]
 
-[ext_resource type="Script" path="res://door.gd" id="1_m1h8l"]
+[ext_resource type="Script" path="res://scripts/world/door.gd" id="1_m1h8l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4iuhh"]
 

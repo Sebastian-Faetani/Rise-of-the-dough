@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqeu2j55klbsa"]
+[gd_scene load_steps=10 format=3 uid="uid://dqeu2j55klbsa"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_ipl5t"]
 [ext_resource type="Script" path="res://scripts/player/SmoothCamera.gd" id="2_quloi"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dfattamrv2qrl" path="res://assets/ui/HealthBarBelow.png" id="4_4mgkg"]
 [ext_resource type="Script" path="res://scenes/player/HealthBar.gd" id="4_jqa03"]
 [ext_resource type="Texture2D" uid="uid://b34mwlxirwu2g" path="res://assets/ui/HealthBarOverPart.png" id="5_02ugg"]
+[ext_resource type="AudioStream" uid="uid://cwyxtarqjabqk" path="res://assets/weapons/wet-slop.wav" id="7_sc7eu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s4lsa"]
 
@@ -108,3 +109,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "REINICIAR
 "
+
+[node name="MopSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_sc7eu")

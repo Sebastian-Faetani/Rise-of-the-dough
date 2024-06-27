@@ -35,6 +35,7 @@ var hp: int = max_hp:
 			current_state = EnemyStates.Death
 			playback.stop()
 			playback.travel("death")
+			$CollisionShape3D.disabled = true
 
 
 enum EnemyStates {

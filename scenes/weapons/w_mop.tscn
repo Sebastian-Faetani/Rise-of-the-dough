@@ -82,10 +82,8 @@ texture_filter = 1
 position = Vector2(710, 301)
 scale = Vector2(0.621815, 0.621815)
 sprite_frames = SubResource("SpriteFrames_hkejt")
-animation = &"attack"
+animation = &"Idle"
 autoplay = "Idle"
-frame = 5
-frame_progress = 1.0
 
 [node name="PistolCross" type="TextureRect" parent="CanvasLayer"]
 texture_filter = 1
@@ -108,25 +106,5 @@ expand_mode = 1
 [node name="GunRays" type="Node3D" parent="."]
 
 [node name="RayCast3D" type="RayCast3D" parent="GunRays"]
-target_position = Vector3(0, 0, -2)
-collision_mask = 3
-
-[node name="RayCast3D5" type="RayCast3D" parent="GunRays"]
-transform = Transform3D(0.990268, -0.0289357, 0.136132, 0, 0.978148, 0.207912, -0.139173, -0.205888, 0.968628, 0, 0, 0)
-target_position = Vector3(0, 0, -2)
-collision_mask = 3
-
-[node name="RayCast3D4" type="RayCast3D" parent="GunRays"]
-transform = Transform3D(0.994522, -0.0163519, 0.103242, 0, 0.987688, 0.156434, -0.104528, -0.155578, 0.982278, 0.00617981, 0, 6.50883e-05)
-target_position = Vector3(0, 0, -2)
-collision_mask = 3
-
-[node name="RayCast3D3" type="RayCast3D" parent="GunRays"]
-transform = Transform3D(0.997564, -0.00729154, 0.0693743, 0, 0.994522, 0.104528, -0.0697565, -0.104274, 0.992099, 0, 0, 0)
-target_position = Vector3(0, 0, -2)
-collision_mask = 3
-
-[node name="RayCast3D2" type="RayCast3D" parent="GunRays"]
-transform = Transform3D(0.999391, -0.0018265, 0.0348517, 0, 0.99863, 0.052336, -0.0348995, -0.0523041, 0.998021, 0, 0, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 3
