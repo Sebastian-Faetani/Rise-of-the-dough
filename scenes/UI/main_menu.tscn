@@ -20,10 +20,10 @@ texture = ExtResource("1_0ojx0")
 
 [node name="start_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 755.0
-offset_top = 347.0
-offset_right = 885.0
-offset_bottom = 423.0
+offset_left = 748.0
+offset_top = 273.0
+offset_right = 878.0
+offset_bottom = 349.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.694713, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
@@ -32,9 +32,9 @@ text = "Jugar"
 [node name="options_button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 704.0
-offset_top = 441.0
+offset_top = 363.0
 offset_right = 933.0
-offset_bottom = 517.0
+offset_bottom = 439.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.694713, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
@@ -42,14 +42,26 @@ text = "Opciones"
 
 [node name="quit_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 767.0
-offset_top = 530.0
-offset_right = 879.0
-offset_bottom = 606.0
+offset_left = 765.0
+offset_top = 544.0
+offset_right = 877.0
+offset_bottom = 620.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.658911, 1.22733e-06, 9.62615e-08, 1)
 theme_override_font_sizes/font_size = 49
 text = "Salir"
 
+[node name="credit-button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 723.0
+offset_top = 457.0
+offset_right = 929.0
+offset_bottom = 533.0
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.639216, 0, 0, 1)
+theme_override_font_sizes/font_size = 49
+text = "Créditos"
+
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="credit-button" to="." method="_on_creditbutton_pressed"]

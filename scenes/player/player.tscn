@@ -13,6 +13,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_vf3wu"]
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
+process_mode = 1
 transform = Transform3D(0.735737, 0, 0, 0, 0.735737, 0, 0, 0, 0.735737, 0, 0, 0)
 script = ExtResource("1_ipl5t")
 

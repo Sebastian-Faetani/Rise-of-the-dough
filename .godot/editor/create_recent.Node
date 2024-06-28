@@ -1,8 +1,10 @@
+Label
 Button
+Sprite2D
+Control
 VBoxContainer
 MarginContainer
 Label3D
-Label
 Node3D
 Area3D
 CollisionShape3D
@@ -10,5 +12,3 @@ Sprite3D
 AudioStreamPlayer
 RayCast3D
 AnimationTree
-AnimationPlayer
-TextureProgressBar

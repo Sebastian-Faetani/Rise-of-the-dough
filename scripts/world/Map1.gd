@@ -1,6 +1,8 @@
 extends Node3D
-@onready var Pause_Menu = $PauseMenu
+@onready var pause_menu = $Pause_menu
+
 var paused = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,10 +16,10 @@ func PauseMenu():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if paused:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		Pause_Menu.hide()
+		pause_menu.hide()
 		get_tree().paused = false
 	else:
 		
-		Pause_Menu.show()
+		pause_menu.show()
 		get_tree().paused = true
 	paused = !paused

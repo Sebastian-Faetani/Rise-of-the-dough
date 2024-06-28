@@ -1,5 +1,6 @@
 extends Control
 @onready var Map = $".."
+@onready var San = $"."
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,6 +11,9 @@ func _process(delta):
 func _on_reanudar_pressed():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Map.PauseMenu()
+	San.PauseMenu()
+	
+
 
 
 func _on_menu_pressed():

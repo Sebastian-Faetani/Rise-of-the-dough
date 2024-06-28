@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1719545716
+::res://::1719618594
 export_presets.cfg::TextFile::-1::1719511290::0::1::::<><>::
 icon.svg::CompressedTexture2D::2379319187830962872::1719509480::1719509480::1::::<><>::
 README.md::TextFile::-1::1719509480::0::1::::<><>::
@@ -14,11 +14,11 @@ Sprite_tarjeta_puerta.png::CompressedTexture2D::8719389811360957645::1719509480:
 ::res://assets/interfaz/::1719509534
 fabrica-y-oficinas-coatresa-denys-and-von-arend_4.jpg::CompressedTexture2D::9082405261393365200::1719509480::1719509534::1::::<><>::
 ::res://assets/maps/::1719509480
-::res://assets/maps/Reception/::1719549323
-lvl_1.tscn::PackedScene::5044330141747791818::1719549323::0::1::::<><>::uid://c65cvpk7k1a4f::::res://assets/maps/Reception/textures/Lvl1.blend<>uid://8g2wdlxcmc4m::::res://assets/maps/Reception/textures/Hedge.jpg<>uid://dwuamdx0ednr0::::res://assets/maps/Reception/textures/Palette_Red.png<>uid://b66lo0ejc0ubm::::res://assets/maps/Reception/textures/palette2.png<>uid://3txd5mhcsrnn::::res://assets/maps/Reception/textures/palette1.png<>uid://dcac6j10erler::::res://assets/maps/Reception/textures/Paintings.png<>uid://d4jps051cyxh7::::res://assets/maps/Reception/textures/palette3.png<>uid://2g8um0ihkmdf::::res://assets/maps/Reception/textures/PC.png
-::res://assets/maps/Reception/textures/::1719549372
+::res://assets/maps/Reception/::1719618509
+lvl_1.tscn::PackedScene::5044330141747791818::1719618509::0::1::::<><>::uid://c65cvpk7k1a4f::::res://assets/maps/Reception/textures/Lvl1.blend<>uid://dwuamdx0ednr0::::res://assets/maps/Reception/textures/Palette_Red.png<>uid://b66lo0ejc0ubm::::res://assets/maps/Reception/textures/palette2.png<>uid://3txd5mhcsrnn::::res://assets/maps/Reception/textures/palette1.png<>uid://dcac6j10erler::::res://assets/maps/Reception/textures/Paintings.png<>uid://d4jps051cyxh7::::res://assets/maps/Reception/textures/palette3.png<>uid://2g8um0ihkmdf::::res://assets/maps/Reception/textures/PC.png
+::res://assets/maps/Reception/textures/::1719618351
 Hedge.jpg::CompressedTexture2D::2330296928461090958::1719509480::1719509535::1::::<><>::
-Lvl1.blend::PackedScene::7010786593211151183::1719549372::1719549396::1::::<><>::uid://cvce726fpwf5o::::res://assets/maps/Reception/textures/textures/Palette_Red.png<>uid://bh4acqh8t7at3::::res://assets/maps/Reception/textures/textures/palette2.png<>uid://ulxfemrk5a4o::::res://assets/maps/Reception/textures/textures/palette1.png<>uid://02gxj0d8fo7p::::res://assets/maps/Reception/textures/textures/palette3.png<>uid://dthr35t7jwx5b::::res://assets/maps/Reception/textures/textures/Paintings.png<>uid://cmw7ratenxwej::::res://assets/maps/Reception/textures/textures/PC.png<>uid://df5tymx70vgfb::::res://assets/maps/Reception/textures/textures/wood 01.jpg
+Lvl1.blend::PackedScene::7010786593211151183::1719618293::1719618351::1::::<><>::uid://cvce726fpwf5o::::res://assets/maps/Reception/textures/textures/Palette_Red.png<>uid://ulxfemrk5a4o::::res://assets/maps/Reception/textures/textures/palette1.png<>uid://bh4acqh8t7at3::::res://assets/maps/Reception/textures/textures/palette2.png<>uid://02gxj0d8fo7p::::res://assets/maps/Reception/textures/textures/palette3.png<>uid://dthr35t7jwx5b::::res://assets/maps/Reception/textures/textures/Paintings.png<>uid://cmw7ratenxwej::::res://assets/maps/Reception/textures/textures/PC.png
 Lvl1Planos.jpeg::CompressedTexture2D::2716411738164230829::1719509480::1719509535::1::::<><>::
 Paintings.png::CompressedTexture2D::7299817045968930733::1719509480::1719509535::1::::<><>::
 palette1.png::CompressedTexture2D::2005914241966991387::1719509480::1719509535::1::::<><>::
@@ -37,8 +37,9 @@ palette3.png::CompressedTexture2D::1810865177037715807::1719509480::1719509535::
 Palette_Red.png::CompressedTexture2D::6251237318936508702::1719509480::1719509535::1::::<><>::
 PC.png::CompressedTexture2D::5662497133448143409::1719509480::1719509535::1::::<><>::
 wood 01.jpg::CompressedTexture2D::7573334751106416443::1719509480::1719509537::1::::<><>::
-::res://assets/ui/::1719509826
+::res://assets/ui/::1719617155
 CapiCorpLogo.png::CompressedTexture2D::2727036270538435872::1719509480::1719509527::1::::<><>::
+color fondo.png::CompressedTexture2D::4853854373003098241::1719617153::1719617155::1::::<><>::
 HealthBarBelow.png::CompressedTexture2D::7511393841555419477::1719509480::1719509527::1::::<><>::
 HealthBarOverPart.png::CompressedTexture2D::4412343765479289580::1719509480::1719509527::1::::<><>::
 mira.png::CompressedTexture2D::7184686508587895686::1719509480::1719509527::1::::<><>::
@@ -47,22 +48,23 @@ Sprite_tarjeta_puerta.png::CompressedTexture2D::6763798712341506141::1719509480:
 MopSpriteSheetLonger.png::CompressedTexture2D::5250531989568412215::1719509480::1719509534::1::::<><>::
 wet-slop.wav::AudioStreamWAV::6367971441438841470::1719509480::1719509538::1::::<><>::
 ::res://scenes/::1719509480
-::res://scenes/enemies/::1719549322
-enemy.tscn::PackedScene::4079660027175586814::1719549322::0::1::::<><>::res://scripts/enemies/Enemy.gd<>uid://ckbfcn02nos5x::::res://assets/enemies/BaguetteEnemy/Enemy_spritesheet_baguette.png
-::res://scenes/maps/::1719549322
+::res://scenes/enemies/::1719618509
+enemy.tscn::PackedScene::4079660027175586814::1719618509::0::1::::<><>::res://scripts/enemies/Enemy.gd<>uid://ckbfcn02nos5x::::res://assets/enemies/BaguetteEnemy/Enemy_spritesheet_baguette.png
+::res://scenes/maps/::1719618553
 door.gd::GDScript::-1::1719509480::0::1::::<>StaticBody3D<>::
-Map1.tscn::PackedScene::8948514798218769307::1719549322::0::1::::<><>::uid://cd4rm62flkxh7::::res://assets/maps/Reception/lvl_1.tscn<>res://scripts/world/Map1.gd<>uid://dvftx12mel54j::::res://scenes/world/door.tscn<>uid://v1t1y5eddx6c::::res://scenes/world/exit.tscn<>uid://dqeu2j55klbsa::::res://scenes/player/player.tscn<>uid://byehn0yp68wve::::res://scenes/enemies/enemy.tscn<>uid://1aubenqseunk::::res://scenes/world/key.tscn<>uid://utsjrli2iinq::::res://scenes/UI/pause_menu.tscn
-sandbox.tscn::PackedScene::785655475211529721::1719509480::0::1::::<><>::uid://dqeu2j55klbsa::::res://scenes/player/player.tscn<>uid://dp3ahihn3qc0h::::res://assets/enviroment/prototype-texture-with-size.png
-::res://scenes/player/::1719549322
+Map1.tscn::PackedScene::8948514798218769307::1719618553::0::1::::<><>::uid://cd4rm62flkxh7::::res://assets/maps/Reception/lvl_1.tscn<>res://scripts/world/Map1.gd<>uid://dvftx12mel54j::::res://scenes/world/door.tscn<>uid://v1t1y5eddx6c::::res://scenes/world/exit.tscn<>uid://dqeu2j55klbsa::::res://scenes/player/player.tscn<>uid://byehn0yp68wve::::res://scenes/enemies/enemy.tscn<>uid://1aubenqseunk::::res://scenes/world/key.tscn<>res://scripts/world/Pause_menu.gd
+sandbox.tscn::PackedScene::785655475211529721::1719618509::0::1::::<><>::uid://dqeu2j55klbsa::::res://scenes/player/player.tscn<>uid://dp3ahihn3qc0h::::res://assets/enviroment/prototype-texture-with-size.png<>res://scripts/world/sandbox.gd<>res://scripts/world/Pause_menu_sandbox.gd
+::res://scenes/player/::1719618509
 HealthBar.gd::GDScript::-1::1719509480::0::1::::<>TextureProgressBar<>::
-player.tscn::PackedScene::8291804137025965856::1719549322::0::1::::<><>::res://scripts/player/player.gd<>res://scripts/player/SmoothCamera.gd<>uid://80tse0fem85b::::res://scenes/weapons/w_mop.tscn<>uid://dfattamrv2qrl::::res://assets/ui/HealthBarBelow.png<>res://scenes/player/HealthBar.gd<>uid://b34mwlxirwu2g::::res://assets/ui/HealthBarOverPart.png<>uid://cwyxtarqjabqk::::res://assets/weapons/wet-slop.wav
-::res://scenes/UI/::1719549323
-main_menu.gd::GDScript::-1::1719545557::0::1::::<>Control<>::
-main_menu.tscn::PackedScene::4406989485849078573::1719549323::0::1::::<><>::uid://d2nt5ggekraiy::::res://assets/interfaz/fabrica-y-oficinas-coatresa-denys-and-von-arend_4.jpg<>res://scenes/UI/main_menu.gd
-play_menu.gd::GDScript::-1::1719509480::0::1::::<>Control<>::
-play_menu.tscn::PackedScene::2271037652955975338::1719549323::0::1::::<><>::res://scenes/UI/play_menu.gd<>uid://d2nt5ggekraiy::::res://assets/interfaz/fabrica-y-oficinas-coatresa-denys-and-von-arend_4.jpg
-pause_menu.tscn::PackedScene::1444109938392413466::1719549323::0::1::::<><>::res://scenes/UI/pause_menu.gd
-pause_menu.gd::GDScript::-1::1719546769::0::1::::<>Control<>::
+player.tscn::PackedScene::8291804137025965856::1719618509::0::1::::<><>::res://scripts/player/player.gd<>res://scripts/player/SmoothCamera.gd<>uid://80tse0fem85b::::res://scenes/weapons/w_mop.tscn<>uid://dfattamrv2qrl::::res://assets/ui/HealthBarBelow.png<>res://scenes/player/HealthBar.gd<>uid://b34mwlxirwu2g::::res://assets/ui/HealthBarOverPart.png<>uid://cwyxtarqjabqk::::res://assets/weapons/wet-slop.wav
+::res://scenes/UI/::1719618510
+credit_menu.tscn::PackedScene::5615034873223233171::1719618510::0::1::::<><>::res://scripts/world/credit_menu.gd<>uid://cbfiji4c8e3kn::::res://assets/ui/color fondo.png
+main_menu.gd::GDScript::-1::1719616657::0::1::::<>Control<>::
+main_menu.tscn::PackedScene::4406989485849078573::1719618509::0::1::::<><>::uid://d2nt5ggekraiy::::res://assets/interfaz/fabrica-y-oficinas-coatresa-denys-and-von-arend_4.jpg<>res://scenes/UI/main_menu.gd
+pause_menu.gd::GDScript::-1::1719610260::0::1::::<>Control<>::
+pause_menu.tscn::PackedScene::1444109938392413466::1719610137::0::1::::<><>::res://scenes/UI/pause_menu.gd
+play_menu.gd::GDScript::-1::1719615927::0::1::::<>Control<>::
+play_menu.tscn::PackedScene::2271037652955975338::1719618509::0::1::::<><>::res://scenes/UI/play_menu.gd<>uid://d2nt5ggekraiy::::res://assets/interfaz/fabrica-y-oficinas-coatresa-denys-and-von-arend_4.jpg
 ::res://scenes/weapons/::1719549322
 pickup.gd::GDScript::-1::1719509480::0::1::::<>Area3D<>::
 pickup.tscn::PackedScene::160475074151145019::1719549322::0::1::::<><>::uid://iftk68k5kiya::::res://assets/enviroment/Mop_sprite.png<>res://scenes/weapons/pickup.gd
@@ -74,16 +76,20 @@ key.tscn::PackedScene::1826126291165135764::1719549323::0::1::::<><>::res://scri
 ::res://scripts/::1719509480
 ::res://scripts/enemies/::1719509480
 Enemy.gd::GDScript::-1::1719509480::0::1::::Enemy<>CharacterBody3D<>::
-::res://scripts/player/::1719510242
-player.gd::GDScript::-1::1719510241::0::1::::Player<>CharacterBody3D<>::
+::res://scripts/player/::1719612798
+player.gd::GDScript::-1::1719612798::0::1::::Player<>CharacterBody3D<>::
 SmoothCamera.gd::GDScript::-1::1719509480::0::1::::<>Camera3D<>::
 ::res://scripts/weapons/::1719509480
 Hitscan_weapon.gd::GDScript::-1::1719509480::0::1::::<>Node3D<>::
-::res://scripts/world/::1719547019
+::res://scripts/world/::1719616582
+credit_menu.gd::GDScript::-1::1719616582::0::1::::<>Control<>::
 door.gd::GDScript::-1::1719509480::0::1::::<>Node3D<>::
 exit.gd::GDScript::-1::1719502982::0::1::::<>StaticBody3D<>::
 key.gd::GDScript::-1::1719502221::0::1::::<>StaticBody3D<>::
-Map1.gd::GDScript::-1::1719547019::0::1::::<>Node3D<>::
+Map1.gd::GDScript::-1::1719610135::0::1::::<>Node3D<>::
+Pause_menu.gd::GDScript::-1::1719610499::0::1::::<>Control<>::
+Pause_menu_sandbox.gd::GDScript::-1::1719611057::0::1::::<>Control<>::
+sandbox.gd::GDScript::-1::1719611110::0::1::::<>Node3D<>::
 ::res://textures/::1719509534
 Hedge.jpg::CompressedTexture2D::3707184408390752143::1719509480::1719509527::1::::<><>::
 Lvl1Planos.jpeg::CompressedTexture2D::4315806450632922091::1719509480::1719509528::1::::<><>::

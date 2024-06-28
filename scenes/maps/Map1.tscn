@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dqeu2j55klbsa" path="res://scenes/player/player.tscn" id="3_rofjf"]
 [ext_resource type="PackedScene" uid="uid://byehn0yp68wve" path="res://scenes/enemies/enemy.tscn" id="4_ds8cg"]
 [ext_resource type="PackedScene" uid="uid://1aubenqseunk" path="res://scenes/world/key.tscn" id="6_micsu"]
-[ext_resource type="PackedScene" uid="uid://utsjrli2iinq" path="res://scenes/UI/pause_menu.tscn" id="8_1vhac"]
+[ext_resource type="Script" path="res://scripts/world/Pause_menu.gd" id="8_g7vfj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qkceo"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -60,9 +60,6 @@ transform = Transform3D(1.42683, 0, 0, 0, 1.19225, 0, 0, 0, 1.14899, 3.14981, 0.
 [node name="Exit" parent="NavigationRegion3D/Door2" instance=ExtResource("3_3hgl6")]
 transform = Transform3D(-5.57661e-08, 0, 1.27578, 0, 1.27578, 0, -1.27578, 0, -5.57661e-08, 1.59228, 0.4865, 1.06222)
 
-[node name="Player" parent="." instance=ExtResource("3_rofjf")]
-transform = Transform3D(-0.99988, 0, 0.0155154, 0, 1, 0, -0.0155154, 0, -0.99988, 38.521, 0.999999, 8.15883)
-
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("4_ds8cg")]
@@ -83,21 +80,51 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.72377, -0.00801444, -3.2636
 [node name="Pickups" type="Node3D" parent="."]
 
 [node name="Key" parent="Pickups" instance=ExtResource("6_micsu")]
-transform = Transform3D(1.58901, 0, 0, 0, 4.41393, 0, 0, 0, 1.41246, 8.58434, 0.0608764, 16.4638)
+transform = Transform3D(1.58901, 0, 0, 0, 4.41393, 0, 0, 0, 1.41246, -0.0502172, 1.25648, -7.79116)
 
 [node name="Label" type="Label3D" parent="."]
 transform = Transform3D(-1.2037e-07, 0, 2.75375, 0, 2.75375, 0, -2.75375, 0, -1.2037e-07, -6.77983, 1.17338, 1.50676)
 text = "Coming soon..."
 
-[node name="PauseMenu" parent="." instance=ExtResource("8_1vhac")]
+[node name="Pause_menu" type="Control" parent="."]
+process_mode = 3
 visible = false
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -114.0
-offset_top = -228.0
-offset_right = -114.0
-offset_bottom = -228.0
-scale = Vector2(1.81723, 1.8135)
+offset_left = -62.0
+offset_top = -136.0
+offset_right = -22.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_g7vfj")
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause_menu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause_menu/MarginContainer"]
+layout_mode = 2
+
+[node name="Reanudar" type="Button" parent="Pause_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Reanudar"
+
+[node name="Menu" type="Button" parent="Pause_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Menú principal"
+
+[node name="Controles" type="Button" parent="Pause_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Controles"
+
+[node name="Player" parent="." instance=ExtResource("3_rofjf")]
+transform = Transform3D(1.10874, 0, 0, 0, 1.10874, 0, 0, 0, 1.10874, 33.8231, 0.53651, 5.28428)
+
+[connection signal="pressed" from="Pause_menu/MarginContainer/VBoxContainer/Reanudar" to="Pause_menu" method="_on_reanudar_pressed"]
+[connection signal="pressed" from="Pause_menu/MarginContainer/VBoxContainer/Menu" to="Pause_menu" method="_on_menu_pressed"]

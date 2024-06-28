@@ -1,16 +1,12 @@
-[gd_scene load_steps=23 format=3 uid="uid://cd4rm62flkxh7"]
+[gd_scene load_steps=21 format=3 uid="uid://cd4rm62flkxh7"]
 
 [ext_resource type="PackedScene" uid="uid://c65cvpk7k1a4f" path="res://assets/maps/Reception/textures/Lvl1.blend" id="1_1ge5f"]
-[ext_resource type="Texture2D" uid="uid://8g2wdlxcmc4m" path="res://assets/maps/Reception/textures/Hedge.jpg" id="2_1dung"]
 [ext_resource type="Texture2D" uid="uid://dwuamdx0ednr0" path="res://assets/maps/Reception/textures/Palette_Red.png" id="3_1jidx"]
 [ext_resource type="Texture2D" uid="uid://b66lo0ejc0ubm" path="res://assets/maps/Reception/textures/palette2.png" id="4_e5if0"]
 [ext_resource type="Texture2D" uid="uid://3txd5mhcsrnn" path="res://assets/maps/Reception/textures/palette1.png" id="5_bh5hu"]
 [ext_resource type="Texture2D" uid="uid://dcac6j10erler" path="res://assets/maps/Reception/textures/Paintings.png" id="6_0lv2k"]
 [ext_resource type="Texture2D" uid="uid://d4jps051cyxh7" path="res://assets/maps/Reception/textures/palette3.png" id="7_2r72d"]
 [ext_resource type="Texture2D" uid="uid://2g8um0ihkmdf" path="res://assets/maps/Reception/textures/PC.png" id="8_15cqg"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4uaak"]
-albedo_texture = ExtResource("2_1dung")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nq7d8"]
 albedo_texture = ExtResource("3_1jidx")
@@ -53,50 +49,44 @@ albedo_texture = ExtResource("5_bh5hu")
 
 [node name="Lvl1" instance=ExtResource("1_1ge5f")]
 
-[node name="Cube" parent="." index="1"]
-transform = Transform3D(0.494607, 0, 0, 0, 1, 0, 0, 0, 0.360601, -21.3282, 2.14275, 72.8449)
-
-[node name="stretchy_bush" parent="." index="30"]
-material_override = SubResource("StandardMaterial3D_4uaak")
-
-[node name="Crate_1_mesh_001" parent="." index="35"]
+[node name="Crate_1_mesh_001" parent="." index="88"]
 material_override = SubResource("StandardMaterial3D_nq7d8")
 
-[node name="Crate_1_mesh_002" parent="." index="36"]
+[node name="Crate_1_mesh_002" parent="." index="89"]
 material_override = SubResource("StandardMaterial3D_w2i4j")
 
-[node name="Sofa 2 Alt" parent="." index="37"]
+[node name="Sofa 2 Alt" parent="." index="91"]
 material_override = SubResource("StandardMaterial3D_tflof")
 
-[node name="Painting" parent="." index="38"]
+[node name="Painting" parent="." index="92"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1297, 1.65589, -0.223606)
 material_override = SubResource("StandardMaterial3D_l633a")
 
-[node name="Laptop Base" parent="." index="39"]
+[node name="Laptop Base" parent="." index="93"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.694505, 0.797241, -5.20737)
 material_override = SubResource("StandardMaterial3D_7p83v")
 
-[node name="Laptop Screen" parent="." index="40"]
+[node name="Laptop Screen" parent="." index="94"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.788488, 0.828743, -5.0713)
 material_override = SubResource("StandardMaterial3D_hrjib")
 
-[node name="Counter 2 A" parent="." index="45"]
+[node name="Counter 2 A" parent="." index="99"]
 material_override = SubResource("StandardMaterial3D_8pql1")
 
-[node name="Desk" parent="." index="46"]
+[node name="Desk" parent="." index="100"]
 material_override = SubResource("StandardMaterial3D_issaw")
 
-[node name="Chair Body Ac" parent="." index="48"]
+[node name="Chair Body Ac" parent="." index="102"]
 material_override = SubResource("StandardMaterial3D_bdobe")
 
-[node name="Modern Shelves 2" parent="." index="49"]
+[node name="Modern Shelves 2" parent="." index="103"]
 material_override = SubResource("StandardMaterial3D_i0sb8")
 
-[node name="Modern Shelves 2_002" parent="." index="50"]
+[node name="Modern Shelves 2_002" parent="." index="104"]
 material_override = SubResource("StandardMaterial3D_wk0ci")
 
-[node name="Modern Shelves 2_003" parent="." index="53"]
+[node name="Modern Shelves 2_003" parent="." index="107"]
 material_override = SubResource("StandardMaterial3D_k6oke")
 
-[node name="Modern Shelves 2_001" parent="." index="54"]
+[node name="Modern Shelves 2_001" parent="." index="108"]
 material_override = SubResource("StandardMaterial3D_0fh52")

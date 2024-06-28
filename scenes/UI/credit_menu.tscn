@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl872lohvng0r"]
+
+[ext_resource type="Script" path="res://scripts/world/credit_menu.gd" id="1_c7bj8"]
+[ext_resource type="Texture2D" uid="uid://cbfiji4c8e3kn" path="res://assets/ui/color fondo.png" id="2_bnnwl"]
+
+[node name="credit_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c7bj8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(546, 333)
+scale = Vector2(4.06376, 3.99079)
+texture = ExtResource("2_bnnwl")
+
+[node name="names" type="Label" parent="."]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 120.0
+offset_right = 889.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Sebastian Faetani
+Agustín Iñiguez"
+
+[node name="title programadores" type="Label" parent="."]
+layout_mode = 1
+offset_left = 360.0
+offset_top = 28.0
+offset_right = 960.0
+offset_bottom = 138.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Programadores"
+
+[node name="title artis" type="Label" parent="."]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 212.0
+offset_right = 726.0
+offset_bottom = 322.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Artista"
+
+[node name="artist name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 305.0
+offset_right = 749.0
+offset_bottom = 374.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Sasha Flory"
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 559.0
+offset_right = 649.0
+offset_bottom = 635.0
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.713726, 0, 0, 1)
+theme_override_font_sizes/font_size = 49
+text = "Volver
+"
+
+[node name="design name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = 41.0
+offset_right = 233.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Diseñador"
+
+[node name="designer name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 458.0
+offset_right = 860.0
+offset_bottom = 527.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Sebastian Faetani"
+
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
