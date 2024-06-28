@@ -22,6 +22,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var lerp_speed = 10.0
 var direction = Vector3.ZERO
 var crouch_depth = -0.5
+var collectkey = false
 
 #slide variables
 var slide_timer = 0.0
@@ -142,6 +143,17 @@ func _physics_process(delta):
 		if collider != null:
 			if collider.is_in_group("interactuable"):
 				collider.interact()
+	if Input.is_action_just_pressed("interact"):
+		var collider = interact.get_collider()
+		if collider != null:
+			if collider.is_in_group("interaction"):
+				collectkey = true
+				collider.collectkey()
+	if Input.is_action_just_pressed("interact") and collectkey == true:
+		var collider = interact.get_collider()
+		if collider != null:
+			if collider.is_in_group("exit"):
+				collider.bye()
 
 	move_and_slide()
 	

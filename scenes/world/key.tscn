@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://1aubenqseunk"]
+
+[ext_resource type="Script" path="res://scripts/world/key.gd" id="1_awfo6"]
+[ext_resource type="Texture2D" uid="uid://c3mo1n0bygol6" path="res://assets/ui/Sprite_tarjeta_puerta.png" id="2_5wx52"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vsb3q"]
+size = Vector3(0.926758, 1, 1)
+
+[node name="Key" type="StaticBody3D" groups=["interaction"]]
+transform = Transform3D(0.36, 0, 0, 0, 1, 0, 0, 0, 0.32, 0, 0, 0)
+script = ExtResource("1_awfo6")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.154098, 0, 0, 0, 1.02077e-05, 0.248368, 0, -0.116917, 2.16823e-05, 0, 0, 0)
+texture = ExtResource("2_5wx52")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.281145, 0, 0, 0, 0.00598065, 0, 0, 0, 0.122104, 0.00132092, 0, -8.01831e-05)
+shape = SubResource("BoxShape3D_vsb3q")

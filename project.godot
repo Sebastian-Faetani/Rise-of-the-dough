@@ -15,7 +15,7 @@ run/main_scene="res://scenes/UI/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0.903598, 0.903598, 0.903598, 1)
 boot_splash/image="res://assets/ui/CapiCorpLogo.png"
-config/icon="res://icon.svg"
+config/icon="res://assets/ui/HealthBarOverPart.png"
 
 [display]
 

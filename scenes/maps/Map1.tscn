@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0qyy4ojwvyel"]
+[gd_scene load_steps=11 format=3 uid="uid://d0qyy4ojwvyel"]
 
 [ext_resource type="PackedScene" uid="uid://cd4rm62flkxh7" path="res://assets/maps/Reception/lvl_1.tscn" id="1_5jh8e"]
 [ext_resource type="PackedScene" uid="uid://dvftx12mel54j" path="res://scenes/world/door.tscn" id="2_mfr1l"]
+[ext_resource type="PackedScene" uid="uid://v1t1y5eddx6c" path="res://scenes/world/exit.tscn" id="3_3hgl6"]
 [ext_resource type="PackedScene" uid="uid://dqeu2j55klbsa" path="res://scenes/player/player.tscn" id="3_rofjf"]
 [ext_resource type="PackedScene" uid="uid://byehn0yp68wve" path="res://scenes/enemies/enemy.tscn" id="4_ds8cg"]
+[ext_resource type="PackedScene" uid="uid://1aubenqseunk" path="res://scenes/world/key.tscn" id="6_micsu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qkceo"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -38,10 +40,6 @@ navigation_mesh = SubResource("NavigationMesh_2atyg")
 [node name="Door 6" parent="NavigationRegion3D/Door2" instance=ExtResource("2_mfr1l")]
 transform = Transform3D(-3.67092e-08, 0, 0.512657, 0, 1.10304, 0, -0.839809, 0, -2.2409e-08, 4.73032, 0.157896, 12.269)
 
-[node name="Door 2" parent="NavigationRegion3D/Door2" instance=ExtResource("2_mfr1l")]
-transform = Transform3D(-0.00437603, 0, 1.18234, 0, 1.16545, 0, -1.30733, 0, -0.0646725, 1.74141, 0.179293, 1.02446)
-isLocked = true
-
 [node name="Door 5" parent="NavigationRegion3D/Door2" instance=ExtResource("2_mfr1l")]
 transform = Transform3D(0.00897795, 0, -0.792661, 0, 1.11531, 0, 0.912569, 0, 0.00590026, 1.48943, 0.188163, 7.08061)
 isLocked = true
@@ -55,6 +53,9 @@ transform = Transform3D(0.010865, 0, -0.994156, 0, 1.09926, 0, 0.898245, 0, 0.01
 
 [node name="Door" parent="NavigationRegion3D/Door2" instance=ExtResource("2_mfr1l")]
 transform = Transform3D(1.42683, 0, 0, 0, 1.19225, 0, 0, 0, 1.14899, 3.14981, 0.143249, -0.259157)
+
+[node name="Exit" parent="NavigationRegion3D/Door2" instance=ExtResource("3_3hgl6")]
+transform = Transform3D(-5.57661e-08, 0, 1.27578, 0, 1.27578, 0, -1.27578, 0, -5.57661e-08, 1.59228, 0.4865, 1.06222)
 
 [node name="Player" parent="." instance=ExtResource("3_rofjf")]
 transform = Transform3D(-0.99988, 0, 0.0155154, 0, 1, 0, -0.0155154, 0, -0.99988, 38.521, 0.999999, 8.15883)
@@ -77,3 +78,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.68753, -0.00801444, 6.95411
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.72377, -0.00801444, -3.26361)
 
 [node name="Pickups" type="Node3D" parent="."]
+
+[node name="Key" parent="Pickups" instance=ExtResource("6_micsu")]
+transform = Transform3D(1.58901, 0, 0, 0, 4.41393, 0, 0, 0, 1.41246, 8.58434, 0.0608764, 16.4638)
+
+[node name="Label" type="Label3D" parent="."]
+transform = Transform3D(-1.2037e-07, 0, 2.75375, 0, 2.75375, 0, -2.75375, 0, -1.2037e-07, -6.77983, 1.17338, 1.50676)
+text = "Coming soon..."
