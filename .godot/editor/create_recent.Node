@@ -1,3 +1,6 @@
+Button
+VBoxContainer
+MarginContainer
 Label3D
 Label
 Node3D
@@ -9,7 +12,3 @@ RayCast3D
 AnimationTree
 AnimationPlayer
 TextureProgressBar
-Timer
-NavigationAgent3D
-AnimatedSprite3D
-CharacterBody3D

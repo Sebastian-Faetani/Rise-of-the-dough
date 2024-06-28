@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0qyy4ojwvyel"]
+[gd_scene load_steps=13 format=3 uid="uid://d0qyy4ojwvyel"]
 
 [ext_resource type="PackedScene" uid="uid://cd4rm62flkxh7" path="res://assets/maps/Reception/lvl_1.tscn" id="1_5jh8e"]
+[ext_resource type="Script" path="res://scripts/world/Map1.gd" id="1_b4n0j"]
 [ext_resource type="PackedScene" uid="uid://dvftx12mel54j" path="res://scenes/world/door.tscn" id="2_mfr1l"]
 [ext_resource type="PackedScene" uid="uid://v1t1y5eddx6c" path="res://scenes/world/exit.tscn" id="3_3hgl6"]
 [ext_resource type="PackedScene" uid="uid://dqeu2j55klbsa" path="res://scenes/player/player.tscn" id="3_rofjf"]
 [ext_resource type="PackedScene" uid="uid://byehn0yp68wve" path="res://scenes/enemies/enemy.tscn" id="4_ds8cg"]
 [ext_resource type="PackedScene" uid="uid://1aubenqseunk" path="res://scenes/world/key.tscn" id="6_micsu"]
+[ext_resource type="PackedScene" uid="uid://utsjrli2iinq" path="res://scenes/UI/pause_menu.tscn" id="8_1vhac"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qkceo"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -25,6 +27,7 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Arr
 
 [node name="Map1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0407944, 7.15256e-07, 0.0151711)
+script = ExtResource("1_b4n0j")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8w8us")
@@ -85,3 +88,16 @@ transform = Transform3D(1.58901, 0, 0, 0, 4.41393, 0, 0, 0, 1.41246, 8.58434, 0.
 [node name="Label" type="Label3D" parent="."]
 transform = Transform3D(-1.2037e-07, 0, 2.75375, 0, 2.75375, 0, -2.75375, 0, -1.2037e-07, -6.77983, 1.17338, 1.50676)
 text = "Coming soon..."
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_1vhac")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -228.0
+offset_right = -114.0
+offset_bottom = -228.0
+scale = Vector2(1.81723, 1.8135)
