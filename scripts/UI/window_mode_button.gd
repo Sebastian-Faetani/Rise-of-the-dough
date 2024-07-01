@@ -4,10 +4,10 @@ extends Control
 
 
 const WINDOW_MODE_ARRAY : Array[String] = [
-	"Full-Screen",
-	"Window Mode",
-	"Borderless Window",
-	"Borderless Full-Screen"
+	"Pantalla Completa",
+	"Ventana",
+	"Ventana sin bordes",
+	"Pantalla Completa sin bordes"
 ]
 
 func _ready(): 
@@ -32,3 +32,4 @@ func on_window_mode_selected(index : int) -> void:
 		3: #Fullscreen borderless
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+

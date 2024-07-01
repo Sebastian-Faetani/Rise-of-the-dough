@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready():
-	pass # Replace with function body.
+	get_viewport().size = DisplayServer.screen_get_size()
 
 
 

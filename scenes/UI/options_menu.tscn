@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scripts/UI/options_menu.gd" id="1_1ctsv"]
 [ext_resource type="PackedScene" uid="uid://bs7bfk6y3maph" path="res://scenes/UI/settings_tab_container.tscn" id="2_mbm0c"]
 
-[sub_resource type="SystemFont" id="SystemFont_27i4i"]
+[sub_resource type="SystemFont" id="SystemFont_r1blt"]
 font_names = PackedStringArray("Impact")
 
-[sub_resource type="SystemFont" id="SystemFont_r1blt"]
+[sub_resource type="SystemFont" id="SystemFont_27i4i"]
 font_names = PackedStringArray("Impact")
 
 [node name="Options_menu" type="Control"]
@@ -18,19 +18,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1ctsv")
 metadata/_edit_use_anchors_ = true
-
-[node name="ExitButton" type="Button" parent="."]
-layout_mode = 2
-offset_left = 58.0
-offset_top = 986.0
-offset_right = 192.0
-offset_bottom = 1054.0
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_fonts/font = SubResource("SystemFont_27i4i")
-theme_override_font_sizes/font_size = 48
-text = "Volver
-"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -60,4 +47,13 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = SubResource("SystemFont_27i4i")
+theme_override_font_sizes/font_size = 48
+text = "Volver
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

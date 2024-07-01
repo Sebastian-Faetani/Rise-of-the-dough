@@ -14,3 +14,8 @@ res://scenes/UI/options_menu.tscn
 res://scripts/UI/controls_explained.gd
 res://scenes/UI/play_menu.gd
 res://scenes/UI/settings_tab_container.tscn
+res://scenes/UI/resolution_mode_button.tscn
+res://scripts/UI/resolution_mode_button.gd
+res://scenes/UI/main_menu.gd
+res://scripts/UI/window_mode_button.gd
+res://scenes/UI/options_display_button.tscn
