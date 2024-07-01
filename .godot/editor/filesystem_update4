@@ -1,3 +1,4 @@
+res://scenes/UI/main_menu.tscn
 res://scenes/player/player.tscn
 res://scenes/enemies/enemy.tscn
 res://scenes/enemies/mb_enemy.tscn
@@ -12,6 +13,10 @@ res://scenes/UI/options_display_button.tscn
 res://scenes/weapons/mop_pickup.tscn
 res://scenes/weapons/w_mop.tscn
 res://scenes/world/door.tscn
-res://scripts/enemies/mb_enemy.gd
-res://scripts/player/player.gd
 res://scenes/world/exit.tscn
+res://scenes/UI/main_menu.gd
+res://scripts/UI/options_menu.gd
+res://scripts/world/Keypad.gd
+res://scenes/world/keypad.tscn
+res://scripts/player/player.gd
+res://scripts/world/exit.gd

@@ -199,3 +199,6 @@ func change_gun(gun):
 	$Head/Weapon_handler.get_child(0).queue_free()
 	var new_gun = carried_guns[gun].instantiate()
 	$Head/Weapon_handler.add_child(new_gun)
+
+func puerta_desbloqueada():
+	pass

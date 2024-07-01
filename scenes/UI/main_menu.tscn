@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b311qc0ldm0ij"]
+[gd_scene load_steps=4 format=3 uid="uid://b311qc0ldm0ij"]
 
-[ext_resource type="Texture2D" uid="uid://d2nt5ggekraiy" path="res://assets/interfaz/fabrica-y-oficinas-coatresa-denys-and-von-arend_4.jpg" id="1_0ojx0"]
 [ext_resource type="Script" path="res://scenes/UI/main_menu.gd" id="1_1gr01"]
+[ext_resource type="Texture2D" uid="uid://boo5u6oy1x7tf" path="res://assets/ui/Logo_DM.png" id="2_dr7kf"]
+[ext_resource type="AudioStream" uid="uid://bpukd8nxflpey" path="res://sounds/interfaz/button.mp3" id="3_gvnkn"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -14,9 +15,9 @@ grow_vertical = 2
 script = ExtResource("1_1gr01")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(966, 532)
-scale = Vector2(2.63243, 2.18484)
-texture = ExtResource("1_0ojx0")
+position = Vector2(533, 532)
+scale = Vector2(1.46466, 1.21562)
+texture = ExtResource("2_dr7kf")
 
 [node name="start_button" type="Button" parent="."]
 layout_mode = 0
@@ -61,6 +62,9 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.639216, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
 text = "Créditos"
+
+[node name="Button_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gvnkn")
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]

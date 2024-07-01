@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://e1gvrhamblp3"]
+
+[ext_resource type="Script" path="res://scripts/world/Keypad.gd" id="1_uuill"]
+[ext_resource type="Texture2D" uid="uid://cj40xuv2pexgp" path="res://assets/enviroment/KeypadRed.jpg" id="2_dxtgu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_llae1"]
+
+[node name="Keypad" type="StaticBody3D" groups=["exit"]]
+script = ExtResource("1_uuill")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.28401, 0, 0, 0, 0.28401, 0, 0, 0, 0.28401, 0, 0, 0)
+texture = ExtResource("2_dxtgu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.31868, 0, 0, 0, 0.637379, 0, 0, 0, 0.0142047, 0, 0, -0.000279814)
+shape = SubResource("BoxShape3D_llae1")
+
+[connection signal="texture_changed" from="Sprite3D" to="." method="_on_sprite_3d_texture_changed"]

@@ -1,7 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://2lk1q4ru0cmx"]
+[gd_scene load_steps=41 format=3 uid="uid://2lk1q4ru0cmx"]
 
 [ext_resource type="Script" path="res://scripts/enemies/mb_enemy.gd" id="1_i3ts0"]
 [ext_resource type="Texture2D" uid="uid://bl2frcmtk0xx6" path="res://assets/enemies/BossEnemy/Enemy_spritesheet_baguette_miniboss.png" id="1_xgtr1"]
+[ext_resource type="AudioStream" uid="uid://b8ty5tqe01ddm" path="res://sounds/enemies/Enemy dead mopa.mp3" id="3_pouvi"]
+[ext_resource type="AudioStream" uid="uid://btnlr8rugdsm0" path="res://sounds/enemies/Enemy dead hidro.mp3" id="4_tv161"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lt0p2"]
 
@@ -391,5 +393,11 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_jmov2")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="DeadMopa" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pouvi")
+
+[node name="DeadHidro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tv161")
 
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
