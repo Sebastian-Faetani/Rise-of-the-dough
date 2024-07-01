@@ -14,16 +14,16 @@ grow_vertical = 2
 script = ExtResource("1_1gr01")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(580, 323)
-scale = Vector2(1.53867, 1.27705)
+position = Vector2(966, 532)
+scale = Vector2(2.63243, 2.18484)
 texture = ExtResource("1_0ojx0")
 
 [node name="start_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 748.0
-offset_top = 273.0
-offset_right = 878.0
-offset_bottom = 349.0
+offset_left = 1271.0
+offset_top = 536.0
+offset_right = 1401.0
+offset_bottom = 612.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.694713, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
@@ -31,10 +31,10 @@ text = "Jugar"
 
 [node name="options_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 704.0
-offset_top = 363.0
-offset_right = 933.0
-offset_bottom = 439.0
+offset_left = 1227.0
+offset_top = 626.0
+offset_right = 1456.0
+offset_bottom = 702.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.694713, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
@@ -42,10 +42,10 @@ text = "Opciones"
 
 [node name="quit_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 765.0
-offset_top = 544.0
-offset_right = 877.0
-offset_bottom = 620.0
+offset_left = 1288.0
+offset_top = 807.0
+offset_right = 1400.0
+offset_bottom = 883.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.658911, 1.22733e-06, 9.62615e-08, 1)
 theme_override_font_sizes/font_size = 49
@@ -53,15 +53,16 @@ text = "Salir"
 
 [node name="credit-button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 723.0
-offset_top = 457.0
-offset_right = 929.0
-offset_bottom = 533.0
+offset_left = 1246.0
+offset_top = 720.0
+offset_right = 1452.0
+offset_bottom = 796.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.639216, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
 text = "Créditos"
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="credit-button" to="." method="_on_creditbutton_pressed"]

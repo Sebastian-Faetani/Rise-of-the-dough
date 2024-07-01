@@ -14,16 +14,16 @@ grow_vertical = 2
 script = ExtResource("1_72jbf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(578, 330)
-scale = Vector2(1.49975, 1.3048)
+position = Vector2(954, 522)
+scale = Vector2(2.60473, 2.26615)
 texture = ExtResource("1_mtekn")
 
 [node name="story-button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 703.0
-offset_top = 350.0
-offset_right = 898.0
-offset_bottom = 426.0
+offset_left = 1249.0
+offset_top = 568.0
+offset_right = 1444.0
+offset_bottom = 644.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.641106, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
@@ -31,10 +31,10 @@ text = "Historia"
 
 [node name="sandbox-button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 694.0
-offset_top = 442.0
-offset_right = 908.0
-offset_bottom = 518.0
+offset_left = 1240.0
+offset_top = 660.0
+offset_right = 1454.0
+offset_bottom = 736.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.596853, 1.62441e-06, 4.33177e-07, 1)
 theme_override_font_sizes/font_size = 49
@@ -42,10 +42,10 @@ text = "SandBox"
 
 [node name="back-button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 726.0
-offset_top = 538.0
-offset_right = 883.0
-offset_bottom = 614.0
+offset_left = 1272.0
+offset_top = 756.0
+offset_right = 1429.0
+offset_bottom = 832.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.56173, 0, 0, 1)
 theme_override_font_sizes/font_size = 49

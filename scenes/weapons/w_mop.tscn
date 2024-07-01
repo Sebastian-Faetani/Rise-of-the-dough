@@ -76,13 +76,13 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="GunAnim" type="AnimatedSprite2D" parent="CanvasLayer/Control"]
 texture_filter = 1
-position = Vector2(710, 301)
-scale = Vector2(0.621815, 0.621815)
+position = Vector2(1209, 525)
 sprite_frames = SubResource("SpriteFrames_hkejt")
-animation = &"Idle"
+animation = &"attack"
 autoplay = "Idle"
 
 [node name="PistolCross" type="TextureRect" parent="CanvasLayer"]
@@ -102,6 +102,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_fvc74")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="GunRays" type="Node3D" parent="."]
 

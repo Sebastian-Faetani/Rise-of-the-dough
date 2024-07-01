@@ -1,16 +1,80 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqeu2j55klbsa"]
+[gd_scene load_steps=16 format=3 uid="uid://dqeu2j55klbsa"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_ipl5t"]
 [ext_resource type="Script" path="res://scripts/player/SmoothCamera.gd" id="2_quloi"]
-[ext_resource type="PackedScene" uid="uid://80tse0fem85b" path="res://scenes/weapons/w_mop.tscn" id="3_4qcfl"]
-[ext_resource type="Texture2D" uid="uid://dfattamrv2qrl" path="res://assets/ui/HealthBarBelow.png" id="4_4mgkg"]
+[ext_resource type="PackedScene" uid="uid://die854fwg4egx" path="res://scenes/weapons/w_clap.tscn" id="3_7cw1q"]
 [ext_resource type="Script" path="res://scenes/player/HealthBar.gd" id="4_jqa03"]
-[ext_resource type="Texture2D" uid="uid://b34mwlxirwu2g" path="res://assets/ui/HealthBarOverPart.png" id="5_02ugg"]
+[ext_resource type="Texture2D" uid="uid://n8x3tvdb674u" path="res://assets/ui/LifeBarUnder.png" id="4_tnn4f"]
+[ext_resource type="PackedScene" uid="uid://dcsfow5r7t024" path="res://scenes/UI/game_over_menu.tscn" id="4_x2yd1"]
+[ext_resource type="Texture2D" uid="uid://b8mf6b8r88afq" path="res://assets/ui/LifeBarOver.png" id="5_l1m2r"]
+[ext_resource type="Texture2D" uid="uid://be3yaj7nptdtu" path="res://assets/ui/LifeBar.png" id="6_kuyal"]
 [ext_resource type="AudioStream" uid="uid://cwyxtarqjabqk" path="res://assets/weapons/wet-slop.wav" id="7_sc7eu"]
+[ext_resource type="Texture2D" uid="uid://7h4hmjf5fy3" path="res://assets/ui/damage.png" id="8_45c1w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s4lsa"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vf3wu"]
+
+[sub_resource type="Animation" id="Animation_7vnn2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w1axw"]
+resource_name = "take_damage"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_anoes"]
+_data = {
+"RESET": SubResource("Animation_7vnn2"),
+"take_damage": SubResource("Animation_w1axw")
+}
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 process_mode = 1
@@ -36,80 +100,53 @@ top_level = true
 current = true
 script = ExtResource("2_quloi")
 
-[node name="mop" parent="Head/SmoothCamera" instance=ExtResource("3_4qcfl")]
-
 [node name="interact" type="RayCast3D" parent="Head/SmoothCamera"]
 transform = Transform3D(0.6539, 0, 0, 0, -0.00600092, -0.929248, 0, 0.929248, -0.00600092, 0, 0, -0.325511)
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="Weapon_handler" type="Node3D" parent="Head"]
 
-[node name="HealthBar" type="TextureProgressBar" parent="UI" node_paths=PackedStringArray("player")]
+[node name="w_clap" parent="Head/Weapon_handler" instance=ExtResource("3_7cw1q")]
+
+[node name="HealthBar" type="TextureProgressBar" parent="." node_paths=PackedStringArray("player")]
 texture_filter = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 151.0
-offset_top = 148.0
-offset_right = 215.0
-offset_bottom = 212.0
+offset_left = 72.0
+offset_top = -494.0
+offset_right = 200.0
+offset_bottom = -430.0
 grow_vertical = 2
-scale = Vector2(1.90899, 1.80509)
-fill_mode = 3
-texture_under = ExtResource("4_4mgkg")
-texture_progress = ExtResource("5_02ugg")
+scale = Vector2(2.88126, 2.72444)
+texture_under = ExtResource("4_tnn4f")
+texture_over = ExtResource("5_l1m2r")
+texture_progress = ExtResource("6_kuyal")
 script = ExtResource("4_jqa03")
-player = NodePath("../..")
+player = NodePath("..")
 
-[node name="DeathScreen" type="Control" parent="UI"]
-visible = false
-layout_mode = 3
+[node name="DamageTexture" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 0.0296021
+offset_top = -0.0526123
+offset_right = 0.029541
+offset_bottom = -0.0526123
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 5.47871e-05
+pivot_offset = Vector2(960, 540)
+texture = ExtResource("8_45c1w")
 
-[node name="Panel" type="Panel" parent="UI/DeathScreen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -62.0
-offset_top = -20.0
-offset_right = 62.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="DamageAnimationPlayer" type="AnimationPlayer" parent="DamageTexture"]
+libraries = {
+"": SubResource("AnimationLibrary_anoes")
+}
+autoplay = "RESET"
 
-[node name="Label" type="Label" parent="UI/DeathScreen/Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -36.0
-offset_top = 5.0
-offset_right = 40.0
-offset_bottom = 28.0
-grow_horizontal = 2
-text = "MORISTE"
-
-[node name="Button" type="Button" parent="UI/DeathScreen/Panel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -45.0
-offset_top = -37.0
-offset_right = 41.0
-offset_bottom = -6.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "REINICIAR
-"
+[node name="GameOverMenu" parent="." instance=ExtResource("4_x2yd1")]
+visible = false
 
 [node name="MopSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_sc7eu")

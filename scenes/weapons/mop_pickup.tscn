@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj0abgkrdmit"]
+
+[ext_resource type="Texture2D" uid="uid://iftk68k5kiya" path="res://assets/enviroment/Mop_sprite.png" id="1_dpn64"]
+[ext_resource type="Script" path="res://scenes/weapons/pickup.gd" id="1_qi3cj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hr0qg"]
+
+[node name="Mop_Pickup" type="Area3D"]
+script = ExtResource("1_qi3cj")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.238914, 0, 0, 0, 0.238914, 0, 0, 0, 0.238914, 0, 0, 0)
+billboard = 1
+texture = ExtResource("1_dpn64")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.93509, 0, 0, 0, 0.520791, 0, 0, 0, 0.473, 0, 0, 0)
+shape = SubResource("BoxShape3D_hr0qg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

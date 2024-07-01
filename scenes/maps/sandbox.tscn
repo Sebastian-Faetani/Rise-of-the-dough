@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://lgtvpksns5vx"]
+[gd_scene load_steps=15 format=3 uid="uid://lgtvpksns5vx"]
 
 [ext_resource type="PackedScene" uid="uid://dqeu2j55klbsa" path="res://scenes/player/player.tscn" id="1_a1f82"]
 [ext_resource type="Texture2D" uid="uid://dp3ahihn3qc0h" path="res://assets/enviroment/prototype-texture-with-size.png" id="1_d4eq0"]
 [ext_resource type="Script" path="res://scripts/world/sandbox.gd" id="1_gs8g2"]
 [ext_resource type="Script" path="res://scripts/world/Pause_menu_sandbox.gd" id="4_fpjfb"]
+[ext_resource type="PackedScene" uid="uid://byehn0yp68wve" path="res://scenes/enemies/enemy.tscn" id="5_gem5d"]
+[ext_resource type="PackedScene" uid="uid://2lk1q4ru0cmx" path="res://scenes/enemies/mb_enemy.tscn" id="6_cvxac"]
+[ext_resource type="PackedScene" uid="uid://cj0abgkrdmit" path="res://scenes/weapons/mop_pickup.tscn" id="7_2n5vi"]
+[ext_resource type="PackedScene" uid="uid://t0nno57ammie" path="res://scenes/weapons/power_washer_pickup.tscn" id="8_vbbhg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d8uri"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -17,10 +21,17 @@ background_mode = 2
 sky = SubResource("Sky_lvjyo")
 tonemap_mode = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwisl"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_fql45"]
+vertices = PackedVector3Array(11.25, 0.5, -12, 12, 0.5, -12, 12, 0.5, -29.75, 10.5, 0.5, -11.25, 11.25, 0.5, -12, 12, 0.5, -29.75, -29.75, 0.5, -29.75, -29.75, 0.5, 2.75, -29.75, 0.5, 2.75, 10.5, 0.5, 2.5, 10.5, 0.5, -11.25, 13.75, 0.5, -11.25, 13.75, 0.5, -6.5, 18.25, 0.5, -6.5, 18.25, 0.5, -6.5, 18.75, 0.5, -5.5, 29.75, 0.5, -5.5, 13.75, 0.5, -11.25, 18.25, 0.5, -6.5, 29.75, 0.5, -5.5, 12, 0.5, -29.75, 12, 0.5, -12, 13, 0.5, -12, 13, 0.5, -12, 13.75, 0.5, -11.25, 29.75, 0.5, -5.5, 29.75, 0.5, -29.75, 12, 0.5, -29.75, 13.25, 2.75, -4.5, 12.25, 2.75, -3.75, 13, 2.75, -3.25, 18.25, 0.75, -3.25, 18.25, 0.75, -4.5, 15.75, 2.75, -4.5, 15.625, 2.75, -3.25, 18.25, 0.75, -3.25, 18.75, 0.5, -2.25, 29.75, 0.5, -2.25, 29.75, 0.5, -5.5, 18.75, 0.5, -5.5, 18.25, 0.75, -4.5, 18.25, 0.5, -1.25, 13.75, 0.5, -1.25, 13.75, 0.5, 3.75, 29.75, 0.5, -2.25, 18.75, 0.5, -2.25, 18.25, 0.5, -1.25, 29.75, 0.5, -2.25, 18.25, 0.5, -1.25, 13.75, 0.5, 3.75, 29.75, 0.5, -2.25, 13.75, 0.5, 3.75, 12.75, 0.5, 4.75, 12, 0.5, 29.75, 29.75, 0.5, 29.75, 12.75, 0.5, 4.75, 12, 0.5, 4.75, 12, 0.5, 29.75, 12, 0.5, 29.75, 12, 0.5, 4.75, 11.25, 0.5, 4.75, 12, 0.5, 29.75, 11.25, 0.5, 4.75, 10.5, 0.5, 4, -29.75, 0.5, 2.75, -29.75, 0.5, 29.75, 10.5, 0.5, 4, 10.5, 0.5, 2.5, -29.75, 0.5, 2.75)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(6, 3, 7), PackedInt32Array(10, 9, 8), PackedInt32Array(13, 12, 11), PackedInt32Array(16, 15, 14), PackedInt32Array(19, 18, 17), PackedInt32Array(22, 21, 20), PackedInt32Array(24, 23, 25), PackedInt32Array(25, 23, 27), PackedInt32Array(25, 27, 26), PackedInt32Array(29, 28, 30), PackedInt32Array(30, 28, 34), PackedInt32Array(34, 28, 33), PackedInt32Array(34, 33, 32), PackedInt32Array(34, 32, 31), PackedInt32Array(40, 39, 35), PackedInt32Array(35, 39, 36), PackedInt32Array(36, 39, 38), PackedInt32Array(36, 38, 37), PackedInt32Array(43, 42, 41), PackedInt32Array(46, 45, 44), PackedInt32Array(49, 48, 47), PackedInt32Array(51, 50, 52), PackedInt32Array(52, 50, 53), PackedInt32Array(53, 50, 54), PackedInt32Array(57, 56, 55), PackedInt32Array(60, 59, 58), PackedInt32Array(62, 61, 63), PackedInt32Array(63, 61, 65), PackedInt32Array(63, 65, 64), PackedInt32Array(68, 67, 66)]
+agent_radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yof4h"]
 albedo_texture = ExtResource("1_d4eq0")
 uv1_triplanar = true
-uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oifra"]
+albedo_color = Color(0.255828, 0.263289, 0.127226, 1)
 
 [node name="Sandbox" type="Node3D"]
 script = ExtResource("1_gs8g2")
@@ -32,29 +43,54 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lrn32")
 
-[node name="LevelContent" type="Node3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_fql45")
 
-[node name="Floor" type="CSGBox3D" parent="LevelContent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-material_overlay = SubResource("StandardMaterial3D_fwisl")
+[node name="LevelContent" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="wall" type="CSGBox3D" parent="NavigationRegion3D/LevelContent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.5, 0.5)
+material_override = SubResource("StandardMaterial3D_yof4h")
 use_collision = true
-size = Vector3(64, 1, 64)
-
-[node name="wall" type="CSGBox3D" parent="LevelContent/Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, 0.5)
 size = Vector3(1, 3, 6)
 
-[node name="wall2" type="CSGBox3D" parent="LevelContent/Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, -8)
+[node name="BorderWall" type="CSGBox3D" parent="NavigationRegion3D/LevelContent/wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4834, 0, -0.498558)
+size = Vector3(1, 3, 64)
+
+[node name="BorderWall2" type="CSGBox3D" parent="NavigationRegion3D/LevelContent/wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.483, 0, -0.499)
+size = Vector3(1, 3, 64)
+
+[node name="BorderWall3" type="CSGBox3D" parent="NavigationRegion3D/LevelContent/wall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.9921, 0, 30.9811)
+size = Vector3(1, 3, 62)
+
+[node name="BorderWall4" type="CSGBox3D" parent="NavigationRegion3D/LevelContent/wall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.992, 0, -31.981)
+size = Vector3(1, 3, 62)
+
+[node name="wall2" type="CSGBox3D" parent="NavigationRegion3D/LevelContent/wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.5)
 size = Vector3(1, 3, 6)
 
-[node name="passage" type="CSGBox3D" parent="LevelContent/Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9896, 2.49757, -3.74)
+[node name="passage" type="CSGBox3D" parent="NavigationRegion3D/LevelContent/wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103998, 0.49757, -4.24)
 size = Vector3(1, 1, 2.5)
 
-[node name="passage2" type="CSGBox3D" parent="LevelContent/Floor"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.9652, 2.49757, -3.854)
+[node name="passage2" type="CSGBox3D" parent="NavigationRegion3D/LevelContent/wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.9652, 0.49757, -4.354)
 size = Vector3(3, 1, 3)
+
+[node name="Ramp" type="CSGPolygon3D" parent="NavigationRegion3D/LevelContent/wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.02705, 3.99497, -1.85898, -2.83637)
+polygon = PackedVector2Array(-0.530403, 2.85451, -0.490589, 0.362264, 2.41891, 0.36736)
+
+[node name="Floor" type="CSGBox3D" parent="NavigationRegion3D/LevelContent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_oifra")
+use_collision = true
+size = Vector3(64, 1, 64)
 
 [node name="Player" parent="." instance=ExtResource("1_a1f82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -92,9 +128,21 @@ text = "Reanudar"
 layout_mode = 2
 text = "Menú principal"
 
-[node name="Controles" type="Button" parent="Pause_menu_sandbox/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Controles"
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("5_gem5d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+
+[node name="mb_enemy" parent="Enemies" instance=ExtResource("6_cvxac")]
+transform = Transform3D(1.01436, 0, 0, 0, 1.01436, 0, 0, 0, 1.01436, -4, 0, -15)
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="Mop_Pickup" parent="Pickups" instance=ExtResource("7_2n5vi")]
+transform = Transform3D(-0.0667441, 0, 0.99777, 0, 1, 0, -0.99777, 0, -0.0667441, 7, 0.0748969, 0)
+
+[node name="power_washer_pickup" parent="Pickups" instance=ExtResource("8_vbbhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.516302, -2.74416)
 
 [connection signal="pressed" from="Pause_menu_sandbox/MarginContainer/VBoxContainer/Reanudar" to="Pause_menu_sandbox" method="_on_reanudar_pressed"]
 [connection signal="pressed" from="Pause_menu_sandbox/MarginContainer/VBoxContainer/Menu" to="Pause_menu_sandbox" method="_on_menu_pressed"]

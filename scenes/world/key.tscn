@@ -11,7 +11,7 @@ transform = Transform3D(0.36, 0, 0, 0, 1, 0, 0, 0, 0.32, 0, 0, 0)
 script = ExtResource("1_awfo6")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.154098, 0, 0, 0, 1.02077e-05, 0.248368, 0, -0.116917, 2.16823e-05, 0, 0, 0)
+transform = Transform3D(0.187726, 0, 0, 0, 1.24353e-05, 0.302568, 0, -0.142431, 2.64139e-05, 0, 0, 0)
 texture = ExtResource("2_5wx52")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

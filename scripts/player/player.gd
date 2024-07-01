@@ -11,6 +11,16 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var crouching_collision = $crouching_collision
 @onready var head_bump_check = $head_bump_check
 @onready var interact = $Head/SmoothCamera/interact
+@onready var damage_animation_player = $DamageTexture/DamageAnimationPlayer
+@onready var game_over_menu = $GameOverMenu
+
+#weapons
+@onready var CLAP = preload("res://scenes/weapons/w_clap.tscn")
+@onready var MOP = preload("res://scenes/weapons/w_mop.tscn")
+@onready var POWERWASHER = preload("res://scenes/weapons/w_power_washer.tscn")
+
+@onready var carried_guns = [CLAP]
+var currentWeapon = 0
 
 
 #player variables
@@ -41,17 +51,18 @@ var dead = false
 @export var max_player_health = 100
 @onready var current_player_health: int = max_player_health:
 	set(value):
+		if value < current_player_health:
+			damage_animation_player.stop(false)
+			damage_animation_player.play("take_damage")
 		current_player_health = value
 		healthChanged.emit()
 		if current_player_health <= 0:
 				dead = true
-				$UI/DeathScreen.show()
-				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+				game_over_menu.game_over()
 
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	$UI/DeathScreen/Panel/Button.button_up.connect(restart)
 
 func _input(event: InputEvent):
 	if dead:
@@ -70,7 +81,18 @@ func _process(_delta):
 		get_tree().quit()
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
-
+	
+	if Input.is_action_just_pressed("next_weapon"):
+		currentWeapon += 1
+		if currentWeapon > len(carried_guns) - 1:
+			currentWeapon = 0
+		change_gun(currentWeapon)
+	elif Input.is_action_just_pressed("prev_weapon"):
+		currentWeapon -= 1
+		if currentWeapon < 0:
+			currentWeapon = len(carried_guns) - 1
+		change_gun(currentWeapon)
+	
 func _physics_process(delta):
 	if dead:
 		return
@@ -122,7 +144,7 @@ func _physics_process(delta):
 		if slide_timer <= 0:
 			sliding = false
 	
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if sliding:
 		direction = (transform.basis * Vector3(slide_vector.x, 0, slide_vector.y)).normalized()
@@ -138,13 +160,14 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
+		
+	#picking up stuff
+	
 	if Input.is_action_just_pressed("interact"):
 		var collider = interact.get_collider()
 		if collider != null:
 			if collider.is_in_group("interactuable"):
 				collider.interact()
-	if Input.is_action_just_pressed("interact"):
-		var collider = interact.get_collider()
 		if collider != null:
 			if collider.is_in_group("interaction"):
 				collectkey = true
@@ -156,8 +179,11 @@ func _physics_process(delta):
 				collider.bye()
 
 	move_and_slide()
-	
-
 
 func restart():
 	get_tree().reload_current_scene()
+
+func change_gun(gun):
+	$Head/Weapon_handler.get_child(0).queue_free()
+	var new_gun = carried_guns[gun].instantiate()
+	$Head/Weapon_handler.add_child(new_gun)

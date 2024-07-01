@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://brw5t2ykamv7w"]
+
+[ext_resource type="Script" path="res://scripts/UI/options_menu.gd" id="1_1ctsv"]
+[ext_resource type="PackedScene" uid="uid://bs7bfk6y3maph" path="res://scenes/UI/settings_tab_container.tscn" id="2_mbm0c"]
+
+[sub_resource type="SystemFont" id="SystemFont_27i4i"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_r1blt"]
+font_names = PackedStringArray("Impact")
+
+[node name="Options_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ctsv")
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 58.0
+offset_top = 986.0
+offset_right = 192.0
+offset_bottom = 1054.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = SubResource("SystemFont_27i4i")
+theme_override_font_sizes/font_size = 48
+text = "Volver
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_r1blt")
+theme_override_font_sizes/font_size = 64
+text = "Opciones"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings_tab_container" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_mbm0c")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

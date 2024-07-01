@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs7bfk6y3maph"]
+
+[ext_resource type="PackedScene" uid="uid://ccb3afm7kbdfm" path="res://scenes/UI/window_mode_button.tscn" id="1_2b74c"]
+[ext_resource type="PackedScene" uid="uid://drqriiog4yvrj" path="res://scenes/UI/resolution_mode_button.tscn" id="2_bdysb"]
+
+[node name="Settings_tab_container" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+tab_alignment = 1
+
+[node name="Gráficos" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Gráficos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Gráficos/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Gráficos/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Window_Mode_Button" parent="TabContainer/Gráficos/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_2b74c")]
+layout_mode = 2
+
+[node name="Resolution_Mode_Button" parent="TabContainer/Gráficos/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_bdysb")]
+layout_mode = 2

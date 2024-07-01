@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcsfow5r7t024"]
+
+[ext_resource type="Script" path="res://scripts/UI/game_over_menu.gd" id="1_3q1ia"]
+
+[sub_resource type="SystemFont" id="SystemFont_v84yt"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="Theme" id="Theme_xk88n"]
+default_font = SubResource("SystemFont_v84yt")
+default_font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_tin2c"]
+font_size = 128
+
+[node name="GameOverMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_xk88n")
+script = ExtResource("1_3q1ia")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -306.0
+offset_top = 189.0
+offset_right = 306.0
+offset_bottom = 528.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "MORISTE"
+label_settings = SubResource("LabelSettings_tin2c")
+horizontal_alignment = 1
+
+[node name="restartbutton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Reinciar"
+
+[node name="MenuButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Menú principal"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/restartbutton" to="." method="_on_restartbutton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

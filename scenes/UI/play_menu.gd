@@ -7,12 +7,12 @@ func _ready():
 
 
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 
 func _on_storybutton_pressed():
-	get_tree().change_scene_to_file("res://scenes/maps/Map1.tscn")
+	get_tree().change_scene_to_file("res://scenes/UI/controls_explained.tscn")
 
 
 func _on_sandboxbutton_pressed():

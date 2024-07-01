@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://die854fwg4egx"]
+
+[ext_resource type="Texture2D" uid="uid://cu6whfbyy1jwa" path="res://assets/weapons/w_clap.png" id="1_ku0bq"]
+[ext_resource type="Texture2D" uid="uid://damk0cdacun0a" path="res://assets/ui/mira.png" id="2_vpo5s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5q0m"]
+atlas = ExtResource("1_ku0bq")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcb22"]
+atlas = ExtResource("1_ku0bq")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2187p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5q0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcb22")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}]
+
+[node name="w_clap" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="GunAnim" type="AnimatedSprite2D" parent="CanvasLayer/Control"]
+texture_filter = 1
+position = Vector2(967, 674)
+scale = Vector2(1.59362, 1.59362)
+sprite_frames = SubResource("SpriteFrames_2187p")
+animation = &"attack"
+autoplay = "Idle"
+frame = 2
+frame_progress = 1.0
+
+[node name="PistolCross" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -23.5
+offset_right = 21.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_vpo5s")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GunRays" type="Node3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="GunRays"]
+target_position = Vector3(0, 0, -1)
+collision_mask = 3

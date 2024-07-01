@@ -3,7 +3,7 @@ class_name Enemy
 
 #external variables
 @export var speed = 5.0
-@export var attack_range := 1.5
+@export var attack_range := 1.6
 @export var max_hp = 30
 @export var attack_damage := 20
 @export var cooldown_time = 1.5
@@ -25,6 +25,8 @@ var see_range := 30.0
 var can_move := true
 var can_attack := true
 var enemyDead := false
+var mopDeath = false
+var waterDeath = false
 var hp: int = max_hp:
 	set(value):
 		hp = value
@@ -34,7 +36,10 @@ var hp: int = max_hp:
 			attack_cooldown.stop()
 			current_state = EnemyStates.Death
 			playback.stop()
-			playback.travel("death")
+			if mopDeath == true:
+				playback.travel("mopDeath")
+			elif waterDeath == true:
+				playback.travel("waterDeath")
 			$CollisionShape3D.disabled = true
 
 
@@ -109,6 +114,12 @@ func enemyTakeDamage(dmg_amount):
 	current_state = EnemyStates.Chasing
 	print(dmg_amount)
 	hp -= dmg_amount
+
+func DeathByMop(bool):
+	mopDeath = bool
+
+func DeathByWater(bool):
+	waterDeath = bool
 
 func _on_attack_cooldown_timeout():
 	can_attack = true
