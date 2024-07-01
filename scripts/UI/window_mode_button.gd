@@ -25,6 +25,7 @@ func on_window_mode_selected(index : int) -> void:
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 		1: #window mode
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			DisplayServer.window_set_min_size(Vector2i(1152, 648))
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 		2: #window mode borderless
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
