@@ -16,6 +16,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var attack_cooldown = $AttackCooldown
 @onready var animation_player = $AnimationPlayer
 @onready var animation_tree = $AnimationTree
+@onready var dead_mopa = $DeadMopa
+@onready var dead_hidro = $DeadHidro
+
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 
 #internal variables
@@ -38,8 +41,10 @@ var hp: int = max_hp:
 			playback.stop()
 			if mopDeath == true:
 				playback.travel("mopDeath")
+				dead_mopa.play()
 			elif waterDeath == true:
 				playback.travel("waterDeath")
+				dead_hidro.play()
 			$CollisionShape3D.disabled = true
 
 

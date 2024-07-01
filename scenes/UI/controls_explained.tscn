@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bvtqkk53b4fuq" path="res://assets/interfaz/icons/esc_sprite.png" id="7_ngls5"]
 
 [node name="controls_explained" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

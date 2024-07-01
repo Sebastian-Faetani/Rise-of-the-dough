@@ -1,18 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvftx12mel54j"]
 
 [ext_resource type="Script" path="res://scripts/world/door.gd" id="1_m1h8l"]
+[ext_resource type="Texture2D" uid="uid://bdeim4sg288gx" path="res://assets/enviroment/Sprite_puerta_comun.png" id="2_7vuw5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4iuhh"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_j0q65"]
 
 [node name="Door" type="StaticBody3D" groups=["interactuable"]]
 script = ExtResource("1_m1h8l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 2.04653, 0, 0, 0, 1, 0, 0.746498, -0.231152)
+transform = Transform3D(1, 0, 0, 0, 2.04653, 0, 0, 0, 0.084865, 0, 0.820427, 0.000443578)
 shape = SubResource("BoxShape3D_4iuhh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.05212, 0, 0, 0, 1.71838, 0, 0, 0, 0.254588, 0, 0.704859, -0.152581)
-mesh = SubResource("BoxMesh_j0q65")
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.279849, 0, 0, 0, 0.17558, 0, 0, 0, 0.224348, 0.00643677, 0.69687, 0.00752079)
+texture = ExtResource("2_7vuw5")

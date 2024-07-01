@@ -2,6 +2,8 @@ extends Node3D
 
 @onready var gun_sprite = $CanvasLayer/Control/GunAnim
 @onready var gun_rays = $GunRays.get_children()
+@onready var shoot_hidro =  $"../../../ShootHidro"
+
 @export var gun_damage = 10
 var can_shoot = true
 
@@ -24,7 +26,9 @@ func check_hit():
 func _process(_delta):
 	if Input.is_action_just_pressed("shoot") and can_shoot == true:
 		gun_sprite.play("attack")
+		shoot_hidro.play()
 		check_hit()
+		
 		can_shoot = false
 
 func shoot_anim_done():

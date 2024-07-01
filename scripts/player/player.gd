@@ -13,6 +13,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var interact = $Head/SmoothCamera/interact
 @onready var damage_animation_player = $DamageTexture/DamageAnimationPlayer
 @onready var game_over_menu = $GameOverMenu
+@onready var open_door = $OpenDoor
+@onready var foots = $FootSteps
 
 #weapons
 @onready var CLAP = preload("res://scenes/weapons/w_clap.tscn")
@@ -103,7 +105,6 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_foward", "move_backwards")
-	
 	if Input.is_action_pressed("crouch") || sliding:
 		current_speed = crouch_speed
 		head.position.y = lerp(head.position.y, 0.5 + crouch_depth, delta * lerp_speed)
@@ -167,7 +168,10 @@ func _physics_process(delta):
 		var collider = interact.get_collider()
 		if collider != null:
 			if collider.is_in_group("interactuable"):
+				open_door.play()
 				collider.interact()
+				
+				
 		if collider != null:
 			if collider.is_in_group("interaction"):
 				collectkey = true
@@ -176,7 +180,15 @@ func _physics_process(delta):
 		var collider = interact.get_collider()
 		if collider != null:
 			if collider.is_in_group("exit"):
+				open_door.play()
 				collider.bye()
+				
+
+	if velocity.x != 0 and is_on_floor():
+		if !foots.playing:
+			foots.play()
+	elif foots.playing:
+		foots.stop()
 
 	move_and_slide()
 

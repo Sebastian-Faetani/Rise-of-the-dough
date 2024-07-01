@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dqeu2j55klbsa"]
+[gd_scene load_steps=19 format=3 uid="uid://dqeu2j55klbsa"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_ipl5t"]
 [ext_resource type="Script" path="res://scripts/player/SmoothCamera.gd" id="2_quloi"]
@@ -8,8 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://dcsfow5r7t024" path="res://scenes/UI/game_over_menu.tscn" id="4_x2yd1"]
 [ext_resource type="Texture2D" uid="uid://b8mf6b8r88afq" path="res://assets/ui/LifeBarOver.png" id="5_l1m2r"]
 [ext_resource type="Texture2D" uid="uid://be3yaj7nptdtu" path="res://assets/ui/LifeBar.png" id="6_kuyal"]
-[ext_resource type="AudioStream" uid="uid://cwyxtarqjabqk" path="res://assets/weapons/wet-slop.wav" id="7_sc7eu"]
 [ext_resource type="Texture2D" uid="uid://7h4hmjf5fy3" path="res://assets/ui/damage.png" id="8_45c1w"]
+[ext_resource type="AudioStream" uid="uid://bv46amkbfit8m" path="res://sounds/weapons/Hit mopa.wav" id="11_efcob"]
+[ext_resource type="AudioStream" uid="uid://dqj6pgjdg0wol" path="res://sounds/weapons/shoot hidro.mp3" id="11_ntgnf"]
+[ext_resource type="AudioStream" uid="uid://bbjse0fyivsv7" path="res://sounds/environment/open door.mp3" id="12_vgaog"]
+[ext_resource type="AudioStream" uid="uid://u4av65os2k8b" path="res://sounds/player/footsteps.mp3" id="13_xjog0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s4lsa"]
 
@@ -148,5 +151,14 @@ autoplay = "RESET"
 [node name="GameOverMenu" parent="." instance=ExtResource("4_x2yd1")]
 visible = false
 
-[node name="MopSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_sc7eu")
+[node name="HitMopa" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_efcob")
+
+[node name="ShootHidro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ntgnf")
+
+[node name="OpenDoor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_vgaog")
+
+[node name="FootSteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_xjog0")

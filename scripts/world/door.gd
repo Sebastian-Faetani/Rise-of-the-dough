@@ -1,5 +1,7 @@
 extends Node3D
 @export var isLocked = false
+
+
 func _ready():
 	pass
 
