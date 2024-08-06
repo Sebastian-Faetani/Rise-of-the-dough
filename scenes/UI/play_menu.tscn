@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://7mdwnbpmckxe"]
+[gd_scene load_steps=4 format=3 uid="uid://7mdwnbpmckxe"]
 
 [ext_resource type="Script" path="res://scenes/UI/play_menu.gd" id="1_72jbf"]
-[ext_resource type="Texture2D" uid="uid://d2nt5ggekraiy" path="res://assets/interfaz/fabrica-y-oficinas-coatresa-denys-and-von-arend_4.jpg" id="1_mtekn"]
+[ext_resource type="Texture2D" uid="uid://chwkkmrwh6li1" path="res://assets/interfaz/Menu intento 2.PNG" id="2_qv63x"]
+[ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="3_kmku4"]
 
 [node name="Play_Menu" type="Control"]
 process_mode = 3
@@ -14,42 +15,47 @@ grow_vertical = 2
 script = ExtResource("1_72jbf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(954, 522)
-scale = Vector2(2.60473, 2.26615)
-texture = ExtResource("1_mtekn")
+position = Vector2(960, 540)
+texture = ExtResource("2_qv63x")
 
 [node name="story-button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1249.0
-offset_top = 568.0
-offset_right = 1444.0
-offset_bottom = 644.0
+offset_left = 661.0
+offset_top = 313.0
+offset_right = 994.0
+offset_bottom = 401.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.641106, 0, 0, 1)
-theme_override_font_sizes/font_size = 49
-text = "Historia"
+theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_kmku4")
+theme_override_font_sizes/font_size = 64
+text = "HISTORIA"
+flat = true
 
 [node name="sandbox-button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1240.0
-offset_top = 660.0
-offset_right = 1454.0
-offset_bottom = 736.0
+offset_left = 1021.0
+offset_top = 314.0
+offset_right = 1349.0
+offset_bottom = 402.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.596853, 1.62441e-06, 4.33177e-07, 1)
-theme_override_font_sizes/font_size = 49
-text = "SandBox"
+theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_kmku4")
+theme_override_font_sizes/font_size = 64
+text = "SANDBOX"
+flat = true
 
 [node name="back-button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1272.0
-offset_top = 756.0
-offset_right = 1429.0
-offset_bottom = 832.0
+offset_left = 157.0
+offset_top = 880.0
+offset_right = 349.0
+offset_bottom = 956.0
+rotation = 0.313388
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.56173, 0, 0, 1)
-theme_override_font_sizes/font_size = 49
-text = "Volver"
+theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
+theme_override_font_sizes/font_size = 42
+text = "VOLVER"
+flat = true
 
 [connection signal="pressed" from="story-button" to="." method="_on_storybutton_pressed"]
 [connection signal="pressed" from="sandbox-button" to="." method="_on_sandboxbutton_pressed"]

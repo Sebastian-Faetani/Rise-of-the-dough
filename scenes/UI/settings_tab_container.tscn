@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs7bfk6y3maph"]
+[gd_scene load_steps=4 format=3 uid="uid://bs7bfk6y3maph"]
 
 [ext_resource type="PackedScene" uid="uid://ccb3afm7kbdfm" path="res://scenes/UI/window_mode_button.tscn" id="1_2b74c"]
+[ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="1_yn0hk"]
 [ext_resource type="PackedScene" uid="uid://drqriiog4yvrj" path="res://scenes/UI/resolution_mode_button.tscn" id="2_bdysb"]
 
 [node name="Settings_tab_container" type="Control"]
@@ -28,6 +29,7 @@ tab_alignment = 1
 
 [node name="Gráficos" type="TabBar" parent="TabContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_yn0hk")
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Gráficos"]
 layout_mode = 1

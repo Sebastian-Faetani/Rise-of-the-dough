@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qbujpd4vm47c"
-path="res://.godot/imported/logos_juntos.png-35da777d5445b1b06e848bb1b8b68725.ctex"
+uid="uid://by848tbfbj56d"
+path="res://.godot/imported/Logos_juntos.png-9b26a3869a79c8b2c7c0209404bacc5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/logos_juntos.png"
-dest_files=["res://.godot/imported/logos_juntos.png-35da777d5445b1b06e848bb1b8b68725.ctex"]
+source_file="res://assets/ui/Logos_juntos.png"
+dest_files=["res://.godot/imported/Logos_juntos.png-9b26a3869a79c8b2c7c0209404bacc5b.ctex"]
 
 [params]
 

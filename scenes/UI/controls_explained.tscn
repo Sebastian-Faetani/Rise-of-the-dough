@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cy7f0bdfk1iet"]
+[gd_scene load_steps=10 format=3 uid="uid://cy7f0bdfk1iet"]
 
 [ext_resource type="Script" path="res://scripts/UI/controls_explained.gd" id="1_6eq04"]
 [ext_resource type="Texture2D" uid="uid://dylajj52ilery" path="res://assets/interfaz/controls background.png" id="1_qyorn"]
 [ext_resource type="Texture2D" uid="uid://ccsbe1nepbqhn" path="res://assets/interfaz/icons/wasd_Sprite.png" id="3_6mgli"]
+[ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="3_b7gnn"]
 [ext_resource type="Texture2D" uid="uid://d1o0wrcvyp36v" path="res://assets/interfaz/icons/shift_sprite.png" id="4_4tupo"]
+[ext_resource type="Texture2D" uid="uid://dwg173cmleohm" path="res://assets/interfaz/icons/E_sprite.png" id="4_vpia1"]
 [ext_resource type="Texture2D" uid="uid://blr0chtjbpmab" path="res://assets/interfaz/icons/Ctrl_sprite.png" id="5_2osvs"]
 [ext_resource type="Texture2D" uid="uid://coovtp1w2g8ty" path="res://assets/interfaz/icons/mouse_sprite.png" id="6_bpyxw"]
 [ext_resource type="Texture2D" uid="uid://bvtqkk53b4fuq" path="res://assets/interfaz/icons/esc_sprite.png" id="7_ngls5"]
@@ -37,8 +39,103 @@ offset_right = -143.0
 offset_bottom = -87.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_b7gnn")
 theme_override_font_sizes/font_size = 36
 text = "CONTINUAR"
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(519, 330)
+texture = ExtResource("3_6mgli")
+
+[node name="Label" type="Label" parent="Icon"]
+offset_left = -104.0
+offset_top = 156.0
+offset_right = 130.0
+offset_bottom = 206.0
+theme_override_fonts/font = ExtResource("3_b7gnn")
+theme_override_font_sizes/font_size = 36
+text = "MOVIMIENTO"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon6" type="Sprite2D" parent="."]
+position = Vector2(1373, 789)
+texture = ExtResource("4_vpia1")
+
+[node name="Label" type="Label" parent="Icon6"]
+offset_left = -117.0
+offset_top = 97.0
+offset_right = 142.0
+offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("3_b7gnn")
+theme_override_font_sizes/font_size = 36
+text = "INTERACTUAR"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(528, 790)
+texture = ExtResource("4_4tupo")
+
+[node name="Label2" type="Label" parent="Icon2"]
+offset_left = -117.0
+offset_top = 94.0
+offset_right = 117.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("3_b7gnn")
+theme_override_font_sizes/font_size = 36
+text = "CORRER"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(968, 788)
+texture = ExtResource("5_2osvs")
+
+[node name="Label3" type="Label" parent="Icon3"]
+offset_left = -114.0
+offset_top = 95.135
+offset_right = 120.0
+offset_bottom = 145.135
+theme_override_fonts/font = ExtResource("3_b7gnn")
+theme_override_font_sizes/font_size = 36
+text = "AGACHARSE"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon4" type="Sprite2D" parent="."]
+position = Vector2(975, 297)
+scale = Vector2(0.840061, 0.840061)
+texture = ExtResource("6_bpyxw")
+
+[node name="Label4" type="Label" parent="Icon4"]
+offset_left = -139.0
+offset_top = 222.0
+offset_right = 136.0
+offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("3_b7gnn")
+theme_override_font_sizes/font_size = 36
+text = "MIRAR
+DISPARAR
+CAMBIAR ARMA"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon5" type="Sprite2D" parent="."]
+position = Vector2(1384, 380)
+texture = ExtResource("7_ngls5")
+
+[node name="Label4" type="Label" parent="Icon5"]
+offset_left = -113.0
+offset_top = 101.0
+offset_right = 121.0
+offset_bottom = 151.0
+theme_override_fonts/font = ExtResource("3_b7gnn")
+theme_override_font_sizes/font_size = 36
+text = "PAUSA"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -53,77 +150,5 @@ offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-
-[node name="Icon" type="Sprite2D" parent="HBoxContainer"]
-position = Vector2(336, -256)
-texture = ExtResource("3_6mgli")
-
-[node name="Label" type="Label" parent="HBoxContainer/Icon"]
-offset_left = -104.0
-offset_top = 156.0
-offset_right = 130.0
-offset_bottom = 206.0
-theme_override_font_sizes/font_size = 36
-text = "MOVIMIENTO"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Icon2" type="Sprite2D" parent="HBoxContainer"]
-position = Vector2(682, -194)
-texture = ExtResource("4_4tupo")
-
-[node name="Label2" type="Label" parent="HBoxContainer/Icon2"]
-offset_left = -117.0
-offset_top = 94.0
-offset_right = 117.0
-offset_bottom = 144.0
-theme_override_font_sizes/font_size = 36
-text = "CORRER"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Icon3" type="Sprite2D" parent="HBoxContainer"]
-position = Vector2(966, -195.135)
-texture = ExtResource("5_2osvs")
-
-[node name="Label3" type="Label" parent="HBoxContainer/Icon3"]
-offset_left = -114.0
-offset_top = 95.135
-offset_right = 120.0
-offset_bottom = 145.135
-theme_override_font_sizes/font_size = 36
-text = "AGACHARSE"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Icon4" type="Sprite2D" parent="HBoxContainer"]
-position = Vector2(1239, -322)
-texture = ExtResource("6_bpyxw")
-
-[node name="Label4" type="Label" parent="HBoxContainer/Icon4"]
-offset_left = -139.0
-offset_top = 222.0
-offset_right = 136.0
-offset_bottom = 378.0
-theme_override_font_sizes/font_size = 36
-text = "MIRAR
-DISPARAR
-CAMBIAR ARMA"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Icon5" type="Sprite2D" parent="HBoxContainer"]
-position = Vector2(1539, -195)
-texture = ExtResource("7_ngls5")
-
-[node name="Label4" type="Label" parent="HBoxContainer/Icon5"]
-offset_left = -113.0
-offset_top = 101.0
-offset_right = 121.0
-offset_bottom = 151.0
-theme_override_font_sizes/font_size = 36
-text = "PAUSA"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Continuar" to="." method="_on_continuar_pressed"]

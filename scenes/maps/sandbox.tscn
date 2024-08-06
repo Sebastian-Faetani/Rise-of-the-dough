@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://lgtvpksns5vx"]
+[gd_scene load_steps=17 format=3 uid="uid://lgtvpksns5vx"]
 
 [ext_resource type="PackedScene" uid="uid://dqeu2j55klbsa" path="res://scenes/player/player.tscn" id="1_a1f82"]
 [ext_resource type="Texture2D" uid="uid://dp3ahihn3qc0h" path="res://assets/enviroment/prototype-texture-with-size.png" id="1_d4eq0"]
 [ext_resource type="Script" path="res://scripts/world/sandbox.gd" id="1_gs8g2"]
 [ext_resource type="Script" path="res://scripts/world/Pause_menu_sandbox.gd" id="4_fpjfb"]
+[ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="5_dew8o"]
 [ext_resource type="PackedScene" uid="uid://byehn0yp68wve" path="res://scenes/enemies/enemy.tscn" id="5_gem5d"]
 [ext_resource type="PackedScene" uid="uid://2lk1q4ru0cmx" path="res://scenes/enemies/mb_enemy.tscn" id="6_cvxac"]
 [ext_resource type="PackedScene" uid="uid://cj0abgkrdmit" path="res://scenes/weapons/mop_pickup.tscn" id="7_2n5vi"]
@@ -32,6 +33,10 @@ uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oifra"]
 albedo_color = Color(0.255828, 0.263289, 0.127226, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8yq42"]
+font = ExtResource("5_dew8o")
+font_size = 60
 
 [node name="Sandbox" type="Node3D"]
 script = ExtResource("1_gs8g2")
@@ -84,7 +89,7 @@ size = Vector3(3, 1, 3)
 
 [node name="Ramp" type="CSGPolygon3D" parent="NavigationRegion3D/LevelContent/wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.02705, 3.99497, -1.85898, -2.83637)
-polygon = PackedVector2Array(-0.530403, 2.85451, -0.490589, 0.362264, 2.41891, 0.36736)
+polygon = PackedVector2Array(-0.523143, 2.85668, -0.490589, 0.362264, 2.41891, 0.36736)
 
 [node name="Floor" type="CSGBox3D" parent="NavigationRegion3D/LevelContent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -114,24 +119,46 @@ script = ExtResource("4_fpjfb")
 
 [node name="MarginContainer" type="MarginContainer" parent="Pause_menu_sandbox"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -201.0
+offset_top = -89.0
+offset_right = 319.0
+offset_bottom = 232.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Pause_menu_sandbox/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 57
+
+[node name="Label" type="Label" parent="Pause_menu_sandbox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_dew8o")
+text = "JUEGO PAUSADO"
+label_settings = SubResource("LabelSettings_8yq42")
 
 [node name="Reanudar" type="Button" parent="Pause_menu_sandbox/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_dew8o")
+theme_override_font_sizes/font_size = 46
 text = "Reanudar"
 
 [node name="Menu" type="Button" parent="Pause_menu_sandbox/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_dew8o")
+theme_override_font_sizes/font_size = 46
 text = "Menú principal"
 
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("5_gem5d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("5_gem5d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.29154, 0, -15)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("5_gem5d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6716, 0, -10.0396)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("5_gem5d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0623, 0, -4.24192)
 
 [node name="mb_enemy" parent="Enemies" instance=ExtResource("6_cvxac")]
 transform = Transform3D(1.01436, 0, 0, 0, 1.01436, 0, 0, 0, 1.01436, -4, 0, -15)

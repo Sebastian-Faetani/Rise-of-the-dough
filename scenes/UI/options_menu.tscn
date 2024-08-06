@@ -1,13 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://brw5t2ykamv7w"]
 
 [ext_resource type="Script" path="res://scripts/UI/options_menu.gd" id="1_1ctsv"]
+[ext_resource type="Texture2D" uid="uid://60eiy0ncntlo" path="res://assets/interfaz/Credits background.png" id="2_dnlax"]
+[ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="2_g1wyr"]
 [ext_resource type="PackedScene" uid="uid://bs7bfk6y3maph" path="res://scenes/UI/settings_tab_container.tscn" id="2_mbm0c"]
-
-[sub_resource type="SystemFont" id="SystemFont_r1blt"]
-font_names = PackedStringArray("Impact")
-
-[sub_resource type="SystemFont" id="SystemFont_27i4i"]
-font_names = PackedStringArray("Impact")
 
 [node name="Options_menu" type="Control"]
 layout_mode = 3
@@ -19,11 +15,19 @@ grow_vertical = 2
 script = ExtResource("1_1ctsv")
 metadata/_edit_use_anchors_ = true
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_dnlax")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 12
@@ -37,7 +41,8 @@ theme_override_constants/separation = -48
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_r1blt")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_g1wyr")
 theme_override_font_sizes/font_size = 64
 text = "Opciones"
 horizontal_alignment = 1
@@ -51,9 +56,12 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_fonts/font = SubResource("SystemFont_27i4i")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
+theme_override_fonts/font = ExtResource("2_g1wyr")
 theme_override_font_sizes/font_size = 48
 text = "Volver
 "
+flat = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

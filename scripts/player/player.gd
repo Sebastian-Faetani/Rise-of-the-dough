@@ -13,6 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var interact = $Head/SmoothCamera/interact
 @onready var damage_animation_player = $DamageTexture/DamageAnimationPlayer
 @onready var game_over_menu = $GameOverMenu
+@onready var win_menu = $win_menu
 @onready var open_door = $OpenDoor
 @onready var foots = $FootSteps
 
@@ -35,6 +36,7 @@ var lerp_speed = 10.0
 var direction = Vector3.ZERO
 var crouch_depth = -0.5
 var collectkey = false
+var hasWon = false
 
 #slide variables
 var slide_timer = 0.0
@@ -83,6 +85,9 @@ func _process(_delta):
 		get_tree().quit()
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
+	
+	if hasWon == true:
+		win_menu.victory_arrived()
 	
 	if Input.is_action_just_pressed("next_weapon"):
 		currentWeapon += 1
@@ -202,3 +207,4 @@ func change_gun(gun):
 
 func puerta_desbloqueada():
 	pass
+

@@ -1,8 +1,9 @@
-res://scenes/world
-res://scripts/world
+C:/Users/Sebas/Desktop/godotProyects
 res://assets/ui
 res://scripts/UI
 res://scenes/UI
+res://scripts/world
+res://scenes/world
 res://scripts/weapons
 res://scenes/weapons
 res://assets/weapons
@@ -11,7 +12,6 @@ res://assets/enemies/BaguetteEnemy
 res://assets/maps
 res://scripts/enemies
 res://scenes/enemies
-C:/Users/user/Desktop
 res://assets/maps/Reception
 res://scenes/maps
 res://scripts/player

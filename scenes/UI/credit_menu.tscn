@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cl872lohvng0r"]
 
 [ext_resource type="Script" path="res://scripts/world/credit_menu.gd" id="1_c7bj8"]
-[ext_resource type="Texture2D" uid="uid://cbfiji4c8e3kn" path="res://assets/ui/color fondo.png" id="2_bnnwl"]
+[ext_resource type="Texture2D" uid="uid://60eiy0ncntlo" path="res://assets/interfaz/Credits background.png" id="2_nyi74"]
 
 [node name="credit_menu" type="Control"]
 layout_mode = 3
@@ -13,9 +13,8 @@ grow_vertical = 2
 script = ExtResource("1_c7bj8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(964, 540)
-scale = Vector2(6.54527, 6.58335)
-texture = ExtResource("2_bnnwl")
+position = Vector2(960, 540)
+texture = ExtResource("2_nyi74")
 
 [node name="names" type="Label" parent="."]
 layout_mode = 1
@@ -100,17 +99,19 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -90.0
-offset_top = -171.0
-offset_right = 67.0
-offset_bottom = -95.0
+offset_left = -867.0
+offset_top = -131.0
+offset_right = -710.0
+offset_bottom = -55.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.713726, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_font_sizes/font_size = 49
 text = "Volver
 "
+flat = true
 
 [node name="design name" type="Label" parent="."]
 layout_mode = 1

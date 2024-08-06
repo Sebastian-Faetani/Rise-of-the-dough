@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dstx3m7g0pcr"]
+[gd_scene load_steps=2 format=3 uid="uid://dstx3m7g0pcr"]
+
+[ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="1_gmj1r"]
 
 [node name="Options_Display_Button" type="Control"]
 layout_mode = 3
@@ -18,6 +20,7 @@ theme_override_constants/separation = 160
 [node name="Label" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(264, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gmj1r")
 theme_override_font_sizes/font_size = 32
 text = "BASE_LABEL"
 vertical_alignment = 1

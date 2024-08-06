@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcsfow5r7t024"]
+[gd_scene load_steps=7 format=3 uid="uid://dcsfow5r7t024"]
 
 [ext_resource type="Script" path="res://scripts/UI/game_over_menu.gd" id="1_3q1ia"]
+[ext_resource type="FontFile" uid="uid://mb7qg7r55pn3" path="res://assets/interfaz/Fonts/yummy_bread.ttf" id="2_mrapr"]
+[ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="3_sv7fp"]
 
 [sub_resource type="SystemFont" id="SystemFont_v84yt"]
 font_names = PackedStringArray("Impact")
@@ -10,7 +12,7 @@ default_font = SubResource("SystemFont_v84yt")
 default_font_size = 64
 
 [sub_resource type="LabelSettings" id="LabelSettings_tin2c"]
-font_size = 128
+font_size = 152
 
 [node name="GameOverMenu" type="Control"]
 process_mode = 3
@@ -37,19 +39,25 @@ grow_horizontal = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
+theme_override_constants/separation = 30
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mrapr")
 text = "MORISTE"
 label_settings = SubResource("LabelSettings_tin2c")
 horizontal_alignment = 1
 
 [node name="restartbutton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Reinciar"
+theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_sv7fp")
+text = "Reiniciar"
 
 [node name="MenuButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_sv7fp")
 text = "Menú principal"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/restartbutton" to="." method="_on_restartbutton_pressed"]

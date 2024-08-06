@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmgj3nvj7f0r3"]
+
+[ext_resource type="Script" path="res://scripts/world/win_area.gd" id="1_bmyxw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdd74"]
+
+[node name="Win_area" type="Area3D"]
+script = ExtResource("1_bmyxw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_fdd74")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
