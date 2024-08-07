@@ -1,9 +1,9 @@
+Sprite2D
 Label
 Control
 Timer
 Node2D
 Button
-Sprite2D
 Sprite3D
 CollisionShape3D
 Area3D

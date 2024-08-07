@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cl872lohvng0r"]
 
 [ext_resource type="Script" path="res://scripts/world/credit_menu.gd" id="1_c7bj8"]
-[ext_resource type="Texture2D" uid="uid://60eiy0ncntlo" path="res://assets/interfaz/Credits background.png" id="2_nyi74"]
+[ext_resource type="Texture2D" uid="uid://2one6qmqd6hf" path="res://assets/ui/Main_menu_bg.png" id="2_6lirv"]
 
 [node name="credit_menu" type="Control"]
 layout_mode = 3
@@ -14,7 +14,7 @@ script = ExtResource("1_c7bj8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("2_nyi74")
+texture = ExtResource("2_6lirv")
 
 [node name="names" type="Label" parent="."]
 layout_mode = 1
@@ -30,7 +30,7 @@ offset_bottom = -186.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.17295, 1.17295)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Sebastian Faetani
 Agustín Iñiguez"
@@ -47,7 +47,7 @@ offset_top = 102.0
 offset_right = 296.0
 offset_bottom = 212.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
 text = "Programadores"
 horizontal_alignment = 1
@@ -66,7 +66,7 @@ offset_right = 124.0
 offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
 text = "Artista"
 horizontal_alignment = 1
@@ -86,7 +86,7 @@ offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.19103, 1.19103)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Sasha Flory"
 horizontal_alignment = 1
@@ -99,13 +99,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -867.0
-offset_top = -131.0
-offset_right = -710.0
-offset_bottom = -55.0
+offset_left = -59.0
+offset_top = -129.0
+offset_right = 98.0
+offset_bottom = -53.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_font_sizes/font_size = 49
@@ -126,7 +126,7 @@ offset_right = 196.5
 offset_bottom = 131.28
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
 text = "Diseñador"
 horizontal_alignment = 1
@@ -145,9 +145,10 @@ offset_bottom = 172.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.10722, 1.10722)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
-text = "Sebastian Faetani"
+text = "Sebastian Faetani
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 

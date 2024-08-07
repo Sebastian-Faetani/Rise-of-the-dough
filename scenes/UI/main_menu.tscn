@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b311qc0ldm0ij"]
 
 [ext_resource type="Script" path="res://scenes/UI/main_menu.gd" id="1_1gr01"]
+[ext_resource type="Texture2D" uid="uid://2one6qmqd6hf" path="res://assets/ui/Main_menu_bg.png" id="2_a1ocj"]
 [ext_resource type="Texture2D" uid="uid://boo5u6oy1x7tf" path="res://assets/ui/Logo_DM.png" id="2_dr7kf"]
-[ext_resource type="Texture2D" uid="uid://dvpd0tenv8xg4" path="res://assets/interfaz/Menu intento 1.PNG" id="2_u3rbi"]
 [ext_resource type="AudioStream" uid="uid://bpukd8nxflpey" path="res://sounds/interfaz/button.mp3" id="3_gvnkn"]
 [ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="3_wxauy"]
 
@@ -16,35 +16,35 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1gr01")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
-texture = ExtResource("2_u3rbi")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(965, 546)
+texture = ExtResource("2_a1ocj")
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(427, 430)
-scale = Vector2(1.03177, 0.856332)
+position = Vector2(987, 312)
+scale = Vector2(0.648195, 0.536636)
 texture = ExtResource("2_dr7kf")
 
 [node name="start_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1111.0
-offset_top = 268.0
-offset_right = 1487.0
-offset_bottom = 406.0
+offset_left = 815.0
+offset_top = 616.0
+offset_right = 1191.0
+offset_bottom = 754.0
+scale = Vector2(0.996644, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_fonts/font = ExtResource("3_wxauy")
-theme_override_font_sizes/font_size = 104
-text = "JUGAR"
+theme_override_font_sizes/font_size = 55
+text = "Jugar"
 flat = true
 
 [node name="options_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1525.0
-offset_top = 809.0
-offset_right = 1776.0
-offset_bottom = 885.0
-rotation = 0.0997574
+offset_left = 871.0
+offset_top = 724.0
+offset_right = 1122.0
+offset_bottom = 800.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_fonts/font = ExtResource("3_wxauy")
@@ -54,11 +54,10 @@ flat = true
 
 [node name="quit_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 60.0
-offset_top = 969.0
-offset_right = 176.0
-offset_bottom = 1045.0
-rotation = -0.130116
+offset_left = 943.0
+offset_top = 920.0
+offset_right = 1059.0
+offset_bottom = 996.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_fonts/font = ExtResource("3_wxauy")
@@ -68,11 +67,10 @@ flat = true
 
 [node name="credit-button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1239.0
-offset_top = 774.0
-offset_right = 1465.0
-offset_bottom = 850.0
-rotation = 0.118886
+offset_left = 884.0
+offset_top = 824.0
+offset_right = 1110.0
+offset_bottom = 900.0
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_fonts/font = ExtResource("3_wxauy")
