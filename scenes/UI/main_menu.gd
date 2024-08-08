@@ -1,9 +1,12 @@
 extends Control
 
 @onready var button_sound = $Button_Sound
+@onready var music_menu = $Music_Menu
+
 
 func _ready():
 	get_viewport().size = DisplayServer.screen_get_size()
+	music_menu.play()
 
 
 

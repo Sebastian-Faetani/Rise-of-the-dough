@@ -1,5 +1,7 @@
 extends Node3D
 @onready var pause_menu = $Pause_menu
+@onready var gameplay_music = $Gameplay_Music
+
 
 var paused = false
 
@@ -8,6 +10,7 @@ var paused = false
 func _ready():
 	Input.MOUSE_MODE_CAPTURED
 	get_tree().paused = false
+	gameplay_music.play()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b311qc0ldm0ij"]
+[gd_scene load_steps=7 format=3 uid="uid://b311qc0ldm0ij"]
 
 [ext_resource type="Script" path="res://scenes/UI/main_menu.gd" id="1_1gr01"]
 [ext_resource type="Texture2D" uid="uid://2one6qmqd6hf" path="res://assets/ui/Main_menu_bg.png" id="2_a1ocj"]
 [ext_resource type="Texture2D" uid="uid://boo5u6oy1x7tf" path="res://assets/ui/Logo_DM.png" id="2_dr7kf"]
 [ext_resource type="AudioStream" uid="uid://bpukd8nxflpey" path="res://sounds/interfaz/button.mp3" id="3_gvnkn"]
 [ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="3_wxauy"]
+[ext_resource type="AudioStream" uid="uid://ce4703sux4ymq" path="res://sounds/interfaz/MusicaMenu.mp3" id="6_erqhy"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -80,6 +81,9 @@ flat = true
 
 [node name="Button_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_gvnkn")
+
+[node name="Music_Menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_erqhy")
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]
