@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/weapons/Hitscan_weapon.gd" id="1_u1k55"]
 [ext_resource type="Texture2D" uid="uid://cg2nq265cvg36" path="res://assets/weapons/MopSpriteSheetLonger.png" id="2_el81f"]
-[ext_resource type="Texture2D" uid="uid://damk0cdacun0a" path="res://assets/ui/mira.png" id="3_fvc74"]
+[ext_resource type="Texture2D" uid="uid://iftk68k5kiya" path="res://assets/weapons/Mop_sprite.png" id="3_l26fp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c74di"]
 atlas = ExtResource("2_el81f")
@@ -85,22 +85,23 @@ sprite_frames = SubResource("SpriteFrames_hkejt")
 animation = &"attack"
 autoplay = "Idle"
 
-[node name="PistolCross" type="TextureRect" parent="CanvasLayer"]
+[node name="W_Selected" type="TextureRect" parent="CanvasLayer"]
 texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -21.5
-offset_top = -23.5
-offset_right = 21.5
-offset_bottom = 23.5
+offset_left = -883.0
+offset_top = 292.0
+offset_right = -840.0
+offset_bottom = 339.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(8.32447, 1.26019)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("3_fvc74")
+texture = ExtResource("3_l26fp")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 

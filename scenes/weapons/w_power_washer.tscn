@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://c6d0uhw8oq7mh"]
 
 [ext_resource type="Script" path="res://scripts/weapons/w_powerWasher.gd" id="1_1lqhd"]
-[ext_resource type="Texture2D" uid="uid://damk0cdacun0a" path="res://assets/ui/mira.png" id="2_p350d"]
 [ext_resource type="Texture2D" uid="uid://bku6nwywkpj80" path="res://assets/weapons/Arma_spritesheet_hidro.png" id="2_qlmtj"]
+[ext_resource type="Texture2D" uid="uid://b3o1f2w8y22m6" path="res://assets/weapons/Hidro_sprite.png" id="3_p43p1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_43t2j"]
 atlas = ExtResource("2_qlmtj")
@@ -79,22 +79,23 @@ sprite_frames = SubResource("SpriteFrames_dhm42")
 animation = &"Idle"
 autoplay = "Idle"
 
-[node name="PistolCross" type="TextureRect" parent="CanvasLayer"]
+[node name="W_selected" type="TextureRect" parent="CanvasLayer"]
 texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -21.5
-offset_top = -23.5
-offset_right = 21.5
-offset_bottom = 23.5
+offset_left = -826.0
+offset_top = 253.0
+offset_right = -783.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(5.37522, 2.70651)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_p350d")
+texture = ExtResource("3_p43p1")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 

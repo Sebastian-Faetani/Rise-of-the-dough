@@ -1,7 +1,8 @@
-AudioStreamPlayer
 Sprite2D
-Label
+CenterContainer
 Control
+AudioStreamPlayer
+Label
 Timer
 Node2D
 Button
@@ -11,4 +12,3 @@ Area3D
 StaticBody3D
 HBoxContainer
 CSGPolygon3D
-Node3D

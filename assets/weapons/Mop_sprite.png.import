@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://iftk68k5kiya"
-path.s3tc="res://.godot/imported/Mop_sprite.png-a52dacdf896e2343c8f94609a247b182.s3tc.ctex"
+path.s3tc="res://.godot/imported/Mop_sprite.png-68c978045b5efa0a49ca94f5535000a7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/enviroment/Mop_sprite.png"
-dest_files=["res://.godot/imported/Mop_sprite.png-a52dacdf896e2343c8f94609a247b182.s3tc.ctex"]
+source_file="res://assets/weapons/Mop_sprite.png"
+dest_files=["res://.godot/imported/Mop_sprite.png-68c978045b5efa0a49ca94f5535000a7.s3tc.ctex"]
 
 [params]
 
