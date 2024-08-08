@@ -1,5 +1,4 @@
 res://scenes/UI/main_menu.tscn
-res://scenes/UI/main_menu.gd
 res://scenes/player/player.tscn
 res://scenes/maps/sandbox.tscn
 res://scenes/maps/Map1.tscn
@@ -8,6 +7,5 @@ res://scenes/UI/story_scene.tscn
 res://scenes/UI/controls_explained.tscn
 res://scenes/UI/play_menu.tscn
 res://scenes/enemies/enemy.tscn
-res://scripts/world/Map1.gd
-res://default_bus_layout.tres
-res://scripts/UI/controls_explained.gd
+res://scenes/weapons/mop_pickup.tscn
+res://scenes/weapons/w_mop.tscn

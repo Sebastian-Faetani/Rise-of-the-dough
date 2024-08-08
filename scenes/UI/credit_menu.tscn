@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cl872lohvng0r"]
 
 [ext_resource type="Script" path="res://scripts/world/credit_menu.gd" id="1_c7bj8"]
-[ext_resource type="Texture2D" uid="uid://2one6qmqd6hf" path="res://assets/ui/Main_menu_bg.png" id="2_6lirv"]
+[ext_resource type="Texture2D" uid="uid://c6hvyr8086o2k" path="res://assets/interfaz/MainMenu_background.png" id="2_mhn2a"]
 
 [node name="credit_menu" type="Control"]
 layout_mode = 3
@@ -14,7 +14,7 @@ script = ExtResource("1_c7bj8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("2_6lirv")
+texture = ExtResource("2_mhn2a")
 
 [node name="names" type="Label" parent="."]
 layout_mode = 1
@@ -99,10 +99,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = -129.0
-offset_right = 98.0
-offset_bottom = -53.0
+offset_left = -78.0
+offset_top = -199.0
+offset_right = 79.0
+offset_bottom = -123.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)

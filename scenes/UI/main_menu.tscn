@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://b311qc0ldm0ij"]
 
 [ext_resource type="Script" path="res://scenes/UI/main_menu.gd" id="1_1gr01"]
-[ext_resource type="Texture2D" uid="uid://2one6qmqd6hf" path="res://assets/ui/Main_menu_bg.png" id="2_a1ocj"]
 [ext_resource type="Texture2D" uid="uid://boo5u6oy1x7tf" path="res://assets/ui/Logo_DM.png" id="2_dr7kf"]
+[ext_resource type="Texture2D" uid="uid://c6hvyr8086o2k" path="res://assets/interfaz/MainMenu_background.png" id="2_w5l5p"]
 [ext_resource type="AudioStream" uid="uid://bpukd8nxflpey" path="res://sounds/interfaz/button.mp3" id="3_gvnkn"]
 [ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="3_wxauy"]
 [ext_resource type="AudioStream" uid="uid://ce4703sux4ymq" path="res://sounds/interfaz/MusicaMenu.mp3" id="6_erqhy"]
@@ -17,21 +17,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1gr01")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(965, 546)
-texture = ExtResource("2_a1ocj")
+[node name="BackGround" type="Sprite2D" parent="."]
+position = Vector2(961, 541)
+texture = ExtResource("2_w5l5p")
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(987, 312)
-scale = Vector2(0.648195, 0.536636)
+position = Vector2(962, 306)
+scale = Vector2(0.657392, 0.657392)
 texture = ExtResource("2_dr7kf")
 
 [node name="start_button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 815.0
-offset_top = 616.0
-offset_right = 1191.0
-offset_bottom = 754.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = 18.0
+offset_right = 188.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.996644, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
@@ -41,11 +48,18 @@ text = "Jugar"
 flat = true
 
 [node name="options_button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 871.0
-offset_top = 724.0
-offset_right = 1122.0
-offset_bottom = 800.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 140.0
+offset_right = 126.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_fonts/font = ExtResource("3_wxauy")
@@ -53,30 +67,44 @@ theme_override_font_sizes/font_size = 54
 text = "Opciones"
 flat = true
 
-[node name="quit_button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 943.0
-offset_top = 920.0
-offset_right = 1059.0
-offset_bottom = 996.0
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
-theme_override_fonts/font = ExtResource("3_wxauy")
-theme_override_font_sizes/font_size = 49
-text = "Salir"
-flat = true
-
 [node name="credit-button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 884.0
-offset_top = 824.0
-offset_right = 1110.0
-offset_bottom = 900.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = 234.0
+offset_right = 113.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_fonts/font = ExtResource("3_wxauy")
 theme_override_font_sizes/font_size = 54
 text = "Créditos"
+flat = true
+
+[node name="quit_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = 327.0
+offset_right = 58.0
+offset_bottom = 403.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_wxauy")
+theme_override_font_sizes/font_size = 49
+text = "Salir"
 flat = true
 
 [node name="Button_Sound" type="AudioStreamPlayer" parent="."]
@@ -87,5 +115,5 @@ stream = ExtResource("6_erqhy")
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="credit-button" to="." method="_on_creditbutton_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
