@@ -1,3 +1,7 @@
+OmniLight3D
+AudioStreamPlayer3D
+AudioListener3D
+SpotLight3D
 Sprite2D
 CenterContainer
 Control
@@ -9,6 +13,3 @@ Button
 Sprite3D
 CollisionShape3D
 Area3D
-StaticBody3D
-HBoxContainer
-CSGPolygon3D
