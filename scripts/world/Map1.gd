@@ -2,6 +2,7 @@ extends Node3D
 @onready var pause_menu = $Pause_menu
 @onready var gameplay_music = $Gameplay_Music
 @onready var clocktick = $TicTac
+@onready var alarm_sound = $"alarm sound"
 
 
 var paused = false
@@ -9,6 +10,7 @@ var paused = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#gameplay_music.play()
+	alarm_sound.play()
 	clocktick.play()
 	Input.MOUSE_MODE_CAPTURED
 	get_tree().paused = false

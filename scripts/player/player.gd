@@ -29,9 +29,9 @@ var currentWeapon = 0
 #player variables
 @export var mouse_sens = 0.5
 @export var current_speed = 5.0
-@export var walk_speed = 5.0
-@export var run_speed = 10.0
-@export var crouch_speed = 3.0
+@export var walk_speed = 8.0
+@export var run_speed = 14.0
+@export var crouch_speed = 5.0
 var lerp_speed = 10.0
 var direction = Vector3.ZERO
 var crouch_depth = -0.5

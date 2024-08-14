@@ -5,5 +5,5 @@ func _ready():
 
 func flash():
  light_energy = randf()
- await get_tree().create_timer(randf_range(0.05, 0.2)).timeout
+ await get_tree().create_timer(randf_range(0.05, 0.5)).timeout
  flash()

@@ -1,5 +1,5 @@
-res://assets/maps
 res://scripts/world
+res://assets/maps
 res://scripts/UI
 C:/Users/Sebas/Desktop/godotProyects
 res://assets/ui
@@ -12,7 +12,6 @@ res://assets/enemies/BossEnemy
 res://assets/enemies/BaguetteEnemy
 res://scripts/enemies
 res://scenes/enemies
-res://assets/maps/Reception
 res://scenes/maps
 res://scripts/player
 res://scenes/player

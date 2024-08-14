@@ -440,12 +440,13 @@ transform = Transform3D(0.535, 0, 0, 0, 0.535, 0, 0, 0, 0.535, 0, 1.22511, 0)
 script = ExtResource("1_iun2x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(3.635, 0, 0, 0, -1.58891e-07, -3.635, 0, 3.635, -1.58891e-07, 0, -0.320024, 0)
+transform = Transform3D(3.6, 0, 0, 0, -1.57361e-07, -3.6, 0, 3.6, -1.57361e-07, 0, -0.320024, 0)
 shape = SubResource("SphereShape3D_ach6n")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.869329, 0)
 billboard = 1
+shaded = true
 sprite_frames = SubResource("SpriteFrames_11voo")
 animation = &"attack"
 autoplay = "idle"

@@ -1,6 +1,7 @@
-Sprite3D
-OmniLight3D
 AudioStreamPlayer3D
+OmniLight3D
+Node3D
+Sprite3D
 AudioListener3D
 SpotLight3D
 Sprite2D
@@ -11,4 +12,3 @@ Label
 Timer
 Node2D
 Button
-CollisionShape3D

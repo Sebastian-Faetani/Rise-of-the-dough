@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgqop2imfgif8"]
+
+[ext_resource type="Script" path="res://scripts/weapons/bullet.gd" id="1_a4has"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_j2u2o"]
+
+[node name="Bullet" type="MeshInstance3D"]
+transform = Transform3D(4.12368e-06, -0.0021616, -0.0724863, -0.0732994, -0.00066299, 0, -0.000304452, 0.159591, -0.000981797, 0, 0, 0)
+mesh = SubResource("CylinderMesh_j2u2o")
+script = ExtResource("1_a4has")
