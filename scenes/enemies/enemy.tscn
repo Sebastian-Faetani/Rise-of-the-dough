@@ -436,14 +436,15 @@ states/waterDeath/position = Vector2(710, 173)
 transitions = ["walk", "attack", SubResource("AnimationNodeStateMachineTransition_50gq2"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_iyl63"), "Start", "walk", SubResource("AnimationNodeStateMachineTransition_2r3d5"), "mopDeath", "End", SubResource("AnimationNodeStateMachineTransition_puhlg"), "waterDeath", "End", SubResource("AnimationNodeStateMachineTransition_q0an1")]
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
+transform = Transform3D(0.535, 0, 0, 0, 0.535, 0, 0, 0, 0.535, 0, 1.22511, 0)
 script = ExtResource("1_iun2x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
+transform = Transform3D(3.635, 0, 0, 0, -1.58891e-07, -3.635, 0, 3.635, -1.58891e-07, 0, -0.320024, 0)
 shape = SubResource("SphereShape3D_ach6n")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(0.271503, 0, 0, 0, 0.271503, 0, 0, 0, 0.271503, 0, 0.869329, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.869329, 0)
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_11voo")
 animation = &"attack"

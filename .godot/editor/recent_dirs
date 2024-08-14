@@ -1,3 +1,4 @@
+res://assets/maps
 res://scripts/world
 res://scripts/UI
 C:/Users/Sebas/Desktop/godotProyects
@@ -9,7 +10,6 @@ res://scenes/weapons
 res://assets/weapons
 res://assets/enemies/BossEnemy
 res://assets/enemies/BaguetteEnemy
-res://assets/maps
 res://scripts/enemies
 res://scenes/enemies
 res://assets/maps/Reception

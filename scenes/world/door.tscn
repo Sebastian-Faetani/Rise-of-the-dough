@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://bdeim4sg288gx" path="res://assets/enviroment/Sprite_puerta_comun.png" id="2_7vuw5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4iuhh"]
+size = Vector3(3.62999, 4.74835, 1)
 
 [node name="Door" type="StaticBody3D" groups=["interactuable"]]
 script = ExtResource("1_m1h8l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 2.04653, 0, 0, 0, 0.084865, 0, 0.820427, 0.000443578)
+transform = Transform3D(1, 0, 0, 0, 2.04653, 0, 0, 0, 0.084865, 0.0343857, 0.0466776, 0.000443578)
 shape = SubResource("BoxShape3D_4iuhh")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.279849, 0, 0, 0, 0.17558, 0, 0, 0, 0.224348, 0.00643677, 0.69687, 0.00752079)
 texture = ExtResource("2_7vuw5")
