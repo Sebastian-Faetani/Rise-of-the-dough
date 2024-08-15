@@ -194,9 +194,11 @@ texture = ExtResource("12_7qogr")
 
 [node name="HitMopa" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_efcob")
+bus = &"Weapons"
 
 [node name="ShootHidro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_ntgnf")
+bus = &"Weapons"
 
 [node name="OpenDoor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_vgaog")

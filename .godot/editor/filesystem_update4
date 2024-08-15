@@ -1,11 +1,9 @@
-res://scenes/player/player.tscn
-res://scripts/UI/controls_explained.gd
-res://scripts/world/OmniLight3D2.gd
-res://scenes/maps/sandbox.tscn
 res://scenes/maps/Map1.tscn
+res://scenes/weapons/mop_pickup.tscn
+res://scenes/weapons/power_washer_pickup.tscn
+res://scenes/player/player.tscn
+res://scenes/maps/sandbox.tscn
 res://scenes/UI/play_menu.tscn
 res://scenes/enemies/enemy.tscn
 res://scenes/UI/main_menu.tscn
-res://scripts/world/OmniLight3D.gd
-res://scripts/world/Map1.gd
 res://default_bus_layout.tres

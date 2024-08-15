@@ -1,7 +1,10 @@
-AudioStreamPlayer3D
-OmniLight3D
-Node3D
 Sprite3D
+CollisionShape3D
+StaticBody3D
+MeshInstance3D
+OmniLight3D
+AudioStreamPlayer3D
+Node3D
 AudioListener3D
 SpotLight3D
 Sprite2D
@@ -9,6 +12,3 @@ CenterContainer
 Control
 AudioStreamPlayer
 Label
-Timer
-Node2D
-Button
