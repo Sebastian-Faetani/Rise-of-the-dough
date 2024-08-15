@@ -10,6 +10,7 @@ script = ExtResource("1_uuill")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.28401, 0, 0, 0, 0.28401, 0, 0, 0, 0.28401, 0, 0, 0)
+shaded = true
 texture = ExtResource("2_dxtgu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

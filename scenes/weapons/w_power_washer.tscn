@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/weapons/w_powerWasher.gd" id="1_1lqhd"]
 [ext_resource type="Texture2D" uid="uid://bku6nwywkpj80" path="res://assets/weapons/Arma_spritesheet_hidro.png" id="2_qlmtj"]
-[ext_resource type="Texture2D" uid="uid://b3o1f2w8y22m6" path="res://assets/weapons/Hidro_sprite.png" id="3_p43p1"]
+[ext_resource type="Texture2D" uid="uid://3pw36oyanm6n" path="res://assets/weapons/Hidro_icon.png" id="3_8ihwh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_43t2j"]
 atlas = ExtResource("2_qlmtj")
@@ -95,7 +95,7 @@ grow_vertical = 2
 scale = Vector2(5.37522, 2.70651)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("3_p43p1")
+texture = ExtResource("3_8ihwh")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 

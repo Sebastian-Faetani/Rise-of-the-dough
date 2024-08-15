@@ -14,4 +14,5 @@ transform = Transform3D(0.90865, 0, 0, 0, 1.60823, 0, 0, 0, 0.0499926, 0.0125688
 shape = SubResource("BoxShape3D_pj5ys")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
 texture = ExtResource("2_ishd7")

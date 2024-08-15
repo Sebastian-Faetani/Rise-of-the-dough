@@ -112,6 +112,7 @@ stream = ExtResource("3_gvnkn")
 
 [node name="Music_Menu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_erqhy")
+bus = &"Musica"
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]
