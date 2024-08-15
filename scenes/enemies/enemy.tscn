@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://byehn0yp68wve"]
+[gd_scene load_steps=44 format=3 uid="uid://byehn0yp68wve"]
 
 [ext_resource type="Script" path="res://scripts/enemies/Enemy.gd" id="1_iun2x"]
 [ext_resource type="Texture2D" uid="uid://bvlr8q7i4mhe6" path="res://assets/enemies/BaguetteEnemy/Enemy_spritesheet_baguette.png" id="2_j0vnn"]
@@ -412,16 +412,6 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2r3d5"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_puhlg"]
-switch_mode = 2
-advance_mode = 2
-advance_expression = "mopDeath == true"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q0an1"]
-switch_mode = 2
-advance_mode = 2
-advance_expression = "waterDeath == true"
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_83di8"]
 states/End/position = Vector2(940, 131)
 states/Start/position = Vector2(109, 82)
@@ -433,7 +423,7 @@ states/walk/node = SubResource("AnimationNodeAnimation_x6ub2")
 states/walk/position = Vector2(420, 54)
 states/waterDeath/node = SubResource("AnimationNodeAnimation_3u8lq")
 states/waterDeath/position = Vector2(710, 173)
-transitions = ["walk", "attack", SubResource("AnimationNodeStateMachineTransition_50gq2"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_iyl63"), "Start", "walk", SubResource("AnimationNodeStateMachineTransition_2r3d5"), "mopDeath", "End", SubResource("AnimationNodeStateMachineTransition_puhlg"), "waterDeath", "End", SubResource("AnimationNodeStateMachineTransition_q0an1")]
+transitions = ["walk", "attack", SubResource("AnimationNodeStateMachineTransition_50gq2"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_iyl63"), "Start", "walk", SubResource("AnimationNodeStateMachineTransition_2r3d5")]
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
 transform = Transform3D(0.535, 0, 0, 0, 0.535, 0, 0, 0, 0.535, 0, 1.22511, 0)

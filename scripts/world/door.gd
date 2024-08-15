@@ -9,5 +9,3 @@ func interact():
 	if isLocked == false:
 		print("puerta abierta")
 		queue_free()
-
-

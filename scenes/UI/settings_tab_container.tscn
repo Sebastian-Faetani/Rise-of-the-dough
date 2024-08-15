@@ -26,10 +26,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 tab_alignment = 1
+current_tab = 0
 
 [node name="Gráficos" type="TabBar" parent="TabContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_yn0hk")
+metadata/_tab_index = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Gráficos"]
 layout_mode = 1

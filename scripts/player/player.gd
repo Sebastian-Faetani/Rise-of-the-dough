@@ -207,4 +207,3 @@ func change_gun(gun):
 
 func puerta_desbloqueada():
 	pass
-

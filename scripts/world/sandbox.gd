@@ -20,4 +20,3 @@ func PauseMenu():
 		pause_menu_sandbox.show()
 		get_tree().paused = true
 	paused_sand = !paused_sand
-
