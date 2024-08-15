@@ -1,3 +1,4 @@
+res://assets/weapons
 res://scripts/world
 res://assets/maps
 res://scripts/UI
@@ -7,7 +8,6 @@ res://scenes/UI
 res://scenes/world
 res://scripts/weapons
 res://scenes/weapons
-res://assets/weapons
 res://assets/enemies/BossEnemy
 res://assets/enemies/BaguetteEnemy
 res://scripts/enemies

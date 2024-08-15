@@ -1,14 +1,17 @@
 extends Node3D
 
-@onready var gun_sprite = $CanvasLayer/Control/GunAnim
+@onready var gun_sprite = $AnimationPlayer
 @onready var gun_rays = $GunRays.get_children()
 @onready var hit_mopa =  $"../../../HitMopa"
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
+
 @export var gun_damage = 30
 var can_shoot = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	gun_sprite.animation_finished.connect(shoot_anim_done)
+	pass
 
 func check_hit():
 	for ray in gun_rays:
@@ -25,8 +28,7 @@ func check_hit():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("shoot") and can_shoot == true:
-		gun_sprite.play("attack")
-		check_hit()
+		playback.travel("attack")
 		hit_mopa.play()
 		can_shoot = false
 

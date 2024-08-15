@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6d0uhw8oq7mh"]
+[gd_scene load_steps=21 format=3 uid="uid://c6d0uhw8oq7mh"]
 
 [ext_resource type="Script" path="res://scripts/weapons/w_powerWasher.gd" id="1_1lqhd"]
 [ext_resource type="Texture2D" uid="uid://bku6nwywkpj80" path="res://assets/weapons/Arma_spritesheet_hidro.png" id="2_qlmtj"]
@@ -59,6 +59,134 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_q8hll"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_j2adg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_5e4f5"]
+resource_name = "attack"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.333333, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"check_hit"
+}, {
+"args": [],
+"method": &"shoot_anim_done"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5bp3d"]
+_data = {
+"Idle": SubResource("Animation_q8hll"),
+"RESET": SubResource("Animation_j2adg"),
+"attack": SubResource("Animation_5e4f5")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ovoil"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8op0r"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bw1gp"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_be8wa"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_713xm"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_flcgy"]
+states/Idle/node = SubResource("AnimationNodeAnimation_ovoil")
+states/Idle/position = Vector2(367, 81)
+states/attack/node = SubResource("AnimationNodeAnimation_8op0r")
+states/attack/position = Vector2(550, 81)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_bw1gp"), "Idle", "attack", SubResource("AnimationNodeStateMachineTransition_be8wa"), "attack", "Idle", SubResource("AnimationNodeStateMachineTransition_713xm")]
+
 [node name="w_powerWasher" type="Node3D"]
 script = ExtResource("1_1lqhd")
 
@@ -98,6 +226,16 @@ size_flags_vertical = 4
 texture = ExtResource("3_8ihwh")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5bp3d")
+}
+autoplay = "Idle"
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_flcgy")
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="GunRays" type="Node3D" parent="."]
 

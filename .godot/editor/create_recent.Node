@@ -1,5 +1,8 @@
-Sprite2D
+AnimationTree
+AnimationPlayer
+AnimatedSprite3D
 Sprite3D
+Sprite2D
 CollisionShape3D
 StaticBody3D
 MeshInstance3D
@@ -9,6 +12,3 @@ Node3D
 AudioListener3D
 SpotLight3D
 CenterContainer
-Control
-AudioStreamPlayer
-Label
