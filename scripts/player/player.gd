@@ -2,6 +2,7 @@ extends CharacterBody3D
 class_name Player
 
 signal healthChanged
+signal staminaChanged
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -16,6 +17,15 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var win_menu = $win_menu
 @onready var open_door = $OpenDoor
 @onready var foots = $FootSteps
+@onready var stamina_bar: TextureProgressBar = $StaminaBar
+
+#stamina
+@export var max_player_stamina = 100
+@onready var current_player_stamina: int = max_player_stamina
+var can_regen = false
+var time_to_wait = 1.5
+var s_timer = 0
+var can_start_timer = true
 
 #weapons
 @onready var CLAP = preload("res://scenes/weapons/w_clap.tscn")
@@ -81,6 +91,7 @@ func _process(_delta):
 	if dead:
 		return
 	healthChanged.emit()
+	staminaChanged.emit()
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
 	if Input.is_action_just_pressed("restart"):
@@ -133,8 +144,9 @@ func _physics_process(delta):
 		
 		head.position.y = lerp(head.position.y, 0.5, delta * lerp_speed)
 		
-		if Input.is_action_pressed("run"):
+		if Input.is_action_pressed("run") and current_player_stamina >= 0:
 			current_speed = run_speed
+			current_player_stamina -= 1
 			walking = false
 			running = true
 			crouching = false

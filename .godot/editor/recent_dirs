@@ -1,3 +1,4 @@
+res://scripts/player
 res://assets/weapons
 res://scripts/world
 res://assets/maps
@@ -13,5 +14,4 @@ res://assets/enemies/BaguetteEnemy
 res://scripts/enemies
 res://scenes/enemies
 res://scenes/maps
-res://scripts/player
 res://scenes/player

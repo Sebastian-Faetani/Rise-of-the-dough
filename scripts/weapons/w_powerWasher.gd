@@ -8,6 +8,11 @@ extends Node3D
 @export var gun_damage = 10
 var can_shoot = true
 
+var Bullet = preload("res://scenes/weapons/bullet.tscn")
+@export var bullet_speed: int = 40
+@onready var bullet_position: Marker3D = $bullet_position
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -26,9 +31,18 @@ func check_hit():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("shoot") and can_shoot == true:
+		var bullet_direction = - bullet_position.global_transform.basis.z.normalized()
 		playback.travel("attack")
 		shoot_hidro.play()
+		shoot(bullet_direction)
 		can_shoot = false
 
 func shoot_anim_done():
 	can_shoot = true
+
+func shoot(Dir: Vector3):
+	var W = get_tree().get_root()
+	var R = Bullet.instantiate()
+	W.add_child(R)
+	R.set_global_transform(bullet_position.get_global_transform())
+	R.set_linear_velocity(Dir*bullet_speed)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dqeu2j55klbsa"]
+[gd_scene load_steps=24 format=3 uid="uid://dqeu2j55klbsa"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_ipl5t"]
 [ext_resource type="Script" path="res://scripts/player/SmoothCamera.gd" id="2_quloi"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dcsfow5r7t024" path="res://scenes/UI/game_over_menu.tscn" id="4_x2yd1"]
 [ext_resource type="Texture2D" uid="uid://b8mf6b8r88afq" path="res://assets/ui/LifeBarOver.png" id="5_l1m2r"]
 [ext_resource type="Texture2D" uid="uid://be3yaj7nptdtu" path="res://assets/ui/LifeBar.png" id="6_kuyal"]
+[ext_resource type="Script" path="res://scenes/player/health_bar.gd" id="7_hpai5"]
 [ext_resource type="Texture2D" uid="uid://7h4hmjf5fy3" path="res://assets/ui/damage.png" id="8_45c1w"]
+[ext_resource type="Texture2D" uid="uid://dhq5qto73r4uf" path="res://assets/ui/StaminaBar.png" id="8_f5bs0"]
 [ext_resource type="PackedScene" uid="uid://6ngrvqj01g12" path="res://scenes/UI/win_menu.tscn" id="10_q6cyu"]
 [ext_resource type="Script" path="res://scripts/UI/Reticle.gd" id="11_5kdx0"]
 [ext_resource type="AudioStream" uid="uid://bv46amkbfit8m" path="res://sounds/weapons/Hit mopa.wav" id="11_efcob"]
@@ -122,12 +124,31 @@ anchor_bottom = 0.5
 offset_left = 72.0
 offset_top = 410.0
 offset_right = 200.0
-offset_bottom = 474.0
+offset_bottom = 433.0
 grow_vertical = 2
 scale = Vector2(2.88126, 2.72444)
 texture_under = ExtResource("4_tnn4f")
 texture_over = ExtResource("5_l1m2r")
 texture_progress = ExtResource("6_kuyal")
+script = ExtResource("7_hpai5")
+player = NodePath("..")
+
+[node name="StaminaBar" type="TextureProgressBar" parent="." node_paths=PackedStringArray("player")]
+texture_filter = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 517.0
+offset_top = 237.0
+offset_right = 645.0
+offset_bottom = 260.375
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(1.82218, 2.733)
+fill_mode = 1
+texture_under = ExtResource("4_tnn4f")
+texture_over = ExtResource("5_l1m2r")
+texture_progress = ExtResource("8_f5bs0")
 script = ExtResource("4_jqa03")
 player = NodePath("..")
 
