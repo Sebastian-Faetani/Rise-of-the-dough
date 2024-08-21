@@ -219,3 +219,7 @@ func change_gun(gun):
 
 func puerta_desbloqueada():
 	pass
+
+
+func _on_knife_pickup_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.

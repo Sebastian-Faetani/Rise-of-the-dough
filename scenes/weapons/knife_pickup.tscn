@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://db4g4buo0c504"]
+
+[ext_resource type="Script" path="res://scripts/weapons/knife_pickup.gd" id="1_jqpig"]
+[ext_resource type="Texture2D" uid="uid://c8835pd5qfr44" path="res://assets/weapons/Cuchillo_sprite.png" id="1_qal2u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gdmhm"]
+size = Vector3(0.913147, 1, 1)
+
+[node name="knife_pickup" type="Area3D"]
+script = ExtResource("1_jqpig")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_qal2u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(6.69855, 0, 0, 0, 0.318539, 0, 0, 0, 0.216665, -0.00919907, 0.022646, 0)
+shape = SubResource("BoxShape3D_gdmhm")

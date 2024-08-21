@@ -30,3 +30,7 @@ func PauseMenu():
 		pause_menu.show()
 		get_tree().paused = true
 	paused = !paused
+
+
+func _on_knife_pickup_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.

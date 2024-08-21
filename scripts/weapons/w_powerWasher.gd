@@ -9,7 +9,7 @@ extends Node3D
 var can_shoot = true
 
 var Bullet = preload("res://scenes/weapons/bullet.tscn")
-@export var bullet_speed: int = 40
+@export var bullet_speed: int = 20
 @onready var bullet_position: Marker3D = $bullet_position
 
 

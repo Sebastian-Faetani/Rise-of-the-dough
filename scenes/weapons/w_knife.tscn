@@ -1,0 +1,438 @@
+[gd_scene load_steps=40 format=3 uid="uid://c66fboep6wdyd"]
+
+[ext_resource type="Texture2D" uid="uid://cse21c0wh3jnp" path="res://assets/weapons/Arma_spritesheet_cuchillo.png" id="1_g01pt"]
+[ext_resource type="Script" path="res://scripts/weapons/w_knife.gd" id="1_pfhiq"]
+[ext_resource type="Texture2D" uid="uid://dtvbg14i3kqs2" path="res://assets/weapons/Cuchillo_icon.png" id="2_u2fbw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqenk"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(1568, 0, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vl34"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(3136, 0, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjqjf"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(4704, 0, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ox1em"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(0, 0, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42kjl"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(6272, 0, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv355"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(7840, 0, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyicy"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(9408, 0, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r33w"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(0, 0, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4lv8"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(0, 1080, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58lkw"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(1568, 1080, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsryr"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(3136, 1080, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25y5t"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(4704, 1080, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqqry"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(6272, 1080, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw70x"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(7840, 1080, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8doj1"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(9408, 1080, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k63k4"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(0, 0, 1568, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkvug"]
+atlas = ExtResource("1_g01pt")
+region = Rect2(0, 0, 1568, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xuxmc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqenk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vl34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjqjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ox1em")
+}],
+"loop": false,
+"name": &"Attack1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42kjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv355")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyicy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r33w")
+}],
+"loop": true,
+"name": &"Attack2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4lv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58lkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsryr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25y5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqqry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw70x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8doj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k63k4")
+}],
+"loop": true,
+"name": &"Attack3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkvug")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_pj8tt"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/KnifeAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/KnifeAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rbrja"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/KnifeAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/KnifeAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_i8op5"]
+resource_name = "attack1"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/KnifeAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Attack1"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/KnifeAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.2999, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"check_hit"
+}, {
+"args": [],
+"method": &"move_to_attack2"
+}, {
+"args": [],
+"method": &"shoot_anim_done"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_8mwlj"]
+resource_name = "attack2"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/KnifeAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Attack2"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/KnifeAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.2999, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"check_hit"
+}, {
+"args": [],
+"method": &"move_to_attack3"
+}, {
+"args": [],
+"method": &"shoot_anim_done"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jsqsy"]
+resource_name = "attack3"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/KnifeAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Attack3"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/KnifeAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 0.6999, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"check_hit"
+}, {
+"args": [],
+"method": &"move_to_attack1"
+}, {
+"args": [],
+"method": &"shoot_anim_done"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r42ko"]
+_data = {
+"Idle": SubResource("Animation_pj8tt"),
+"RESET": SubResource("Animation_rbrja"),
+"attack1": SubResource("Animation_i8op5"),
+"attack2": SubResource("Animation_8mwlj"),
+"attack3": SubResource("Animation_jsqsy")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b557r"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3ovyf"]
+animation = &"attack1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oohmm"]
+animation = &"attack2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_swqrq"]
+animation = &"attack3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kuomm"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pug3j"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_osud1"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ycu86"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sdb3u"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cy10r"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kf2e1"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xe5wb"]
+states/Idle/node = SubResource("AnimationNodeAnimation_b557r")
+states/Idle/position = Vector2(389, 87)
+states/attack1/node = SubResource("AnimationNodeAnimation_3ovyf")
+states/attack1/position = Vector2(606, 79)
+states/attack2/node = SubResource("AnimationNodeAnimation_oohmm")
+states/attack2/position = Vector2(389, 246)
+states/attack3/node = SubResource("AnimationNodeAnimation_swqrq")
+states/attack3/position = Vector2(179, 227)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_kuomm"), "Idle", "attack1", SubResource("AnimationNodeStateMachineTransition_pug3j"), "attack1", "Idle", SubResource("AnimationNodeStateMachineTransition_osud1"), "Idle", "attack2", SubResource("AnimationNodeStateMachineTransition_ycu86"), "attack2", "Idle", SubResource("AnimationNodeStateMachineTransition_sdb3u"), "Idle", "attack3", SubResource("AnimationNodeStateMachineTransition_cy10r"), "attack3", "Idle", SubResource("AnimationNodeStateMachineTransition_kf2e1")]
+graph_offset = Vector2(-233.91, 34)
+
+[node name="w_knife" type="Node3D"]
+script = ExtResource("1_pfhiq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="KnifeAnim" type="AnimatedSprite2D" parent="CanvasLayer/Control"]
+position = Vector2(1205, 587)
+scale = Vector2(0.9095, 0.9095)
+sprite_frames = SubResource("SpriteFrames_xuxmc")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(256, 850)
+scale = Vector2(0.711147, 0.711147)
+texture = ExtResource("2_u2fbw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r42ko")
+}
+autoplay = "Idle"
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_xe5wb")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="GunRays" type="Node3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="GunRays"]
+target_position = Vector3(0, 0, -1.5)
+collision_mask = 3

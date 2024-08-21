@@ -1,4 +1,6 @@
-res://scenes/weapons/bullet.tscn
+res://scripts/UI/controls_explained.gd
+res://scripts/world/OmniLight3D2.gd
+res://scenes/weapons/w_knife.tscn
 res://scenes/player/player.tscn
 res://scenes/maps/sandbox.tscn
 res://scenes/maps/Map1.tscn
@@ -7,5 +9,13 @@ res://scenes/UI/main_menu.tscn
 res://scenes/enemies/enemy.tscn
 res://scenes/weapons/w_mop.tscn
 res://scenes/weapons/w_power_washer.tscn
+res://scenes/weapons/bullet.tscn
+res://scripts/weapons/w_knife.gd
+res://scenes/weapons/knife_pickup.tscn
+res://scripts/weapons/knife_pickup.gd
+res://scripts/player/player.gd
+res://scripts/world/Map1.gd
+res://scenes/weapons/mop_pickup.tscn
+res://scripts/enemies/Enemy.gd
 res://scripts/weapons/w_powerWasher.gd
 res://scripts/weapons/bullet.gd

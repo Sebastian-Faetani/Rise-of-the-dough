@@ -250,7 +250,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.4, 0.733333, 0.733433),
+"times": PackedFloat32Array(0.4, 0.733233, 0.733333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
@@ -298,14 +298,11 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.4, 0.733333, 0.733433),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.4, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"check_hit"
-}, {
-"args": [],
-"method": &"shoot_anim_done"
 }, {
 "args": [],
 "method": &"move_to_attack3"
@@ -412,6 +409,7 @@ states/attack2/position = Vector2(561, 213)
 states/attack3/node = SubResource("AnimationNodeAnimation_i1rq0")
 states/attack3/position = Vector2(540, 56)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_eo2py"), "Idle", "attack", SubResource("AnimationNodeStateMachineTransition_d2ulk"), "attack", "Idle", SubResource("AnimationNodeStateMachineTransition_xilck"), "attack3", "Idle", SubResource("AnimationNodeStateMachineTransition_t5bq4"), "attack2", "Idle", SubResource("AnimationNodeStateMachineTransition_4vys0"), "Idle", "attack2", SubResource("AnimationNodeStateMachineTransition_x526e"), "Idle", "attack3", SubResource("AnimationNodeStateMachineTransition_f0fr2")]
+graph_offset = Vector2(-372.196, 0)
 
 [node name="mop" type="Node3D"]
 script = ExtResource("1_u1k55")

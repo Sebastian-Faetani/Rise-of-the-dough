@@ -3,7 +3,7 @@ class_name Enemy
 
 #external variables
 @export var speed = 9.0
-@export var attack_range := 2.5
+@export var attack_range := 2.6
 @export var max_hp = 40
 @export var attack_damage := 20
 @export var cooldown_time = 1.5
