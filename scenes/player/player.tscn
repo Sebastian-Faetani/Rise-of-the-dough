@@ -116,6 +116,8 @@ target_position = Vector3(0, -2, 0)
 
 [node name="w_clap" parent="Head/Weapon_handler" instance=ExtResource("3_3l1w0")]
 
+[node name="StaminaTime" type="Timer" parent="."]
+
 [node name="HealthBar" type="TextureProgressBar" parent="." node_paths=PackedStringArray("player")]
 texture_filter = 1
 anchors_preset = 4
@@ -230,3 +232,5 @@ stream = ExtResource("13_xjog0")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(0.416667, 0, 0, 0, 0.416667, 0, 0, 0, 0.416667, 0.0187552, 0.028537, -0.0216784)
 omni_range = 4.0
+
+[connection signal="timeout" from="StaminaTime" to="." method="_on_stamina_time_timeout"]

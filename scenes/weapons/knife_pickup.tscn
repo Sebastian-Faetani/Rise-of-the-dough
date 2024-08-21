@@ -10,6 +10,7 @@ size = Vector3(0.913147, 1, 1)
 script = ExtResource("1_jqpig")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
 texture = ExtResource("1_qal2u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -18,14 +18,14 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var open_door = $OpenDoor
 @onready var foots = $FootSteps
 @onready var stamina_bar: TextureProgressBar = $StaminaBar
+@onready var stamina_time: Timer = $StaminaTime
 
 #stamina
-@export var max_player_stamina = 100
+@export var max_player_stamina: int = 100
 @onready var current_player_stamina: int = max_player_stamina
-var can_regen = false
-var time_to_wait = 1.5
-var s_timer = 0
-var can_start_timer = true
+@onready var staminaTimer: float = 1.5
+@onready var can_regen = false
+var is_stamina_regen = false
 
 #weapons
 @onready var CLAP = preload("res://scenes/weapons/w_clap.tscn")
@@ -146,11 +146,19 @@ func _physics_process(delta):
 		
 		if Input.is_action_pressed("run") and current_player_stamina >= 0:
 			current_speed = run_speed
+			can_regen = false
 			current_player_stamina -= 1
 			walking = false
 			running = true
 			crouching = false
 		else:
+			can_regen = true
+			if current_player_stamina < max_player_stamina and can_regen == true:
+				if is_stamina_regen == false:
+					is_stamina_regen = true
+					stamina_time.start(staminaTimer)
+			if current_player_stamina == max_player_stamina:
+				can_regen = false
 			current_speed = walk_speed
 			walking = true
 			running = false
@@ -221,5 +229,6 @@ func puerta_desbloqueada():
 	pass
 
 
-func _on_knife_pickup_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.
+func _on_stamina_time_timeout() -> void:
+	is_stamina_regen = false
+	current_player_stamina += 25
