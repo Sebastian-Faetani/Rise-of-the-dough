@@ -147,12 +147,9 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
 "values": [{
-"args": [],
-"method": &"check_hit"
-}, {
 "args": [],
 "method": &"shoot_anim_done"
 }]
