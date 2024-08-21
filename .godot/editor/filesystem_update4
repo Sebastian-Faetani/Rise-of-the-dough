@@ -1,3 +1,4 @@
+res://scenes/weapons/bullet.tscn
 res://scenes/player/player.tscn
 res://scenes/maps/sandbox.tscn
 res://scenes/maps/Map1.tscn
@@ -6,8 +7,4 @@ res://scenes/UI/main_menu.tscn
 res://scenes/enemies/enemy.tscn
 res://scenes/weapons/w_mop.tscn
 res://scenes/weapons/w_power_washer.tscn
-res://scripts/weapons/Hitscan_weapon.gd
-res://scripts/player/player.gd
-res://scenes/weapons/bullet.tscn
-res://scripts/weapons/bullet.gd
 res://scripts/weapons/w_powerWasher.gd
