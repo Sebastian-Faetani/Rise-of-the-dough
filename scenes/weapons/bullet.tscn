@@ -7,17 +7,25 @@ albedo_color = Color(0.264906, 0.553696, 0.64239, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ps0u5"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h1dk6"]
-height = 1.84516
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_newu6"]
+radius = 0.514895
+height = 1.13653
 
 [node name="Bullet" type="RigidBody3D"]
 script = ExtResource("1_a4has")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.093, 0, 0, 0, 0.202, 0, 0, 0, 0.093, 0, 0, 0)
+transform = Transform3D(0.093, 0, 0, 0, 0.0306595, 0, 0, 0, 0.354714, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_eaked")
 mesh = SubResource("CapsuleMesh_ps0u5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.093, 1.01514e-10, -1.35333e-12, -4.33065e-11, 0.218, 0, 1.35333e-12, 1.47722e-21, 0.093, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_h1dk6")
+transform = Transform3D(0.0824114, 0, 0, 0, 0.0584506, 0, 0, 0, 0.342277, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_newu6")
+
+[node name="GunRays" type="Node3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="GunRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.144603)
+target_position = Vector3(0, 0, -0.5)
+collision_mask = 3

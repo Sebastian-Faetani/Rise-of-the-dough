@@ -1,5 +1,5 @@
-Marker3D
 CollisionShape3D
+Marker3D
 MeshInstance3D
 RigidBody3D
 AnimationTree
@@ -12,4 +12,3 @@ OmniLight3D
 AudioStreamPlayer3D
 Node3D
 AudioListener3D
-SpotLight3D

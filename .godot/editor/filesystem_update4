@@ -8,3 +8,4 @@ res://scenes/enemies/enemy.tscn
 res://scenes/weapons/w_mop.tscn
 res://scenes/weapons/w_power_washer.tscn
 res://scripts/weapons/w_powerWasher.gd
+res://scripts/weapons/bullet.gd
