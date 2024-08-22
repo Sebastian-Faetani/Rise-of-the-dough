@@ -3,6 +3,7 @@ extends Node3D
 
 @onready var gun_sprite = $AnimationPlayer
 @onready var gun_rays = $GunRays.get_children()
+@onready var aoe_rays = $AoERays.get_children()
 @onready var hit_mopa =  $"../../../HitMopa"
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
@@ -11,8 +12,8 @@ var player
 var Att1Av = true
 var Att2Av = false
 
-
 @export var gun_damage = 30
+@export var aoe_damage = 20
 var can_shoot = true
 
 # Called when the node enters the scene tree for the first time.
@@ -31,6 +32,19 @@ func check_hit():
 				ray.get_collider().DeathByMop(true)
 				ray.get_collider().DeathByWater(false)
 				ray.get_collider().enemyTakeDamage(gun_damage)
+
+func aoe_hit():
+	for ray in aoe_rays:
+		if ray.is_colliding():
+			if ray.get_collider().is_in_group("enemies"):
+				ray.get_collider().DeathByMop(true)
+				ray.get_collider().DeathByWater(false)
+				ray.get_collider().enemyTakeDamage(aoe_damage)
+				print("enemy hit")
+			elif ray.get_collider().is_in_group("bossEnemy"):
+				ray.get_collider().DeathByMop(true)
+				ray.get_collider().DeathByWater(false)
+				ray.get_collider().enemyTakeDamage(aoe_damage)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("shoot") and can_shoot == true and player.current_player_stamina >= 0:

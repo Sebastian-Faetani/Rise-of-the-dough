@@ -17,18 +17,6 @@ var Bullet = preload("res://scenes/weapons/bullet.tscn")
 func _ready():
 	pass
 
-#func check_hit():
-	#for ray in gun_rays:
-		#if ray.is_colliding():
-			#if ray.get_collider().is_in_group("enemies"):
-				#ray.get_collider().DeathByMop(false)
-				#ray.get_collider().DeathByWater(true)
-				#ray.get_collider().enemyTakeDamage(gun_damage)
-			#elif ray.get_collider().is_in_group("bossEnemy"):
-				#ray.get_collider().DeathByMop(false)
-				#ray.get_collider().DeathByWater(true)
-				#ray.get_collider().enemyTakeDamage(gun_damage)
-
 func _process(_delta):
 	if Input.is_action_just_pressed("shoot") and can_shoot == true:
 		var bullet_direction = - bullet_position.global_transform.basis.z.normalized()

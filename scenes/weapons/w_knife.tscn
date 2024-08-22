@@ -334,7 +334,7 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
-"method": &"check_hit"
+"method": &"power_hit"
 }, {
 "args": [],
 "method": &"shoot_anim_done"
@@ -390,11 +390,11 @@ advance_mode = 2
 states/Idle/node = SubResource("AnimationNodeAnimation_b557r")
 states/Idle/position = Vector2(389, 87)
 states/attack1/node = SubResource("AnimationNodeAnimation_3ovyf")
-states/attack1/position = Vector2(606, 79)
+states/attack1/position = Vector2(389, 236)
 states/attack2/node = SubResource("AnimationNodeAnimation_oohmm")
-states/attack2/position = Vector2(389, 246)
+states/attack2/position = Vector2(611, 236)
 states/attack3/node = SubResource("AnimationNodeAnimation_swqrq")
-states/attack3/position = Vector2(179, 227)
+states/attack3/position = Vector2(611, 87)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_kuomm"), "Idle", "attack1", SubResource("AnimationNodeStateMachineTransition_pug3j"), "attack1", "Idle", SubResource("AnimationNodeStateMachineTransition_osud1"), "Idle", "attack2", SubResource("AnimationNodeStateMachineTransition_ycu86"), "attack2", "Idle", SubResource("AnimationNodeStateMachineTransition_sdb3u"), "Idle", "attack3", SubResource("AnimationNodeStateMachineTransition_cy10r"), "attack3", "Idle", SubResource("AnimationNodeStateMachineTransition_kf2e1")]
 graph_offset = Vector2(-233.91, 34)
 

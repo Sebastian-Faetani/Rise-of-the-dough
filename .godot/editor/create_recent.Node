@@ -1,9 +1,9 @@
+Node3D
 Timer
 CollisionShape3D
 Sprite3D
 Area3D
 RayCast3D
-Node3D
 AnimationTree
 AnimationPlayer
 Sprite2D
@@ -12,4 +12,3 @@ Control
 CanvasLayer
 Marker3D
 MeshInstance3D
-RigidBody3D

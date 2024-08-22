@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://80tse0fem85b"]
+[gd_scene load_steps=33 format=3 uid="uid://80tse0fem85b"]
 
 [ext_resource type="Script" path="res://scripts/weapons/Hitscan_weapon.gd" id="1_u1k55"]
 [ext_resource type="Texture2D" uid="uid://cg2nq265cvg36" path="res://assets/weapons/MopSpriteSheetLonger.png" id="2_el81f"]
@@ -256,11 +256,11 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.4, 0.6966, 0.7),
+"times": PackedFloat32Array(0.233333, 0.6966, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
-"method": &"check_hit"
+"method": &"aoe_hit"
 }, {
 "args": [],
 "method": &"shoot_anim_done"
@@ -270,61 +270,12 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_hr5gc"]
-resource_name = "attack3"
-length = 0.74
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.566667, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0, 1, 2, 3, 4, 5]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [&"attack3"]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.4, 0.733333, 0.733433),
-"transitions": PackedFloat32Array(1, 1, 1),
-"values": [{
-"args": [],
-"method": &"check_hit"
-}, {
-"args": [],
-"method": &"shoot_anim_done"
-}, {
-"args": [],
-"method": &"move_to_attack1"
-}]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sxpxu"]
 _data = {
 "Idle": SubResource("Animation_jdtpi"),
 "RESET": SubResource("Animation_fwc87"),
 "attack": SubResource("Animation_qq3vr"),
-"attack2": SubResource("Animation_woflu"),
-"attack3": SubResource("Animation_hr5gc")
+"attack2": SubResource("Animation_woflu")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kdeei"]
@@ -397,5 +348,31 @@ anim_player = NodePath("../AnimationPlayer")
 [node name="GunRays" type="Node3D" parent="."]
 
 [node name="RayCast3D" type="RayCast3D" parent="GunRays"]
+target_position = Vector3(0, 0, -2)
+collision_mask = 3
+
+[node name="AoERays" type="Node3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="AoERays"]
+target_position = Vector3(0, 0, -2)
+collision_mask = 3
+
+[node name="RayCast3D4" type="RayCast3D" parent="AoERays"]
+transform = Transform3D(0.907044, 0, 0.421036, 0, 1, 0, -0.421036, 0, 0.907044, 0, 0, 0)
+target_position = Vector3(0, 0, -2)
+collision_mask = 3
+
+[node name="RayCast3D5" type="RayCast3D" parent="AoERays"]
+transform = Transform3D(0.907044, 0, -0.421036, 0, 1, 0, 0.421036, 0, 0.907044, 0, 0, 0)
+target_position = Vector3(0, 0, -2)
+collision_mask = 3
+
+[node name="RayCast3D2" type="RayCast3D" parent="AoERays"]
+transform = Transform3D(0.544639, 0, 0.838671, 0, 1, 0, -0.838671, 0, 0.544639, 0, 0, 0)
+target_position = Vector3(0, 0, -2)
+collision_mask = 3
+
+[node name="RayCast3D3" type="RayCast3D" parent="AoERays"]
+transform = Transform3D(0.544639, 0, -0.838671, 0, 1, 0, 0.838671, 0, 0.544639, 0, 0, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 3
