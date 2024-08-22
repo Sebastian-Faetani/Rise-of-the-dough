@@ -1,10 +1,9 @@
-[gd_scene load_steps=44 format=3 uid="uid://80tse0fem85b"]
+[gd_scene load_steps=34 format=3 uid="uid://80tse0fem85b"]
 
 [ext_resource type="Script" path="res://scripts/weapons/Hitscan_weapon.gd" id="1_u1k55"]
 [ext_resource type="Texture2D" uid="uid://cg2nq265cvg36" path="res://assets/weapons/MopSpriteSheetLonger.png" id="2_el81f"]
 [ext_resource type="Texture2D" uid="uid://caqbyxx8s7ych" path="res://assets/weapons/MopSpriteSheetLongerATT2.png" id="3_6wvcg"]
 [ext_resource type="Texture2D" uid="uid://ds1o23ven7tyx" path="res://assets/weapons/Mopa_icon.png" id="3_ryxmt"]
-[ext_resource type="Texture2D" uid="uid://b4yl04wsjv7x1" path="res://assets/weapons/MopSpriteSheetLongerATT3.png" id="4_1doie"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c74di"]
 atlas = ExtResource("2_el81f")
@@ -56,30 +55,6 @@ region = Rect2(7120, 0, 1424, 1112)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ylp45"]
 atlas = ExtResource("3_6wvcg")
-region = Rect2(0, 0, 1424, 1112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u4xll"]
-atlas = ExtResource("4_1doie")
-region = Rect2(1424, 0, 1424, 1112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3lv3n"]
-atlas = ExtResource("4_1doie")
-region = Rect2(2848, 0, 1424, 1112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_65vo7"]
-atlas = ExtResource("4_1doie")
-region = Rect2(4272, 0, 1424, 1112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x547o"]
-atlas = ExtResource("4_1doie")
-region = Rect2(5696, 0, 1424, 1112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hlq3l"]
-atlas = ExtResource("4_1doie")
-region = Rect2(7120, 0, 1424, 1112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kdbjk"]
-atlas = ExtResource("4_1doie")
 region = Rect2(0, 0, 1424, 1112)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hkejt"]
@@ -136,29 +111,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u4xll")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3lv3n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_65vo7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x547o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hlq3l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kdbjk")
-}],
-"loop": true,
-"name": &"attack3",
 "speed": 5.0
 }]
 
@@ -298,11 +250,14 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.4, 0.733333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.4, 0.7299, 0.7333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
 "method": &"check_hit"
+}, {
+"args": [],
+"method": &"shoot_anim_done"
 }, {
 "args": [],
 "method": &"move_to_attack3"
@@ -375,9 +330,6 @@ animation = &"attack"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lwcbv"]
 animation = &"attack2"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i1rq0"]
-animation = &"attack3"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eo2py"]
 advance_mode = 2
 
@@ -387,17 +339,11 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t5bq4"]
-switch_mode = 2
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4vys0"]
 switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x526e"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f0fr2"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4jt0p"]
 states/Idle/node = SubResource("AnimationNodeAnimation_kdeei")
@@ -405,11 +351,9 @@ states/Idle/position = Vector2(322, 56)
 states/attack/node = SubResource("AnimationNodeAnimation_w2lor")
 states/attack/position = Vector2(322, 200)
 states/attack2/node = SubResource("AnimationNodeAnimation_lwcbv")
-states/attack2/position = Vector2(561, 213)
-states/attack3/node = SubResource("AnimationNodeAnimation_i1rq0")
-states/attack3/position = Vector2(540, 56)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_eo2py"), "Idle", "attack", SubResource("AnimationNodeStateMachineTransition_d2ulk"), "attack", "Idle", SubResource("AnimationNodeStateMachineTransition_xilck"), "attack3", "Idle", SubResource("AnimationNodeStateMachineTransition_t5bq4"), "attack2", "Idle", SubResource("AnimationNodeStateMachineTransition_4vys0"), "Idle", "attack2", SubResource("AnimationNodeStateMachineTransition_x526e"), "Idle", "attack3", SubResource("AnimationNodeStateMachineTransition_f0fr2")]
-graph_offset = Vector2(-372.196, 0)
+states/attack2/position = Vector2(488, 56)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_eo2py"), "Idle", "attack", SubResource("AnimationNodeStateMachineTransition_d2ulk"), "attack", "Idle", SubResource("AnimationNodeStateMachineTransition_xilck"), "attack2", "Idle", SubResource("AnimationNodeStateMachineTransition_4vys0"), "Idle", "attack2", SubResource("AnimationNodeStateMachineTransition_x526e")]
+graph_offset = Vector2(-292.196, 11)
 
 [node name="mop" type="Node3D"]
 script = ExtResource("1_u1k55")

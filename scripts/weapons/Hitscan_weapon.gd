@@ -10,7 +10,7 @@ var player
 
 var Att1Av = true
 var Att2Av = false
-var Att3Av = false
+
 
 @export var gun_damage = 30
 var can_shoot = true
@@ -38,8 +38,6 @@ func _process(_delta):
 			playback.travel("attack")
 		if Att2Av == true:
 			playback.travel("attack2")
-		if Att3Av == true:
-			playback.travel("attack3")
 		hit_mopa.play()
 		can_shoot = false
 		player.current_player_stamina -= 25
@@ -50,10 +48,6 @@ func move_to_attack2():
 
 func move_to_attack3():
 	Att2Av = false
-	Att3Av = true
-
-func move_to_attack1():
-	Att3Av = false
 	Att1Av = true
 
 func shoot_anim_done():

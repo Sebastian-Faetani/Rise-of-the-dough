@@ -11,7 +11,7 @@ var Att1Av = true
 var Att2Av = false
 var Att3Av = false
 
-@export var gun_damage = 30
+@export var gun_damage = 20
 var can_shoot = true
 
 # Called when the node enters the scene tree for the first time.
@@ -40,7 +40,7 @@ func _process(_delta):
 		if Att3Av == true:
 			playback.travel("attack3")
 		can_shoot = false
-		player.current_player_stamina -= 25
+		player.current_player_stamina -= 15
 
 func move_to_attack2():
 	Att1Av = false
