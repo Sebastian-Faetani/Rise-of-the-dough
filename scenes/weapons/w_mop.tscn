@@ -2,66 +2,69 @@
 
 [ext_resource type="Script" path="res://scripts/weapons/Hitscan_weapon.gd" id="1_u1k55"]
 [ext_resource type="Texture2D" uid="uid://cg2nq265cvg36" path="res://assets/weapons/MopSpriteSheetLonger.png" id="2_el81f"]
-[ext_resource type="Texture2D" uid="uid://caqbyxx8s7ych" path="res://assets/weapons/MopSpriteSheetLongerATT2.png" id="3_6wvcg"]
 [ext_resource type="Texture2D" uid="uid://ds1o23ven7tyx" path="res://assets/weapons/Mopa_icon.png" id="3_ryxmt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c74di"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_risyu"]
 atlas = ExtResource("2_el81f")
-region = Rect2(0, 0, 1424, 1112)
+region = Rect2(0, 0, 1768, 1051)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8f622"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rufyq"]
 atlas = ExtResource("2_el81f")
-region = Rect2(1424, 0, 1424, 1112)
+region = Rect2(1768, 0, 1768, 1051)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q0qro"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjc7c"]
 atlas = ExtResource("2_el81f")
-region = Rect2(2848, 0, 1424, 1112)
+region = Rect2(3536, 0, 1768, 1051)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pccw8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdxif"]
 atlas = ExtResource("2_el81f")
-region = Rect2(4272, 0, 1424, 1112)
+region = Rect2(5304, 0, 1768, 1051)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8obqp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5seua"]
 atlas = ExtResource("2_el81f")
-region = Rect2(5696, 0, 1424, 1112)
+region = Rect2(7072, 0, 1768, 1051)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8vqaj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g08hi"]
 atlas = ExtResource("2_el81f")
-region = Rect2(7120, 0, 1424, 1112)
+region = Rect2(8840, 0, 1768, 1051)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n5ow8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruuaj"]
 atlas = ExtResource("2_el81f")
-region = Rect2(0, 0, 1424, 1112)
+region = Rect2(0, 0, 1768, 1051)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d7w1g"]
-atlas = ExtResource("3_6wvcg")
-region = Rect2(1424, 0, 1424, 1112)
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa1nh"]
+atlas = ExtResource("2_el81f")
+region = Rect2(0, 1051, 1768, 1051)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_blkro"]
-atlas = ExtResource("3_6wvcg")
-region = Rect2(2848, 0, 1424, 1112)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjqsd"]
+atlas = ExtResource("2_el81f")
+region = Rect2(1768, 1051, 1768, 1051)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jna3c"]
-atlas = ExtResource("3_6wvcg")
-region = Rect2(4272, 0, 1424, 1112)
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8ee0"]
+atlas = ExtResource("2_el81f")
+region = Rect2(3536, 1051, 1768, 1051)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0txrj"]
-atlas = ExtResource("3_6wvcg")
-region = Rect2(5696, 0, 1424, 1112)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvalv"]
+atlas = ExtResource("2_el81f")
+region = Rect2(5304, 1051, 1768, 1051)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3rslm"]
-atlas = ExtResource("3_6wvcg")
-region = Rect2(7120, 0, 1424, 1112)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ekfc"]
+atlas = ExtResource("2_el81f")
+region = Rect2(7072, 1051, 1768, 1051)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ylp45"]
-atlas = ExtResource("3_6wvcg")
-region = Rect2(0, 0, 1424, 1112)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ocxs"]
+atlas = ExtResource("2_el81f")
+region = Rect2(8840, 1051, 1768, 1051)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksax7"]
+atlas = ExtResource("2_el81f")
+region = Rect2(0, 0, 1768, 1051)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hkejt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c74di")
+"texture": SubResource("AtlasTexture_risyu")
 }],
 "loop": true,
 "name": &"Idle",
@@ -69,22 +72,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8f622")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_q0qro")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_pccw8")
+"texture": SubResource("AtlasTexture_rufyq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8obqp")
+"texture": SubResource("AtlasTexture_vjc7c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8vqaj")
+"texture": SubResource("AtlasTexture_vdxif")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n5ow8")
+"texture": SubResource("AtlasTexture_5seua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g08hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruuaj")
 }],
 "loop": false,
 "name": &"attack",
@@ -92,22 +95,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d7w1g")
+"texture": SubResource("AtlasTexture_sa1nh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_blkro")
+"texture": SubResource("AtlasTexture_rjqsd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jna3c")
+"texture": SubResource("AtlasTexture_f8ee0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0txrj")
+"texture": SubResource("AtlasTexture_vvalv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3rslm")
+"texture": SubResource("AtlasTexture_2ekfc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ylp45")
+"texture": SubResource("AtlasTexture_3ocxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksax7")
 }],
 "loop": true,
 "name": &"attack2",
@@ -119,26 +125,26 @@ resource_name = "Idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:animation")
+tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Idle"]
+"update": 0,
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:frame")
+tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [&"Idle"]
 }
 
 [sub_resource type="Animation" id="Animation_fwc87"]
@@ -146,26 +152,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:animation")
+tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Idle"]
+"update": 0,
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:frame")
+tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [&"Idle"]
 }
 
 [sub_resource type="Animation" id="Animation_qq3vr"]
@@ -174,26 +180,26 @@ length = 0.74
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:animation")
+tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack"]
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.566667, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:frame")
+tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.566667, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"attack"]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -218,30 +224,30 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_woflu"]
 resource_name = "attack2"
-length = 0.74
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:animation")
+tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack2"]
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:frame")
+tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.566667, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"attack2"]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -250,7 +256,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.4, 0.7299, 0.7333),
+"times": PackedFloat32Array(0.4, 0.6966, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
@@ -270,26 +276,26 @@ length = 0.74
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:animation")
+tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack3"]
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.566667, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:frame")
+tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.566667, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"attack3"]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -369,7 +375,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="GunAnim" type="AnimatedSprite2D" parent="CanvasLayer/Control"]
 texture_filter = 1
-position = Vector2(1209, 525)
+position = Vector2(1039, 560)
 sprite_frames = SubResource("SpriteFrames_hkejt")
 animation = &"Idle"
 autoplay = "Idle"
