@@ -1,5 +1,7 @@
-res://assets/weapons
+res://assets/enemies/BaguetteEnemy
+res://assets/enemies/BossEnemy
 res://scripts/weapons
+res://assets/weapons
 res://scenes/weapons
 res://scripts/player
 res://scripts/world
@@ -9,8 +11,6 @@ C:/Users/Sebas/Desktop/godotProyects
 res://assets/ui
 res://scenes/UI
 res://scenes/world
-res://assets/enemies/BossEnemy
-res://assets/enemies/BaguetteEnemy
 res://scripts/enemies
 res://scenes/enemies
 res://scenes/maps

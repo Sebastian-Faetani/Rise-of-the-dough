@@ -1,6 +1,4 @@
 extends Node3D
-
-
 @onready var gun_sprite = $AnimationPlayer
 @onready var gun_rays =$GunRays.get_children()
 @onready var animation_tree: AnimationTree = $AnimationTree

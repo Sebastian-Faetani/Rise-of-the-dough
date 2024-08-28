@@ -5,7 +5,8 @@ extends Control
 
 
 func _ready():
-	get_viewport().size = DisplayServer.screen_get_size()
+	#get_viewport().max_scale= DisplayServer.screen_get_max_scale()
+	#get_viewport().size = DisplayServer.screen_get_size()
 	music_menu.play()
 
 

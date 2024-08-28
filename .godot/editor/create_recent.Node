@@ -1,11 +1,11 @@
+AnimationTree
+AnimationPlayer
 Node3D
 Timer
 CollisionShape3D
 Sprite3D
 Area3D
 RayCast3D
-AnimationTree
-AnimationPlayer
 Sprite2D
 AnimatedSprite2D
 Control

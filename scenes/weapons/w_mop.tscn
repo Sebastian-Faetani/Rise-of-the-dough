@@ -176,7 +176,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_qq3vr"]
 resource_name = "attack"
-length = 0.74
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -184,7 +184,7 @@ tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.566667, 0.733333),
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0, 1, 2, 3, 4, 5]
@@ -208,17 +208,17 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.4, 0.733233, 0.733333),
+"times": PackedFloat32Array(0.4, 0.599, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
 "method": &"check_hit"
 }, {
 "args": [],
-"method": &"shoot_anim_done"
+"method": &"move_to_attack2"
 }, {
 "args": [],
-"method": &"move_to_attack2"
+"method": &"shoot_anim_done"
 }]
 }
 
