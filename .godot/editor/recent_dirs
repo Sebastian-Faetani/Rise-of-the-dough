@@ -1,3 +1,4 @@
+res://scenes/maps
 res://assets/enemies/BaguetteEnemy
 res://scripts/enemies
 res://scripts/weapons
@@ -13,5 +14,4 @@ C:/Users/Sebas/Desktop/godotProyects
 res://assets/ui
 res://scenes/UI
 res://scenes/world
-res://scenes/maps
 res://scenes/player

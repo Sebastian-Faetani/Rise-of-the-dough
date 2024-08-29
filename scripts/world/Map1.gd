@@ -1,8 +1,11 @@
 extends Node3D
 @onready var pause_menu = $Pause_menu
 @onready var gameplay_music = $Gameplay_Music
-@onready var clocktick = $TicTac
-@onready var alarm_sound = $"alarm sound"
+@onready var clocktick = $Maps/Level1/TicTac
+@onready var alarm_sound = $"Maps/Level1/alarm sound"
+@onready var level_1: Node3D = $Maps/Level1
+@onready var level_2: Node3D = $Maps/Level2
+@onready var load_trigger: Area3D = $Maps/Level1/LoadTrigger
 
 
 var paused = false
@@ -32,5 +35,6 @@ func PauseMenu():
 	paused = !paused
 
 
-func _on_knife_pickup_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.
+func _on_load_trigger_body_entered(body: Node3D) -> void:
+	level_2.show()
+	level_1.queue_free()
