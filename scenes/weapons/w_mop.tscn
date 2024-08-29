@@ -332,7 +332,7 @@ animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(266, 846)
+position = Vector2(266, 900)
 texture = ExtResource("3_ryxmt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

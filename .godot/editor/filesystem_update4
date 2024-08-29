@@ -1,5 +1,4 @@
 res://scenes/player/player.tscn
-res://scripts/enemies/Enemy.gd
 res://scenes/maps/sandbox.tscn
 res://scenes/maps/Map1.tscn
 res://scenes/UI/play_menu.tscn

@@ -417,7 +417,7 @@ animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(256, 850)
+position = Vector2(256, 904)
 scale = Vector2(0.711147, 0.711147)
 texture = ExtResource("2_u2fbw")
 

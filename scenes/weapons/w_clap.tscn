@@ -312,7 +312,7 @@ animation = &"Idle"
 autoplay = "idle"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(238, 853)
+position = Vector2(238, 901)
 texture = ExtResource("3_836ny")
 
 [node name="GunRays" type="Node3D" parent="."]
