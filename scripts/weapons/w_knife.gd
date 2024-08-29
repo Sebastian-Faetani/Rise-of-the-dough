@@ -2,6 +2,8 @@ extends Node3D
 @onready var gun_sprite = $AnimationPlayer
 @onready var gun_rays =$GunRays.get_children()
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var hit_knife = $"../../../HitKnife"
+
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 var player
 
@@ -21,26 +23,30 @@ func check_hit():
 	for ray in gun_rays:
 		if ray.is_colliding():
 			if ray.get_collider().is_in_group("enemies"):
-				ray.get_collider().DeathByMop(true)
+				ray.get_collider().DeathByMop(false)
 				ray.get_collider().DeathByWater(false)
+				ray.get_collider().DeathByKnife(true)
 				ray.get_collider().enemyTakeDamage(gun_damage)
 				
 			elif ray.get_collider().is_in_group("bossEnemy"):
-				ray.get_collider().DeathByMop(true)
+				ray.get_collider().DeathByMop(false)
 				ray.get_collider().DeathByWater(false)
+				ray.get_collider().DeathByKnife(true)
 				ray.get_collider().enemyTakeDamage(gun_damage)
 
 func power_hit():
 	for ray in gun_rays:
 		if ray.is_colliding():
 			if ray.get_collider().is_in_group("enemies"):
-				ray.get_collider().DeathByMop(true)
+				ray.get_collider().DeathByMop(false)
 				ray.get_collider().DeathByWater(false)
+				ray.get_collider().DeathByKnife(true)
 				ray.get_collider().enemyTakeDamage(power_damage)
 				
 			elif ray.get_collider().is_in_group("bossEnemy"):
-				ray.get_collider().DeathByMop(true)
+				ray.get_collider().DeathByMop(false)
 				ray.get_collider().DeathByWater(false)
+				ray.get_collider().DeathByKnife(true)
 				ray.get_collider().enemyTakeDamage(power_damage)
 
 func _process(_delta):
@@ -51,6 +57,7 @@ func _process(_delta):
 			playback.travel("attack2")
 		if Att3Av == true:
 			playback.travel("attack3")
+		hit_knife.play()
 		can_shoot = false
 		player.current_player_stamina -= 25
 

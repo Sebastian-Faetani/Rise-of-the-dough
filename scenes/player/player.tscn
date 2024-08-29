@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dqeu2j55klbsa"]
+[gd_scene load_steps=26 format=3 uid="uid://dqeu2j55klbsa"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_ipl5t"]
 [ext_resource type="Script" path="res://scripts/player/SmoothCamera.gd" id="2_quloi"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://dylajj52ilery" path="res://assets/interfaz/controls background.png" id="12_7qogr"]
 [ext_resource type="AudioStream" uid="uid://bbjse0fyivsv7" path="res://sounds/environment/open door.mp3" id="12_vgaog"]
 [ext_resource type="AudioStream" uid="uid://u4av65os2k8b" path="res://sounds/player/footsteps.mp3" id="13_xjog0"]
+[ext_resource type="AudioStream" uid="uid://1vtfueyxuqsk" path="res://sounds/weapons/Hit Knife.mp3" id="19_unu1p"]
+[ext_resource type="AudioStream" uid="uid://by5fciodjt4o0" path="res://sounds/weapons/Hit punch.mp3" id="20_6n66o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s4lsa"]
 
@@ -232,5 +234,13 @@ stream = ExtResource("13_xjog0")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(0.416667, 0, 0, 0, 0.416667, 0, 0, 0, 0.416667, 0.0187552, 0.028537, -0.0216784)
 omni_range = 4.0
+
+[node name="HitKnife" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_unu1p")
+bus = &"Weapons"
+
+[node name="HitPunch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_6n66o")
+bus = &"Weapons"
 
 [connection signal="timeout" from="StaminaTime" to="." method="_on_stamina_time_timeout"]

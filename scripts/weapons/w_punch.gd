@@ -2,6 +2,8 @@ extends Node3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var gun_rays = $GunRays.get_children()
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var hit_punch = $"../../../HitPunch"
+
 #@onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 var player
@@ -20,11 +22,13 @@ func check_hit():
 			if ray.get_collider().is_in_group("enemies"):
 				ray.get_collider().DeathByMop(true)
 				ray.get_collider().DeathByWater(false)
+				ray.get_collider().DeathByKnife(false)
 				ray.get_collider().enemyTakeDamage(gun_damage)
 				
 			elif ray.get_collider().is_in_group("bossEnemy"):
 				ray.get_collider().DeathByMop(true)
 				ray.get_collider().DeathByWater(false)
+				ray.get_collider().DeathByKnife(false)
 				ray.get_collider().enemyTakeDamage(gun_damage)
 
 func _process(_delta):
@@ -33,6 +37,7 @@ func _process(_delta):
 			playback.travel("attack1")
 		if Att2Av == true:
 			playback.travel("attack2")
+		hit_punch.play()
 		can_shoot = false
 		player.current_player_stamina -= 25
 

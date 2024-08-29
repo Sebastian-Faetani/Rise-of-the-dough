@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://lgtvpksns5vx"]
+[gd_scene load_steps=19 format=3 uid="uid://lgtvpksns5vx"]
 
 [ext_resource type="PackedScene" uid="uid://dqeu2j55klbsa" path="res://scenes/player/player.tscn" id="1_a1f82"]
 [ext_resource type="Texture2D" uid="uid://dp3ahihn3qc0h" path="res://assets/enviroment/prototype-texture-with-size.png" id="1_d4eq0"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://byehn0yp68wve" path="res://scenes/enemies/enemy.tscn" id="5_gem5d"]
 [ext_resource type="PackedScene" uid="uid://2lk1q4ru0cmx" path="res://scenes/enemies/mb_enemy.tscn" id="6_cvxac"]
 [ext_resource type="PackedScene" uid="uid://cj0abgkrdmit" path="res://scenes/weapons/mop_pickup.tscn" id="7_2n5vi"]
+[ext_resource type="PackedScene" uid="uid://sddhnd1geeyo" path="res://scenes/enemies/enemy_distance.tscn" id="8_sxip0"]
 [ext_resource type="PackedScene" uid="uid://t0nno57ammie" path="res://scenes/weapons/power_washer_pickup.tscn" id="8_vbbhg"]
+[ext_resource type="PackedScene" uid="uid://db4g4buo0c504" path="res://scenes/weapons/knife_pickup.tscn" id="11_rtrob"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d8uri"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -150,18 +152,27 @@ text = "Menú principal"
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("5_gem5d")]
 transform = Transform3D(0.282372, 0, 0, 0, 0.282372, 0, 0, 0, 0.282372, 0, 0.617223, -15)
+speed = 0.0
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("5_gem5d")]
 transform = Transform3D(0.282, 0, 0, 0, 0.282, 0, 0, 0, 0.282, 6.29154, 0.690376, -15)
+speed = 0.0
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("5_gem5d")]
 transform = Transform3D(0.282, 0, 0, 0, 0.282, 0, 0, 0, 0.282, 14.4017, 0.658797, -10.0396)
+speed = 0.0
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource("5_gem5d")]
 transform = Transform3D(0.282, 0, 0, 0, 0.282, 0, 0, 0, 0.282, 20.0623, 0.583098, -4.24192)
+speed = 0.0
 
 [node name="mb_enemy" parent="Enemies" instance=ExtResource("6_cvxac")]
 transform = Transform3D(0.702571, 0, 0, 0, 0.702571, 0, 0, 0, 0.702571, -4, 0, -15)
+speed = 0.0
+
+[node name="EnemyDistance" parent="Enemies" instance=ExtResource("8_sxip0")]
+transform = Transform3D(0.282, 0, 0, 0, 0.282, 0, 0, 0, 0.282, 0, 0.644887, 10.4885)
+speed = 0.0
 
 [node name="Pickups" type="Node3D" parent="."]
 
@@ -170,6 +181,11 @@ transform = Transform3D(-0.00753543, 0, 0.112649, 0, 0.1129, 0, -0.112649, 0, -0
 
 [node name="power_washer_pickup" parent="Pickups" instance=ExtResource("8_vbbhg")]
 transform = Transform3D(0.144359, 0, 0, 0, 0.144359, 0, 0, 0, 0.144359, 7, 0.355939, -2.74416)
+
+[node name="knife_pickup" parent="Pickups" instance=ExtResource("11_rtrob")]
+transform = Transform3D(0.150122, 0, 0, 0, 0.150122, 0, 0, 0, 0.150122, 7.19721, 0.0482948, 1.69824)
+
+[node name="EnemiesDistance" type="Node3D" parent="."]
 
 [connection signal="pressed" from="Pause_menu_sandbox/MarginContainer/VBoxContainer/Reanudar" to="Pause_menu_sandbox" method="_on_reanudar_pressed"]
 [connection signal="pressed" from="Pause_menu_sandbox/MarginContainer/VBoxContainer/Menu" to="Pause_menu_sandbox" method="_on_menu_pressed"]

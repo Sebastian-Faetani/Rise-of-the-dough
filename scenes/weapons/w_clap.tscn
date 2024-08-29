@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://die854fwg4egx"]
+[gd_scene load_steps=30 format=3 uid="uid://die854fwg4egx"]
 
 [ext_resource type="Texture2D" uid="uid://cw2ptbqu84hrh" path="res://assets/weapons/Arma_spritesheet_manos.png" id="1_lro5n"]
 [ext_resource type="Script" path="res://scripts/weapons/w_punch.gd" id="1_xy7da"]
+[ext_resource type="Texture2D" uid="uid://dqf3o7msceuwy" path="res://assets/weapons/Sprite_mano_ui.png" id="3_836ny"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5adr5"]
 atlas = ExtResource("1_lro5n")
@@ -98,6 +99,33 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_06b5o"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_l23np"]
 length = 0.001
 tracks/0/type = "value"
@@ -123,54 +151,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_y2otn"]
-resource_name = "attack2"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Control/GunAnim:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack2"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 0.399, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"values": [{
-"args": [],
-"method": &"check_hit"
-}, {
-"args": [],
-"method": &"move_to_attack3"
-}, {
-"args": [],
-"method": &"shoot_anim_done"
-}]
 }
 
 [sub_resource type="Animation" id="Animation_rax0o"]
@@ -221,8 +201,9 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_06b5o"]
-resource_name = "Idle"
+[sub_resource type="Animation" id="Animation_y2otn"]
+resource_name = "attack2"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -233,7 +214,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"idle"]
+"values": [&"attack2"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -242,10 +223,30 @@ tracks/1/path = NodePath("CanvasLayer/Control/GunAnim:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.399, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"check_hit"
+}, {
+"args": [],
+"method": &"move_to_attack3"
+}, {
+"args": [],
+"method": &"shoot_anim_done"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tcftk"]
@@ -309,6 +310,10 @@ scale = Vector2(0.964873, 0.964873)
 sprite_frames = SubResource("SpriteFrames_2187p")
 animation = &"Idle"
 autoplay = "idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(238, 853)
+texture = ExtResource("3_836ny")
 
 [node name="GunRays" type="Node3D" parent="."]
 

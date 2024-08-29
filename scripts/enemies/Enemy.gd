@@ -30,6 +30,7 @@ var can_attack := true
 var enemyDead := false
 var mopDeath = false
 var waterDeath = false
+var knifeDeath = false
 var hp: int = max_hp:
 	set(value):
 		hp = value
@@ -45,6 +46,8 @@ var hp: int = max_hp:
 			elif waterDeath == true:
 				playback.travel("waterDeath")
 				dead_hidro.play()
+			elif knifeDeath == true:
+				playback.travel("knifeDeath")
 			$CollisionShape3D.disabled = true
 
 
@@ -115,10 +118,28 @@ func chase():
 	navigation_agent_3d.target_position = player.global_position
 
 
+func enemyTakeDamageWithMopa(dmg_amount):
+	playback.travel("hit-mopa")
+	current_state = EnemyStates.Chasing
+	print(dmg_amount)
+	hp -= dmg_amount
+
+func enemyTakeDamageWithHidro(dmg_amount):
+	playback.travel("hit-hidro")
+	current_state = EnemyStates.Chasing
+	print(dmg_amount)
+	hp -= dmg_amount
+	
 func enemyTakeDamage(dmg_amount):
 	current_state = EnemyStates.Chasing
 	print(dmg_amount)
 	hp -= dmg_amount
+
+func slowdown():
+	speed = 3.0
+
+func speedup():
+	speed = 9.0
 
 func DeathByMop(bool):
 	mopDeath = bool
@@ -128,3 +149,6 @@ func DeathByWater(bool):
 
 func _on_attack_cooldown_timeout():
 	can_attack = true
+
+func DeathByKnife(bool):
+	knifeDeath = true

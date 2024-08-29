@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://byehn0yp68wve"]
+[gd_scene load_steps=65 format=3 uid="uid://byehn0yp68wve"]
 
 [ext_resource type="Script" path="res://scripts/enemies/Enemy.gd" id="1_iun2x"]
 [ext_resource type="Texture2D" uid="uid://bvlr8q7i4mhe6" path="res://assets/enemies/BaguetteEnemy/Enemy_spritesheet_baguette.png" id="2_j0vnn"]
@@ -18,6 +18,34 @@ region = Rect2(2736, 0, 912, 642)
 [sub_resource type="AtlasTexture" id="AtlasTexture_1fm3d"]
 atlas = ExtResource("2_j0vnn")
 region = Rect2(3648, 0, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e8bq"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(0, 3210, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi6l7"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(912, 3210, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idpqs"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(1824, 3210, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohckk"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(2736, 3210, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u754m"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(0, 0, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un6ed"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(912, 0, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r42va"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(0, 0, 912, 642)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywavk"]
 atlas = ExtResource("2_j0vnn")
@@ -125,6 +153,37 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e8bq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi6l7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idpqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohckk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u754m")
+}],
+"loop": true,
+"name": &"hid-hidro",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un6ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r42va")
+}],
+"loop": true,
+"name": &"hit-mopa",
 "speed": 5.0
 }, {
 "frames": [{
@@ -301,6 +360,96 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_50qrb"]
+resource_name = "hit-hidro"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hid-hidro"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"slowdown"
+}, {
+"args": [],
+"method": &"speedup"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mld1w"]
+resource_name = "hit-mopa"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hit-mopa"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"slowdown"
+}, {
+"args": [],
+"method": &"speedup"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_xgp2b"]
 resource_name = "idle"
 length = 0.001
@@ -327,6 +476,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fwy63"]
+resource_name = "knifeDeath"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"knifeDeath"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="Animation" id="Animation_vmqf5"]
@@ -414,38 +591,12 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_fwy63"]
-resource_name = "knifeDeath"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite3D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"knifeDeath"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite3D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wnrix"]
 _data = {
 "RESET": SubResource("Animation_73duu"),
 "attack": SubResource("Animation_3yoah"),
+"hit-hidro": SubResource("Animation_50qrb"),
+"hit-mopa": SubResource("Animation_mld1w"),
 "idle": SubResource("Animation_xgp2b"),
 "knifeDeath": SubResource("Animation_fwy63"),
 "mopDeath": SubResource("Animation_vmqf5"),
@@ -455,6 +606,12 @@ _data = {
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bracc"]
 animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7d6pc"]
+animation = &"hit-hidro"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5a8bo"]
+animation = &"hit-mopa"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a8u4p"]
 animation = &"knifeDeath"
@@ -477,11 +634,27 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2r3d5"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1mr0a"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_todqr"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_03jye"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s71vh"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_83di8"]
 states/End/position = Vector2(940, 131)
 states/Start/position = Vector2(109, 82)
 states/attack/node = SubResource("AnimationNodeAnimation_bracc")
 states/attack/position = Vector2(619, 48)
+states/hit-hidro/node = SubResource("AnimationNodeAnimation_7d6pc")
+states/hit-hidro/position = Vector2(441, 216)
+states/hit-mopa/node = SubResource("AnimationNodeAnimation_5a8bo")
+states/hit-mopa/position = Vector2(147, 216)
 states/knifeDeath/node = SubResource("AnimationNodeAnimation_a8u4p")
 states/knifeDeath/position = Vector2(593, 131)
 states/mopDeath/node = SubResource("AnimationNodeAnimation_nd8qv")
@@ -490,7 +663,8 @@ states/walk/node = SubResource("AnimationNodeAnimation_x6ub2")
 states/walk/position = Vector2(420, 54)
 states/waterDeath/node = SubResource("AnimationNodeAnimation_3u8lq")
 states/waterDeath/position = Vector2(710, 173)
-transitions = ["walk", "attack", SubResource("AnimationNodeStateMachineTransition_50gq2"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_iyl63"), "Start", "walk", SubResource("AnimationNodeStateMachineTransition_2r3d5")]
+transitions = ["walk", "attack", SubResource("AnimationNodeStateMachineTransition_50gq2"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_iyl63"), "Start", "walk", SubResource("AnimationNodeStateMachineTransition_2r3d5"), "hit-hidro", "walk", SubResource("AnimationNodeStateMachineTransition_1mr0a"), "hit-mopa", "walk", SubResource("AnimationNodeStateMachineTransition_todqr"), "walk", "hit-hidro", SubResource("AnimationNodeStateMachineTransition_03jye"), "walk", "hit-mopa", SubResource("AnimationNodeStateMachineTransition_s71vh")]
+graph_offset = Vector2(-206.269, 0)
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
 transform = Transform3D(0.535, 0, 0, 0, 0.535, 0, 0, 0, 0.535, 0, 1.22511, 0)

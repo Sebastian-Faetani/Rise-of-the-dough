@@ -12,12 +12,14 @@ func check_hit():
 			if ray.get_collider().is_in_group("enemies"):
 				ray.get_collider().DeathByMop(false)
 				ray.get_collider().DeathByWater(true)
-				ray.get_collider().enemyTakeDamage(gun_damage)
+				ray.get_collider().DeathByKnife(false)
+				ray.get_collider().enemyTakeDamageWithHidro(gun_damage)
 				queue_free()
 			elif ray.get_collider().is_in_group("bossEnemy"):
 				ray.get_collider().DeathByMop(false)
 				ray.get_collider().DeathByWater(true)
-				ray.get_collider().enemyTakeDamage(gun_damage)
+				ray.get_collider().DeathByKnife(false)
+				ray.get_collider().enemyTakeDamageWithHidro(gun_damage)
 				queue_free()
 			
 

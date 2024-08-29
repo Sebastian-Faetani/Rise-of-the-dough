@@ -26,12 +26,14 @@ func check_hit():
 			if ray.get_collider().is_in_group("enemies"):
 				ray.get_collider().DeathByMop(true)
 				ray.get_collider().DeathByWater(false)
-				ray.get_collider().enemyTakeDamage(gun_damage)
+				ray.get_collider().DeathByKnife(false)
+				ray.get_collider().enemyTakeDamageWithMopa(gun_damage)
 				
 			elif ray.get_collider().is_in_group("bossEnemy"):
 				ray.get_collider().DeathByMop(true)
 				ray.get_collider().DeathByWater(false)
-				ray.get_collider().enemyTakeDamage(gun_damage)
+				ray.get_collider().DeathByKnife(false)
+				ray.get_collider().enemyTakeDamageWithMopa(gun_damage)
 
 func aoe_hit():
 	for ray in aoe_rays:
@@ -39,12 +41,14 @@ func aoe_hit():
 			if ray.get_collider().is_in_group("enemies"):
 				ray.get_collider().DeathByMop(true)
 				ray.get_collider().DeathByWater(false)
-				ray.get_collider().enemyTakeDamage(aoe_damage)
+				ray.get_collider().DeathByKnife(false)
+				ray.get_collider().enemyTakeDamageWithMopa(aoe_damage)
 				print("enemy hit")
 			elif ray.get_collider().is_in_group("bossEnemy"):
 				ray.get_collider().DeathByMop(true)
 				ray.get_collider().DeathByWater(false)
-				ray.get_collider().enemyTakeDamage(aoe_damage)
+				ray.get_collider().DeathByKnife(false)
+				ray.get_collider().enemyTakeDamageWithMopa(aoe_damage)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("shoot") and can_shoot == true and player.current_player_stamina >= 0:
