@@ -29,6 +29,7 @@ var can_attack := true
 var enemyDead := false
 var mopDeath = false
 var waterDeath = false
+var knifeDeath = false
 var hp: int = max_hp:
 	set(value):
 		hp = value
@@ -41,10 +42,11 @@ var hp: int = max_hp:
 			if mopDeath == true:
 				playback.travel("mopDeath")
 				dead_mopa.play()
-				
 			elif waterDeath == true:
 				playback.travel("waterDeath")
 				dead_hidro.play()
+			elif knifeDeath == true:
+				playback.travel("knifeDeath")
 			$CollisionShape3D.disabled = true
 
 
@@ -124,6 +126,9 @@ func DeathByMop(bool):
 	mopDeath = bool
 
 func DeathByWater(bool):
+	waterDeath = bool
+
+func DeathByKnife(bool):
 	waterDeath = bool
 
 func _on_attack_cooldown_timeout():

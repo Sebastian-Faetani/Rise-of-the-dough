@@ -37,4 +37,5 @@ func PauseMenu():
 
 func _on_load_trigger_body_entered(body: Node3D) -> void:
 	level_2.show()
+	
 	level_1.queue_free()

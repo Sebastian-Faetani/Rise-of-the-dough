@@ -205,6 +205,7 @@ func _physics_process(delta):
 		var collider = interact.get_collider()
 		if collider != null:
 			if collider.is_in_group("exit"):
+				collectkey = false
 				open_door.play()
 				collider.bye()
 				

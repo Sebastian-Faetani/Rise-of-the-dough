@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://2lk1q4ru0cmx"]
+[gd_scene load_steps=45 format=3 uid="uid://2lk1q4ru0cmx"]
 
 [ext_resource type="Script" path="res://scripts/enemies/mb_enemy.gd" id="1_i3ts0"]
 [ext_resource type="Texture2D" uid="uid://bl2frcmtk0xx6" path="res://assets/enemies/BossEnemy/Enemy_spritesheet_baguette_miniboss.png" id="1_xgtr1"]
@@ -22,6 +22,22 @@ region = Rect2(3648, 0, 912, 642)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppkgt"]
 atlas = ExtResource("1_xgtr1")
 region = Rect2(0, 0, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8n4x"]
+atlas = ExtResource("1_xgtr1")
+region = Rect2(0, 4494, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7bti"]
+atlas = ExtResource("1_xgtr1")
+region = Rect2(912, 4494, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpcge"]
+atlas = ExtResource("1_xgtr1")
+region = Rect2(1824, 4494, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh7un"]
+atlas = ExtResource("1_xgtr1")
+region = Rect2(2736, 4494, 912, 642)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3kdgl"]
 atlas = ExtResource("1_xgtr1")
@@ -101,6 +117,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8n4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7bti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpcge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh7un")
+}],
+"loop": false,
+"name": &"knifeDeath",
 "speed": 5.0
 }, {
 "frames": [{
@@ -314,10 +347,39 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_lnboa"]
+resource_name = "knifeDeath"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"knifeDeath"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sc7jo"]
 _data = {
 "RESET": SubResource("Animation_ocyer"),
 "attack": SubResource("Animation_8e0hh"),
+"knifeDeath": SubResource("Animation_lnboa"),
 "mopDeath": SubResource("Animation_llnm1"),
 "walk": SubResource("Animation_2vgse"),
 "waterDeath": SubResource("Animation_yypqd")
@@ -325,6 +387,9 @@ _data = {
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fm4uo"]
 animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oxo6w"]
+animation = &"knifeDeath"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dvtm7"]
 animation = &"mopDeath"
@@ -344,26 +409,18 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ffbok"]
-switch_mode = 2
-advance_mode = 2
-advance_expression = "mopDeath == true"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nqe4a"]
-switch_mode = 2
-advance_mode = 2
-advance_expression = "waterDeath == true"
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jmov2"]
 states/attack/node = SubResource("AnimationNodeAnimation_fm4uo")
 states/attack/position = Vector2(542, 63)
+states/knifeDeath/node = SubResource("AnimationNodeAnimation_oxo6w")
+states/knifeDeath/position = Vector2(647, 137)
 states/mopDeath/node = SubResource("AnimationNodeAnimation_dvtm7")
 states/mopDeath/position = Vector2(720, 53)
 states/walk/node = SubResource("AnimationNodeAnimation_5vhn7")
 states/walk/position = Vector2(379, 80)
 states/waterDeath/node = SubResource("AnimationNodeAnimation_5q5wg")
 states/waterDeath/position = Vector2(758, 134)
-transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_vrc4j"), "walk", "attack", SubResource("AnimationNodeStateMachineTransition_24g6q"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_wf6ay"), "mopDeath", "End", SubResource("AnimationNodeStateMachineTransition_ffbok"), "waterDeath", "End", SubResource("AnimationNodeStateMachineTransition_nqe4a")]
+transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_vrc4j"), "walk", "attack", SubResource("AnimationNodeStateMachineTransition_24g6q"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_wf6ay")]
 
 [node name="mb_enemy" type="CharacterBody3D" groups=["bossEnemy"]]
 transform = Transform3D(1.01436, 0, 0, 0, 1.01436, 0, 0, 0, 1.01436, 0, 0, 0)

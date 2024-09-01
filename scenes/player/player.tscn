@@ -148,7 +148,6 @@ offset_right = 152.0
 offset_bottom = -424.625
 grow_vertical = 2
 scale = Vector2(1.82218, 2.733)
-fill_mode = 1
 texture_under = ExtResource("4_tnn4f")
 texture_over = ExtResource("5_l1m2r")
 texture_progress = ExtResource("8_f5bs0")
