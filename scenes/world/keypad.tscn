@@ -8,7 +8,7 @@
 [node name="Keypad" type="StaticBody3D" groups=["exit"]]
 script = ExtResource("1_uuill")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D" type="Sprite3D" parent="." groups=["exit"]]
 transform = Transform3D(0.28401, 0, 0, 0, 0.28401, 0, 0, 0, 0.28401, 0, 0, 0)
 shaded = true
 texture = ExtResource("2_dxtgu")

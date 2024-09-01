@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://dj6n6bubnxocd"]
 
-[ext_resource type="Script" path="res://scripts/world/exit.gd" id="1_rxx16"]
+[ext_resource type="Script" path="res://scripts/world/exit_fabrica.gd" id="1_8dg71"]
 [ext_resource type="Texture2D" uid="uid://j1goh3fb8eqd" path="res://assets/enviroment/Puerta_produccion.png" id="2_kjbqu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pj5ys"]
 size = Vector3(9.80353, 4.7754, 1)
 
-[node name="ExitFabrica" type="StaticBody3D" groups=["exit"]]
-script = ExtResource("1_rxx16")
+[node name="ExitFabrica" type="StaticBody3D" groups=["salida"]]
+script = ExtResource("1_8dg71")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.90865, 0, 0, 0, 1.60823, 0, 0, 0, 0.0499926, -0.181845, -0.0158105, 0.135801)

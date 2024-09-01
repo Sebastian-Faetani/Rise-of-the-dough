@@ -47,6 +47,7 @@ var direction = Vector3.ZERO
 var crouch_depth = -0.5
 var collectkey = false
 var hasWon = false
+var collectkeyfabrica = false
 
 #slide variables
 var slide_timer = 0.0
@@ -209,7 +210,18 @@ func _physics_process(delta):
 				open_door.play()
 				collider.bye()
 				
-
+	if Input.is_action_just_pressed("interact"):
+		var collider = interact.get_collider()
+		if collider != null:
+			if collider.is_in_group("interaction2"):
+				collectkeyfabrica = true
+				collider.collectkeyFabrica()
+	if Input.is_action_just_pressed("interact") and collectkeyfabrica == true:
+		var collider = interact.get_collider()
+		if collider != null:
+			if collider.is_in_group("exit2"):
+				collectkeyfabrica = false
+				collider.bye2()
 	if velocity.x != 0 and is_on_floor():
 		if !foots.playing:
 			foots.play()

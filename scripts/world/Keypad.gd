@@ -2,7 +2,7 @@ extends StaticBody3D
 var exit
 
 func _ready():
-		exit = get_tree().get_first_node_in_group("exit")
+		exit = get_tree().get_first_node_in_group("salida2")
 
 func _process(_delta):
 	pass

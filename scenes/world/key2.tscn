@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://ckd4u5vemhwpc"]
 
-[ext_resource type="Script" path="res://scripts/world/key.gd" id="1_cd87k"]
+[ext_resource type="Script" path="res://scripts/world/key_2.gd" id="1_1l74r"]
 [ext_resource type="Texture2D" uid="uid://dp1hf06hy38ts" path="res://assets/enviroment/Sprite_llave_2.png" id="2_ocdmp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vsb3q"]
 size = Vector3(0.926758, 1, 1)
 
-[node name="Key" type="StaticBody3D" groups=["interaction"]]
+[node name="Key" type="StaticBody3D" groups=["interaction2"]]
 transform = Transform3D(0.36, 0, 0, 0, 1, 0, 0, 0, 0.32, 0, 0, 0)
-script = ExtResource("1_cd87k")
+script = ExtResource("1_1l74r")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.187726, 0, 0, 0, 1.24353e-05, 0.302568, 0, -0.142431, 2.64139e-05, 0, 0, 0)
