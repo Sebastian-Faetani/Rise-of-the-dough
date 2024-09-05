@@ -11,5 +11,3 @@ func bye3():
 	print("Puerta desbloqueada")
 	queue_free()
 	salida3.bye3()
-	enemy_spawner.timer.stop()
-	

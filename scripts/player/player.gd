@@ -242,6 +242,11 @@ func _physics_process(delta):
 			if collider.is_in_group("salida3"):
 				collider.bye3()
 				collectkeyfabrica = false
+	if Input.is_action_just_pressed("interact"):
+		var collider = interact.get_collider()
+		if collider != null:
+			if collider.is_in_group("EmergencyButton"):
+				collider.EmergencyShutDown()
 	if velocity.x != 0 and is_on_floor():
 		if !foots.playing:
 			foots.play()

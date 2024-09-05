@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d07s78tt0qff1"]
+
+[ext_resource type="Texture2D" uid="uid://ofbl5hn46pl0" path="res://assets/enviroment/Sprite_boton_emergencia.png" id="1_ecx21"]
+[ext_resource type="Script" path="res://scripts/world/emergency_button.gd" id="1_tqmxp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rbdcy"]
+size = Vector3(1.07178, 1.63257, 0.179688)
+
+[node name="OffButton" type="StaticBody3D" groups=["EmergencyButton"]]
+script = ExtResource("1_tqmxp")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("1_ecx21")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0358887, 0.0386963, -0.00585938)
+shape = SubResource("BoxShape3D_rbdcy")
