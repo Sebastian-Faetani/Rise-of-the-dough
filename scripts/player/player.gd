@@ -48,6 +48,7 @@ var crouch_depth = -0.5
 var collectkey = false
 var hasWon = false
 var collectkeyfabrica = false
+var attackBullet := 30.0
 
 #slide variables
 var slide_timer = 0.0
@@ -209,6 +210,12 @@ func _physics_process(delta):
 				collectkey = false
 				open_door.play()
 				collider.bye()
+	if Input.is_action_just_pressed("interact"):
+		var collider = interact.get_collider()
+		if collider != null:
+			if collider.is_in_group("object"):
+				collider.objectCollected()
+				curar()
 				
 	if Input.is_action_just_pressed("interact"):
 		var collider = interact.get_collider()
@@ -244,4 +251,10 @@ func puerta_desbloqueada():
 
 func _on_stamina_time_timeout() -> void:
 	is_stamina_regen = false
-	current_player_stamina += 25
+	current_player_stamina = min(current_player_stamina + 25, max_player_stamina)
+
+func curar():
+	current_player_health += 25
+
+func danio():
+	current_player_health -= attackBullet

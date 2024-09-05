@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsqvumogujrwd"]
+
+[ext_resource type="Script" path="res://scripts/world/objeto_curable.gd" id="1_ausef"]
+[ext_resource type="Texture2D" uid="uid://dcik6652rbfyq" path="res://assets/enviroment/Sprite_cura.png" id="2_1rvq1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m6q5n"]
+size = Vector3(0.590698, 0.942139, 1)
+
+[node name="ObjetoCurable" type="StaticBody3D" groups=["object"]]
+script = ExtResource("1_ausef")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("2_1rvq1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.09292, 0, 0, 0, 2.17842, 0, 0, 0, 0.0274086, 0.0240003, -0.0188803, -0.00856411)
+shape = SubResource("BoxShape3D_m6q5n")

@@ -171,7 +171,7 @@ transform = Transform3D(0.702571, 0, 0, 0, 0.702571, 0, 0, 0, 0.702571, -4, 0, -
 speed = 0.0
 
 [node name="EnemyDistance" parent="Enemies" instance=ExtResource("8_sxip0")]
-transform = Transform3D(0.282, 0, 0, 0, 0.282, 0, 0, 0, 0.282, 0, 0.644887, 10.4885)
+transform = Transform3D(0.458595, 0, 0, 0, 0.458595, 0, 0, 0, 0.458595, 0, 1.03516, 10.4885)
 speed = 0.0
 
 [node name="Pickups" type="Node3D" parent="."]

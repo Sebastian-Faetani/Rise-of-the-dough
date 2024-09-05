@@ -1,9 +1,10 @@
-[gd_scene load_steps=65 format=3 uid="uid://byehn0yp68wve"]
+[gd_scene load_steps=72 format=3 uid="uid://byehn0yp68wve"]
 
 [ext_resource type="Script" path="res://scripts/enemies/Enemy.gd" id="1_iun2x"]
 [ext_resource type="Texture2D" uid="uid://bvlr8q7i4mhe6" path="res://assets/enemies/BaguetteEnemy/Enemy_spritesheet_baguette.png" id="2_j0vnn"]
 [ext_resource type="AudioStream" uid="uid://b8ty5tqe01ddm" path="res://sounds/enemies/Enemy dead mopa.mp3" id="3_vwaj4"]
 [ext_resource type="AudioStream" uid="uid://btnlr8rugdsm0" path="res://sounds/enemies/Enemy dead hidro.mp3" id="4_t8kmm"]
+[ext_resource type="AudioStream" uid="uid://bvs8vrjqjbh73" path="res://sounds/enemies/Enemy dead knife.mp3" id="5_bhl85"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ach6n"]
 
@@ -36,6 +37,14 @@ atlas = ExtResource("2_j0vnn")
 region = Rect2(2736, 3210, 912, 642)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u754m"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(0, 0, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icygv"]
+atlas = ExtResource("2_j0vnn")
+region = Rect2(3648, 4494, 912, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k00p7"]
 atlas = ExtResource("2_j0vnn")
 region = Rect2(0, 0, 912, 642)
 
@@ -173,6 +182,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"hid-hidro",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icygv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k00p7")
+}],
+"loop": true,
+"name": &"hit-knife",
 "speed": 5.0
 }, {
 "frames": [{
@@ -450,6 +470,33 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_320de"]
+resource_name = "hitKnife"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hit-knife"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
 [sub_resource type="Animation" id="Animation_xgp2b"]
 resource_name = "idle"
 length = 0.001
@@ -597,6 +644,7 @@ _data = {
 "attack": SubResource("Animation_3yoah"),
 "hit-hidro": SubResource("Animation_50qrb"),
 "hit-mopa": SubResource("Animation_mld1w"),
+"hitKnife": SubResource("Animation_320de"),
 "idle": SubResource("Animation_xgp2b"),
 "knifeDeath": SubResource("Animation_fwy63"),
 "mopDeath": SubResource("Animation_vmqf5"),
@@ -612,6 +660,9 @@ animation = &"hit-hidro"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5a8bo"]
 animation = &"hit-mopa"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tk4tg"]
+animation = &"hitKnife"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a8u4p"]
 animation = &"knifeDeath"
@@ -646,6 +697,12 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s71vh"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g4fiw"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l1sal"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_83di8"]
 states/End/position = Vector2(940, 131)
 states/Start/position = Vector2(109, 82)
@@ -655,6 +712,8 @@ states/hit-hidro/node = SubResource("AnimationNodeAnimation_7d6pc")
 states/hit-hidro/position = Vector2(441, 216)
 states/hit-mopa/node = SubResource("AnimationNodeAnimation_5a8bo")
 states/hit-mopa/position = Vector2(147, 216)
+states/hitKnife/node = SubResource("AnimationNodeAnimation_tk4tg")
+states/hitKnife/position = Vector2(322.164, 226.635)
 states/knifeDeath/node = SubResource("AnimationNodeAnimation_a8u4p")
 states/knifeDeath/position = Vector2(593, 131)
 states/mopDeath/node = SubResource("AnimationNodeAnimation_nd8qv")
@@ -663,8 +722,8 @@ states/walk/node = SubResource("AnimationNodeAnimation_x6ub2")
 states/walk/position = Vector2(420, 54)
 states/waterDeath/node = SubResource("AnimationNodeAnimation_3u8lq")
 states/waterDeath/position = Vector2(710, 173)
-transitions = ["walk", "attack", SubResource("AnimationNodeStateMachineTransition_50gq2"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_iyl63"), "Start", "walk", SubResource("AnimationNodeStateMachineTransition_2r3d5"), "hit-hidro", "walk", SubResource("AnimationNodeStateMachineTransition_1mr0a"), "hit-mopa", "walk", SubResource("AnimationNodeStateMachineTransition_todqr"), "walk", "hit-hidro", SubResource("AnimationNodeStateMachineTransition_03jye"), "walk", "hit-mopa", SubResource("AnimationNodeStateMachineTransition_s71vh")]
-graph_offset = Vector2(-206.269, 0)
+transitions = ["walk", "attack", SubResource("AnimationNodeStateMachineTransition_50gq2"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_iyl63"), "Start", "walk", SubResource("AnimationNodeStateMachineTransition_2r3d5"), "hit-hidro", "walk", SubResource("AnimationNodeStateMachineTransition_1mr0a"), "hit-mopa", "walk", SubResource("AnimationNodeStateMachineTransition_todqr"), "walk", "hit-hidro", SubResource("AnimationNodeStateMachineTransition_03jye"), "walk", "hit-mopa", SubResource("AnimationNodeStateMachineTransition_s71vh"), "hitKnife", "walk", SubResource("AnimationNodeStateMachineTransition_g4fiw"), "walk", "hitKnife", SubResource("AnimationNodeStateMachineTransition_l1sal")]
+graph_offset = Vector2(-550.836, 7.63525)
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
 transform = Transform3D(0.535, 0, 0, 0, 0.535, 0, 0, 0, 0.535, 0, 1.22511, 0)
@@ -703,5 +762,8 @@ stream = ExtResource("3_vwaj4")
 
 [node name="DeadHidro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_t8kmm")
+
+[node name="DeadKnife" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bhl85")
 
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

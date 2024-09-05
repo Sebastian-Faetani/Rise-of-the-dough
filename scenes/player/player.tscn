@@ -115,8 +115,10 @@ transform = Transform3D(0.6539, 0, 0, 0, -0.00600092, -0.929248, 0, 0.929248, -0
 target_position = Vector3(0, -2, 0)
 
 [node name="Weapon_handler" type="Node3D" parent="Head"]
+visible = false
 
 [node name="w_clap" parent="Head/Weapon_handler" instance=ExtResource("3_3l1w0")]
+visible = false
 
 [node name="StaminaTime" type="Timer" parent="."]
 

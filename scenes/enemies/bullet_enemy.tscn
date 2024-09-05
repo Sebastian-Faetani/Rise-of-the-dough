@@ -1,23 +1,33 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpql31x2vtngy"]
 
-[ext_resource type="Script" path="res://scripts/weapons/bullet_enemy.gd" id="1_j12d6"]
-[ext_resource type="Texture2D" uid="uid://bv45xd3ec6kk5" path="res://assets/enviroment/Dispenser.png" id="2_uybs4"]
+[ext_resource type="Script" path="res://scripts/enemies/bullet_enemy.gd" id="1_jlmeg"]
+[ext_resource type="Texture2D" uid="uid://ff8dst14wb30" path="res://assets/weapons/Sprite_bala_cannon.png" id="2_r0rhn"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cn1je"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_madkd"]
 
 [node name="BulletEnemy" type="RigidBody3D"]
-script = ExtResource("1_j12d6")
+script = ExtResource("1_jlmeg")
 
-[node name="MeshInstance3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.366203, 0, 0, 0, 0.366175, -0.00454422, 0, 0.00454422, 0.366175, 0, 0, 0)
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.73657, 0, 0, 0, 1.73657, 0, 0, 0, 1.73657, 0, 0, 0.0395237)
 billboard = 1
-texture = ExtResource("2_uybs4")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.374794, 0.00689506, 0.00580158, -0.00587138, 0.00375765, 0.374837, 0.00683572, -0.37482, 0.00386455, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_cn1je")
+texture = ExtResource("2_r0rhn")
 
 [node name="EnemyRay" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.30657)
 
-[node name="RayCast3D" type="RayCast3D" parent="EnemyRay"]
-transform = Transform3D(1, 0, 0, 0, -0.0107162, 0.999943, 0, -0.999943, -0.0107162, 0, 0, -0.36161)
+[node name="RayCast3D2" type="RayCast3D" parent="EnemyRay"]
+transform = Transform3D(5.37203e-09, -0.122898, 1.8557e-08, -0.122898, -5.37203e-09, 5.29396e-23, 8.11154e-16, -1.8557e-08, -0.122898, 0.558327, 0.00964797, -0.290807)
+
+[node name="RayCast3D4" type="RayCast3D" parent="EnemyRay"]
+transform = Transform3D(-0.123, 1.0753e-08, 0, -1.0753e-08, -0.123, 0, 0, 0, 0.123, 0.00644945, 0.560837, -0.299078)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.1271, 0, 0, 0, 1.1271, 0, 0, 0, 1.1271, 0, 0, 0)
+shape = SubResource("SphereShape3D_madkd")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

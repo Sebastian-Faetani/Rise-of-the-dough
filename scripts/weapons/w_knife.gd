@@ -6,7 +6,7 @@ extends Node3D
 
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 var player
-
+var lona
 var Att1Av = true
 var Att2Av = false
 var Att3Av = false
@@ -18,6 +18,7 @@ var can_shoot = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
+	lona = get_tree().get_first_node_in_group("destructibles")
 
 func check_hit():
 	for ray in gun_rays:
@@ -26,13 +27,15 @@ func check_hit():
 				ray.get_collider().DeathByMop(false)
 				ray.get_collider().DeathByWater(false)
 				ray.get_collider().DeathByKnife(true)
-				ray.get_collider().enemyTakeDamage(gun_damage)
+				ray.get_collider().enemyTakeDamageWithKnife(gun_damage)
 				
 			elif ray.get_collider().is_in_group("bossEnemy"):
 				ray.get_collider().DeathByMop(false)
 				ray.get_collider().DeathByWater(false)
 				ray.get_collider().DeathByKnife(true)
-				ray.get_collider().enemyTakeDamage(gun_damage)
+				ray.get_collider().enemyTakeDamageWithKnife(gun_damage)
+			elif ray.get_collider().is_in_group("destructibles"):
+				lona.seRompe()
 
 func power_hit():
 	for ray in gun_rays:
@@ -41,13 +44,14 @@ func power_hit():
 				ray.get_collider().DeathByMop(false)
 				ray.get_collider().DeathByWater(false)
 				ray.get_collider().DeathByKnife(true)
-				ray.get_collider().enemyTakeDamage(power_damage)
+				ray.get_collider().enemyTakeDamageWithKnife(power_damage)
 				
 			elif ray.get_collider().is_in_group("bossEnemy"):
 				ray.get_collider().DeathByMop(false)
 				ray.get_collider().DeathByWater(false)
 				ray.get_collider().DeathByKnife(true)
-				ray.get_collider().enemyTakeDamage(power_damage)
+				ray.get_collider().enemyTakeDamageWithKnife(power_damage)
+			
 
 func _process(_delta):
 	if Input.is_action_just_pressed("shoot") and can_shoot == true and player.current_player_stamina >= 0:

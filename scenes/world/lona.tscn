@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://im43n3og7i3l"]
+
+[ext_resource type="Texture2D" uid="uid://badqj4x2sjvww" path="res://assets/enviroment/Sprite_lona_cortada.png" id="1_bd2v2"]
+[ext_resource type="Script" path="res://scripts/world/lona.gd" id="1_lrsmt"]
+[ext_resource type="Texture2D" uid="uid://cqmnllrhkbvkb" path="res://assets/enviroment/Sprite_lona.png" id="2_0vehs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kya8"]
+atlas = ExtResource("1_bd2v2")
+region = Rect2(0, 0, 713, 409)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt83e"]
+atlas = ExtResource("2_0vehs")
+region = Rect2(0, 0, 709, 403)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i6q37"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kya8")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lt83e")
+}],
+"loop": true,
+"name": &"Full",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sn5db"]
+
+[node name="Lona" type="StaticBody3D" groups=["destructibles"]]
+script = ExtResource("1_lrsmt")
+
+[node name="animations" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i6q37")
+animation = &"Full"
+autoplay = "Full"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(6.91829, 0, 0, 0, 4.1516, 0, 0, 0, 0.186752, 0, 0, 0)
+shape = SubResource("BoxShape3D_sn5db")

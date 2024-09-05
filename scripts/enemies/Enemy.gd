@@ -18,13 +18,15 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var animation_tree = $AnimationTree
 @onready var dead_mopa = $DeadMopa
 @onready var dead_hidro = $DeadHidro
+@onready var dead_knife = $DeadKnife
+
 
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 
 #internal variables
 var player
 var distance
-var see_range := 30.0
+var see_range := 100.0
 var can_move := true
 var can_attack := true
 var enemyDead := false
@@ -48,6 +50,7 @@ var hp: int = max_hp:
 				dead_hidro.play()
 			elif knifeDeath == true:
 				playback.travel("knifeDeath")
+				dead_knife.play()
 			$CollisionShape3D.disabled = true
 
 
@@ -126,6 +129,12 @@ func enemyTakeDamageWithMopa(dmg_amount):
 
 func enemyTakeDamageWithHidro(dmg_amount):
 	playback.travel("hit-hidro")
+	current_state = EnemyStates.Chasing
+	print(dmg_amount)
+	hp -= dmg_amount
+
+func enemyTakeDamageWithKnife(dmg_amount):
+	playback.travel("hitKnife")
 	current_state = EnemyStates.Chasing
 	print(dmg_amount)
 	hp -= dmg_amount

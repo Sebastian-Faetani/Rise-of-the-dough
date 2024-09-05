@@ -1,10 +1,12 @@
 extends Node3D
+var level2 = preload("res://scenes/maps/Map2.tscn")
+
 @onready var pause_menu = $Pause_menu
 @onready var gameplay_music = $Gameplay_Music
 @onready var clocktick = $Maps/Level1/TicTac
 @onready var alarm_sound = $"Maps/Level1/alarm sound"
 @onready var level_1: Node3D = $Maps/Level1
-@onready var level_2: Node3D = $Maps/Level2
+
 @onready var load_trigger: Area3D = $Maps/Level1/LoadTrigger
 
 
@@ -35,7 +37,8 @@ func PauseMenu():
 	paused = !paused
 
 
-func _on_load_trigger_body_entered(body: Node3D) -> void:
-	level_2.show()
-	
+func _on_load_trigger_body_entered(body) -> void:
+	var  Level2 = level2.instantiate()
+	$Maps.add_child(Level2)
+
 	level_1.queue_free()

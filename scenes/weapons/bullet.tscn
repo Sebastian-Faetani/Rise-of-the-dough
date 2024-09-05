@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgqop2imfgif8"]
+[gd_scene load_steps=7 format=3 uid="uid://bgqop2imfgif8"]
 
 [ext_resource type="Script" path="res://scripts/weapons/bullet.gd" id="1_a4has"]
+[ext_resource type="Texture2D" uid="uid://b2bkw3xupp1xy" path="res://assets/weapons/Sprite_chorro_hidro.png" id="2_i4uov"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eaked"]
 albedo_color = Color(0.264906, 0.553696, 0.64239, 1)
@@ -11,21 +12,33 @@ albedo_color = Color(0.264906, 0.553696, 0.64239, 1)
 radius = 0.514895
 height = 1.13653
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v3kkc"]
+
 [node name="Bullet" type="RigidBody3D"]
 script = ExtResource("1_a4has")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.175586, 0, 0, 0, 0.0578858, 0, 0, 0, 0.669707, 0, 0, 0)
+transform = Transform3D(0.0354529, 0, 0, 0, 0.0116878, 0, 0, 0, 0.135222, 0.0104955, -0.0031088, -0.100723)
 material_override = SubResource("StandardMaterial3D_eaked")
 mesh = SubResource("CapsuleMesh_ps0u5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.0824114, 0, 0, 0, 0.0584506, 0, 0, 0, 0.342277, 0, 0, 0)
+transform = Transform3D(0.0356139, 0, 0, 0, 0.0252593, 0, 0, 0, 0.147914, 0, 0, -0.0682204)
 shape = SubResource("CapsuleShape3D_newu6")
 
 [node name="GunRays" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.137377)
 
 [node name="RayCast3D" type="RayCast3D" parent="GunRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.144603)
+transform = Transform3D(0.264422, 0, 0, 0, 0.223923, 0, 0, 0, 0.218235, 0.00933177, 0, 0.0640901)
 target_position = Vector3(0, 0, -0.5)
 collision_mask = 3
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.602082, 0, 0, 0, 0.205618, 0.565884, 0, -0.565884, 0.205618, 0, 0, 0)
+texture = ExtResource("2_i4uov")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.00010967, 0, 0, 0, 0.00010967, 0, 0, 0, 6.33218e-08, 0, 0, -0.000572024)
+visible = false
+shape = SubResource("BoxShape3D_v3kkc")

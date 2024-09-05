@@ -4,14 +4,13 @@ class_name EnemyDistance
 # External variables
 @export var speed = 9.0
 @export var attack_range := 2.6
-@export var max_hp = 40
+@export var max_hp = 500
 @export var attack_damage := 20
 @export var cooldown_time = 1.5
 @export var aggro_range := 15.0
-@export var range_shoot := 40.0
+@export var range_shoot := 20.0
 @export var bullet_speed := 10.0 # Nueva variable para la velocidad de la bala
 var Bullet = preload("res://scenes/enemies/bullet_enemy.tscn")
-
 # Declared variables
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var animated_sprite_3d = $AnimatedSprite3D
@@ -21,6 +20,13 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var animation_tree = $AnimationTree
 @onready var dead_mopa = $DeadMopa
 @onready var dead_hidro = $DeadHidro
+@onready var dead_knife = $DeadKnife
+
+@onready var gun_rays = $GunRays.get_children()
+@onready var bullet_position = $bullet_position
+
+
+
 
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 
@@ -52,12 +58,11 @@ var hp: int = max_hp:
 				dead_hidro.play()
 			elif knifeDeath == true:
 				playback.travel("knifeDeath")
+				dead_hidro.play()
 			$CollisionShape3D.disabled = true
 
 enum EnemyStates {
 	Idle,
-	Chasing,
-	Attacking,
 	Death,
 	Throwing
 }
@@ -77,30 +82,20 @@ func _physics_process(delta):
 		EnemyStates.Idle:
 			can_move = true
 			if distance < aggro_range:
-				current_state = EnemyStates.Chasing
-		EnemyStates.Chasing:
-			chase()
-			if distance > see_range:
 				current_state = EnemyStates.Idle
-			elif distance <= attack_range and can_attack:
-				current_state = EnemyStates.Attacking
+		
+			chase()
 			if distance > see_range:
 				current_state = EnemyStates.Idle
 			elif distance <= range_shoot and can_attack:
 				current_state = EnemyStates.Throwing
-		EnemyStates.Attacking:
-			if can_attack:
-				can_attack = false
-				playback.travel("attack")
-				attack_cooldown.start(cooldown_time)
-				current_state = EnemyStates.Chasing
 		EnemyStates.Throwing:
 			if can_attack:
 				can_attack = false
 				playback.travel("attack")
 				attack_cooldown.start(cooldown_time)
-				current_state = EnemyStates.Chasing
-				shoot()
+				current_state = EnemyStates.Idle
+				#shoot()
 		EnemyStates.Death:
 			pass
 
@@ -132,18 +127,24 @@ func chase():
 
 func enemyTakeDamageWithMopa(dmg_amount):
 	playback.travel("hit-mopa")
-	current_state = EnemyStates.Chasing
+	current_state = EnemyStates.Idle
 	print(dmg_amount)
 	hp -= dmg_amount
 
 func enemyTakeDamageWithHidro(dmg_amount):
 	playback.travel("hit-hidro")
-	current_state = EnemyStates.Chasing
+	current_state = EnemyStates.Idle
+	print(dmg_amount)
+	hp -= dmg_amount
+
+func enemyTakeDamageWithKnife(dmg_amount):
+	playback.travel("hitKnife")
+	current_state = EnemyStates.Idle
 	print(dmg_amount)
 	hp -= dmg_amount
 
 func enemyTakeDamage(dmg_amount):
-	current_state = EnemyStates.Chasing
+	current_state = EnemyStates.Idle
 	print(dmg_amount)
 	hp -= dmg_amount
 
@@ -161,7 +162,8 @@ func _on_attack_cooldown_timeout():
 func shoot() -> void:
 		if Bullet:
 			var bullet = Bullet.instantiate()
-			get_parent().add_child(bullet)
+			var W = get_tree().get_root()
+			W.add_child(bullet)
 			bullet.global_position = global_position
 			var direction = (player.global_position - global_position).normalized()
 			if bullet.has_method("set_direction"):

@@ -1,10 +1,12 @@
 res://scripts/world
 res://scenes/world
+res://assets/enviroment
+res://assets/enemies/CañoncitoEnemy
+res://scripts/enemies
 res://assets/enemies/BossEnemy
+res://assets/enemies/BaguetteEnemy
 res://
 res://scenes/maps
-res://assets/enemies/BaguetteEnemy
-res://scripts/enemies
 res://scripts/weapons
 res://scenes/enemies
 res://assets/weapons

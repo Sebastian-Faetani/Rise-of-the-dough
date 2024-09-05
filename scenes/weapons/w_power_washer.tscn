@@ -241,4 +241,4 @@ target_position = Vector3(0, 0, -20)
 collision_mask = 3
 
 [node name="bullet_position" type="Marker3D" parent="."]
-transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 0, -0.775994)
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 0, -0.89911)

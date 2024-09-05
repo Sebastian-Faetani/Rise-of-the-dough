@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://utsjrli2iinq"]
+[gd_scene load_steps=3 format=3 uid="uid://utsjrli2iinq"]
 
 [ext_resource type="Script" path="res://scenes/UI/pause_menu.gd" id="1_1pibt"]
+[ext_resource type="Texture2D" uid="uid://qfbbdppvd4db" path="res://assets/interfaz/controles.png" id="2_frf8t"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -31,6 +32,11 @@ text = "Menú principal"
 [node name="Controles" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Controles"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64, 155)
+scale = Vector2(0.229977, 0.229977)
+texture = ExtResource("2_frf8t")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Reanudar" to="." method="_on_reanudar_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

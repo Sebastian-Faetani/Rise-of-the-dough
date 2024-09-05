@@ -18,6 +18,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var animation_tree = $AnimationTree
 @onready var dead_mopa = $DeadMopa
 @onready var dead_hidro = $DeadHidro
+@onready var dead_knife = $DeadKnife
+
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 
 #internal variables
@@ -47,6 +49,7 @@ var hp: int = max_hp:
 				dead_hidro.play()
 			elif knifeDeath == true:
 				playback.travel("knifeDeath")
+				dead_knife.play()
 			$CollisionShape3D.disabled = true
 
 
@@ -117,10 +120,27 @@ func chase():
 	navigation_agent_3d.target_position = player.global_position
 
 
+func enemyTakeDamageWithMopa(dmg_amount):
+	playback.travel("hit-mopa")
+	current_state = EnemyStates.Chasing
+	print(dmg_amount)
+	hp -= dmg_amount
+func enemyTakeDamageWithHidro(gun_damage):
+	playback.travel("hit-hidro")
+	current_state = EnemyStates.Chasing
+	print(gun_damage)
+	hp -= gun_damage
 func enemyTakeDamage(dmg_amount):
 	current_state = EnemyStates.Chasing
 	print(dmg_amount)
 	hp -= dmg_amount
+	
+func enemyTakeDamageWithKnife(gun_damage):
+	playback.travel("hitKnife")
+	current_state = EnemyStates.Chasing
+	print(gun_damage)
+	hp -= gun_damage
+
 
 func DeathByMop(bool):
 	mopDeath = bool
@@ -129,7 +149,7 @@ func DeathByWater(bool):
 	waterDeath = bool
 
 func DeathByKnife(bool):
-	waterDeath = bool
+	knifeDeath = bool
 
 func _on_attack_cooldown_timeout():
 	can_attack = true
