@@ -1,8 +1,10 @@
+Sprite3D
+AudioStreamPlayer
+CollisionShape3D
+Area3D
 CSGPolygon3D
 Node3D
 OmniLight3D
-CollisionShape3D
-Sprite3D
 StaticBody3D
 AnimatedSprite3D
 AnimationPlayer
@@ -10,5 +12,3 @@ RigidBody3D
 Timer
 Sprite2D
 SpotLight3D
-AudioStreamPlayer
-Marker3D

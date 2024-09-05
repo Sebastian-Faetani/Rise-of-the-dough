@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bp0phkuwvcpfy"]
+[gd_scene load_steps=4 format=3 uid="uid://bp0phkuwvcpfy"]
 
 [ext_resource type="Script" path="res://scripts/world/keypadproduccion.gd" id="1_m4qa5"]
-[ext_resource type="Texture2D" uid="uid://cj40xuv2pexgp" path="res://assets/enviroment/KeypadRed.jpg" id="2_j7uvr"]
+[ext_resource type="Texture2D" uid="uid://ofbl5hn46pl0" path="res://assets/enviroment/Sprite_boton_emergencia.png" id="2_vipqf"]
 
-[node name="keypadproduccion" type="StaticBody3D" groups=["salida3"]]
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfr0b"]
+size = Vector3(1.31128, 0.725952, 1)
+
+[node name="Boton" type="StaticBody3D" groups=["salida3"]]
 script = ExtResource("1_m4qa5")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource("2_j7uvr")
+texture = ExtResource("2_vipqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2.3, 0, 0, 0, 0.0305831, -0.00183105, -0.0108093, 0)
+shape = SubResource("BoxShape3D_nfr0b")

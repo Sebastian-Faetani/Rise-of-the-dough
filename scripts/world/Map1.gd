@@ -17,6 +17,7 @@ func _ready():
 	#gameplay_music.play()
 	alarm_sound.play()
 	clocktick.play()
+	gameplay_music.play()
 	Input.MOUSE_MODE_CAPTURED
 	get_tree().paused = false
 	#gameplay_music.play()
@@ -40,5 +41,5 @@ func PauseMenu():
 func _on_load_trigger_body_entered(body) -> void:
 	var  Level2 = level2.instantiate()
 	$Maps.add_child(Level2)
-
+	gameplay_music.stop()
 	level_1.queue_free()

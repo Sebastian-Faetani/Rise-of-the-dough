@@ -13,7 +13,7 @@ script = ExtResource("1_ph56f")
 texture = ExtResource("1_v6v5l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.14014, 0, 0, 0, 1.20858, 0, 0, 0, 0.0527059, -0.00695658, -0.0115747, -0.000580639)
+transform = Transform3D(1.14014, 0, 0, 0, 1.20858, 0, 0, 0, 0.082008, -0.00695658, -0.0115747, -0.000580639)
 shape = SubResource("BoxShape3D_ydkxr")
 
 [connection signal="texture_changed" from="Sprite3D" to="." method="_on_sprite_3d_texture_changed"]

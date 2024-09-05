@@ -13,5 +13,5 @@ script = ExtResource("1_c2fxy")
 texture = ExtResource("1_085sv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00674438, -0.00305176, -0.00842285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00674438, -0.00305176, 8.88575e-05)
 shape = SubResource("BoxShape3D_hesju")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://im43n3og7i3l"]
+[gd_scene load_steps=9 format=3 uid="uid://im43n3og7i3l"]
 
 [ext_resource type="Texture2D" uid="uid://badqj4x2sjvww" path="res://assets/enviroment/Sprite_lona_cortada.png" id="1_bd2v2"]
 [ext_resource type="Script" path="res://scripts/world/lona.gd" id="1_lrsmt"]
 [ext_resource type="Texture2D" uid="uid://cqmnllrhkbvkb" path="res://assets/enviroment/Sprite_lona.png" id="2_0vehs"]
+[ext_resource type="AudioStream" uid="uid://deqbvyrifvbn3" path="res://sounds/environment/lonaRipping.mp3" id="4_kp345"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2kya8"]
 atlas = ExtResource("1_bd2v2")
@@ -49,3 +50,6 @@ autoplay = "Full"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(6.91829, 0, 0, 0, 4.1516, 0, 0, 0, 0.186752, 0, 0, 0)
 shape = SubResource("BoxShape3D_sn5db")
+
+[node name="SeRompio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kp345")

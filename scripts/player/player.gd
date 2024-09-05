@@ -240,8 +240,8 @@ func _physics_process(delta):
 		var collider = interact.get_collider()
 		if collider != null:
 			if collider.is_in_group("salida3"):
-				collectkeyfabrica = false
 				collider.bye3()
+				collectkeyfabrica = false
 	if velocity.x != 0 and is_on_floor():
 		if !foots.playing:
 			foots.play()
