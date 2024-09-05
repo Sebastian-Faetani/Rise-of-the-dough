@@ -48,6 +48,7 @@ var crouch_depth = -0.5
 var collectkey = false
 var hasWon = false
 var collectkeyfabrica = false
+var collectkeyascensor = false
 var attackBullet := 30.0
 
 #slide variables
@@ -229,6 +230,18 @@ func _physics_process(delta):
 			if collider.is_in_group("exit2"):
 				collectkeyfabrica = false
 				collider.bye2()
+	if Input.is_action_just_pressed("interact"):
+		var collider = interact.get_collider()
+		if collider != null:
+			if collider.is_in_group("interaction3"):
+				collectkeyascensor = true
+				collider.collectkeyAscensor()
+	if Input.is_action_just_pressed("interact") and collectkeyascensor == true:
+		var collider = interact.get_collider()
+		if collider != null:
+			if collider.is_in_group("salida3"):
+				collectkeyfabrica = false
+				collider.bye3()
 	if velocity.x != 0 and is_on_floor():
 		if !foots.playing:
 			foots.play()

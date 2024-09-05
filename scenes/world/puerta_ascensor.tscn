@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://clpiw8h1fkgsb"]
+
+[ext_resource type="Texture2D" uid="uid://uj7cy7rbv5tv" path="res://assets/enviroment/Sprite_puerta_ascensor.png" id="1_c8c6t"]
+[ext_resource type="Script" path="res://scripts/world/puerta_ascensor.gd" id="1_mi5we"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vphkc"]
+size = Vector3(3.87964, 9.81628, 0.116943)
+
+[node name="puertaAscensor" type="StaticBody3D" groups=["salidaAscensor"]]
+script = ExtResource("1_mi5we")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98077, 0, -0.000637054)
+texture = ExtResource("1_c8c6t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sprite3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0262481, -0.0103145, 0.021368)
+shape = SubResource("BoxShape3D_vphkc")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8238, 0.014792, -0.00498486)
+texture = ExtResource("1_c8c6t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sprite3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0262481, -0.0103145, 0.021368)
+shape = SubResource("BoxShape3D_vphkc")

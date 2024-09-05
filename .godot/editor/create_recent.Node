@@ -1,8 +1,9 @@
+OmniLight3D
+CollisionShape3D
+Sprite3D
 StaticBody3D
 AnimatedSprite3D
 AnimationPlayer
-CollisionShape3D
-Sprite3D
 RigidBody3D
 Timer
 Sprite2D

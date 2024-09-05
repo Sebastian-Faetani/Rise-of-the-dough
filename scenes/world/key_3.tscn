@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://d22gb3ioleyto"]
+
+[ext_resource type="Texture2D" uid="uid://dp1hf06hy38ts" path="res://assets/enviroment/Sprite_llave_2.png" id="1_085sv"]
+[ext_resource type="Script" path="res://scripts/world/key_3.gd" id="1_c2fxy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hesju"]
+size = Vector3(1.30072, 0.805908, 0.0388184)
+
+[node name="key3" type="StaticBody3D" groups=["interaction3"]]
+script = ExtResource("1_c2fxy")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_085sv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00674438, -0.00305176, -0.00842285)
+shape = SubResource("BoxShape3D_hesju")

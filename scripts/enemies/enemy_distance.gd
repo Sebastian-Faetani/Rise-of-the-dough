@@ -4,7 +4,7 @@ class_name EnemyDistance
 # External variables
 @export var speed = 9.0
 @export var attack_range := 2.6
-@export var max_hp = 500
+@export var max_hp = 100
 @export var attack_damage := 20
 @export var cooldown_time = 1.5
 @export var aggro_range := 15.0
@@ -58,7 +58,7 @@ var hp: int = max_hp:
 				dead_hidro.play()
 			elif knifeDeath == true:
 				playback.travel("knifeDeath")
-				dead_hidro.play()
+				dead_knife.play()
 			$CollisionShape3D.disabled = true
 
 enum EnemyStates {
