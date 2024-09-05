@@ -1,3 +1,5 @@
+CSGPolygon3D
+Node3D
 OmniLight3D
 CollisionShape3D
 Sprite3D
@@ -10,6 +12,3 @@ Sprite2D
 SpotLight3D
 AudioStreamPlayer
 Marker3D
-RayCast3D
-Node3D
-MeshInstance3D

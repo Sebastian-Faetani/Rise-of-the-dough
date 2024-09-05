@@ -1,3 +1,4 @@
+res://assets/maps
 res://scripts/world
 res://scenes/world
 res://assets/enviroment
@@ -12,7 +13,6 @@ res://scenes/enemies
 res://assets/weapons
 res://scenes/weapons
 res://scripts/player
-res://assets/maps
 res://scripts/UI
 C:/Users/Sebas/Desktop/godotProyects
 res://assets/ui
