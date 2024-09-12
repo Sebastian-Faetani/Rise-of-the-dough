@@ -1,13 +1,4 @@
-res://scenes/enemies/bullet_enemy.tscn
-res://scripts/enemies/bullet_enemy.gd
-res://scenes/player/player.tscn
-res://scenes/enemies/mb_enemy.tscn
-res://scenes/maps/Map1.tscn
-res://scenes/maps/Map2.tscn
-res://scenes/weapons/bullet.tscn
-res://scenes/world/enemy_spawner.tscn
-res://scenes/enemies/enemy.tscn
-res://scenes/world/emergency_button.tscn
-res://scenes/world/ObjetoCurable.tscn
-res://scenes/UI/play_menu.tscn
-res://scenes/enemies/enemy_distance.tscn
+res://scenes/UI/controls_explained.tscn
+res://assets/maps/OutlineColor.tres
+res://scripts/UI/window_mode_button.gd
+res://scenes/UI/credit_menu.tscn

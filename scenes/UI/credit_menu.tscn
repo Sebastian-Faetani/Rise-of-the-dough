@@ -17,15 +17,16 @@ position = Vector2(960, 540)
 texture = ExtResource("2_mhn2a")
 
 [node name="names" type="Label" parent="."]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -259.0
+offset_left = 66.0
 offset_top = -327.0
-offset_right = 169.0
+offset_right = 494.0
 offset_bottom = -186.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -38,13 +39,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="title programadores" type="Label" parent="."]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -304.0
+offset_left = 21.0
 offset_top = 102.0
-offset_right = 296.0
+offset_right = 621.0
 offset_bottom = 212.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -54,15 +56,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="title artis" type="Label" parent="."]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -133.0
+offset_left = 192.0
 offset_top = -176.0
-offset_right = 124.0
+offset_right = 449.0
 offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -73,15 +76,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="artist name" type="Label" parent="."]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -177.0
+offset_left = 148.0
 offset_top = -80.0
-offset_right = 98.0
+offset_right = 423.0
 offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -93,36 +97,38 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="back_button" type="Button" parent="."]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -78.0
+offset_left = 246.5
 offset_top = -199.0
-offset_right = 79.0
+offset_right = 404.5
 offset_bottom = -123.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 49
 text = "Volver
 "
 flat = true
 
 [node name="design name" type="Label" parent="."]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.5
+offset_left = 124.5
 offset_top = 21.28
-offset_right = 196.5
+offset_right = 521.5
 offset_bottom = 131.28
 grow_horizontal = 2
 grow_vertical = 2
@@ -132,15 +138,16 @@ text = "Diseñador"
 horizontal_alignment = 1
 
 [node name="designer name" type="Label" parent="."]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -235.0
+offset_left = 90.0
 offset_top = 103.0
-offset_right = 193.0
+offset_right = 518.0
 offset_bottom = 172.0
 grow_horizontal = 2
 grow_vertical = 2
