@@ -11,26 +11,31 @@
 [sub_resource type="BoxMesh" id="BoxMesh_jr4c3"]
 
 [node name="BulletEnemy" type="RigidBody3D"]
+transform = Transform3D(-0.0970097, 0, 0.995283, 0, 1, 0, -0.995283, 0, -0.0970097, 0, 0, 0)
 lock_rotation = true
 script = ExtResource("1_jlmeg")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1.73657, 0, 0, 0, 1.73657, 0, 0, 0, 1.73657, 0, 0, 0.0395237)
-visible = false
-billboard = 1
 texture = ExtResource("2_r0rhn")
 
 [node name="EnemyRay" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.30657)
 
 [node name="RayCast3D2" type="RayCast3D" parent="EnemyRay"]
-transform = Transform3D(5.37203e-09, -0.122898, 1.8557e-08, -0.122898, -5.37203e-09, 5.29396e-23, 8.11154e-16, -1.8557e-08, -0.122898, 0.558327, 0.00964797, -0.290807)
+transform = Transform3D(1.66533e-16, 0, 0.122898, -0.122898, -5.37205e-09, 0, 5.37205e-09, -0.122898, -9.31323e-10, -0.0459575, 0.00964797, 0.161448)
+
+[node name="RayCast3D3" type="RayCast3D" parent="EnemyRay"]
+transform = Transform3D(-8.14907e-10, -4.65661e-09, -0.122898, -0.122084, 0.0141256, 0, 0.0141256, 0.122084, -1.02445e-08, 0.045799, 0.00964797, -0.779938)
+
+[node name="RayCast3D5" type="RayCast3D" parent="EnemyRay"]
+transform = Transform3D(-6.98492e-10, -5.58794e-09, -0.122898, -0.122084, 0.0141256, 0, 0.0141256, 0.122084, -8.3819e-09, -0.00455423, 0.00964797, -0.263332)
 
 [node name="RayCast3D4" type="RayCast3D" parent="EnemyRay"]
 transform = Transform3D(-0.123, 1.0753e-08, 0, -1.0753e-08, -0.123, 0, 0, 0, 0.123, 0.00644945, 0.560837, -0.299078)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.1271, 0, 0, 0, 1.1271, 0, 0, 0, 1.1271, 0, 0, 0)
+transform = Transform3D(1.0018, 0, -7.45058e-09, 0, 1.0018, 0, 7.45058e-09, 0, 1.0018, 0, 0, 0)
 shape = SubResource("SphereShape3D_madkd")
 
 [node name="Timer" type="Timer" parent="."]
@@ -38,10 +43,12 @@ wait_time = 2.0
 autostart = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("SphereMesh_yjcdx")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.404234, 0, 0, 0, 0.40851, 0.166752, 0, 0)
+visible = false
 material_override = ExtResource("3_yen4e")
 mesh = SubResource("BoxMesh_jr4c3")
 

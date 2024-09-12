@@ -10,8 +10,10 @@ func _ready():
 	linear_velocity = direction * speed
 	player = get_tree().get_first_node_in_group("player")
 	
+	
 func set_direction (direction : Vector3) -> void:
 	linear_velocity = direction * speed
+	look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
 
 func check_hit():
 	for ray in enemy_ray:
@@ -23,7 +25,7 @@ func check_hit():
 			queue_free()
 				
 
-func _process(_delta):
+func _process(delta: float) -> void:
 	check_hit()
 	
 	
@@ -33,3 +35,6 @@ func danio():
 
 func _on_timer_timeout() -> void:
 	queue_free()
+
+
+	

@@ -1,5 +1,5 @@
 res://scenes/enemies/bullet_enemy.tscn
-res://assets/maps/OutlineColor.tres
+res://scripts/enemies/bullet_enemy.gd
 res://scenes/player/player.tscn
 res://scenes/enemies/mb_enemy.tscn
 res://scenes/maps/Map1.tscn
