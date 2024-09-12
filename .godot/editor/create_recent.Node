@@ -1,3 +1,4 @@
+MeshInstance3D
 CSGBox3D
 Timer
 CollisionShape3D
@@ -12,4 +13,3 @@ AnimatedSprite3D
 AnimationPlayer
 RigidBody3D
 Sprite2D
-SpotLight3D
