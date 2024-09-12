@@ -592,7 +592,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-284.357, 20)
 
 [node name="EnemyDistance" type="CharacterBody3D" groups=["enemies"]]
-transform = Transform3D(0.535, 0, 0, 0, 0.535, 0, 0, 0, 0.535, 0, 0.906767, 0)
+transform = Transform3D(1.325, 0, 0, 0, 1.325, 0, 0, 0, 1.325, 0, 1.26186, 0)
 script = ExtResource("1_o5d7d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -601,7 +601,6 @@ shape = SubResource("CapsuleShape3D_1uxvl")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1.00132, 0, 0, 0, 1.00132, 0, 0, 0, 1.00132, 0, 0.869329, 0)
-billboard = 1
 shaded = true
 sprite_frames = SubResource("SpriteFrames_11voo")
 animation = &"attack"

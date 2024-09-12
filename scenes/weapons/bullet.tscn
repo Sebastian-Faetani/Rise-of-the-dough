@@ -15,6 +15,7 @@ height = 1.13653
 [sub_resource type="BoxShape3D" id="BoxShape3D_v3kkc"]
 
 [node name="Bullet" type="RigidBody3D"]
+lock_rotation = true
 script = ExtResource("1_a4has")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

@@ -6,6 +6,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_madkd"]
 
 [node name="BulletEnemy" type="RigidBody3D"]
+lock_rotation = true
 script = ExtResource("1_jlmeg")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

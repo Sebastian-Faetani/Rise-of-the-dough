@@ -2,7 +2,6 @@ extends CharacterBody3D
 class_name EnemyDistance
 
 # External variables
-@export var speed = 9.0
 @export var attack_range := 2.6
 @export var max_hp = 100
 @export var attack_damage := 20
@@ -73,6 +72,9 @@ var current_state = initial_state
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 
+func _process(delta: float) -> void:
+	look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
+
 func _physics_process(delta):
 	var next_position = navigation_agent_3d.get_next_path_position()
 	distance = global_position.distance_to(player.global_position)
@@ -106,17 +108,9 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	
 	var direction = global_position.direction_to(next_position)
-	if direction:
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-		velocity.z = move_toward(velocity.z, 0, speed)
 	
 	if distancetoshoot <= range_shoot and can_attack:
 		pass
-		
-	move_and_slide()
 
 func attack() -> void:
 	if distance <= attack_range:

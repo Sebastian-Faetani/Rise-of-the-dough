@@ -26,6 +26,7 @@ func check_hit():
 func _process(_delta):
 	check_hit()
 	
+	
 func danio():
 	player.current_player_health -= damage
 
