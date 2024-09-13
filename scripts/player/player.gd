@@ -19,6 +19,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var foots = $FootSteps
 @onready var stamina_bar: TextureProgressBar = $StaminaBar
 @onready var stamina_time: Timer = $StaminaTime
+@onready var weapon_handler = $Head/Weapon_handler
 
 #stamina
 @export var max_player_stamina: int = 100
@@ -50,7 +51,6 @@ var hasWon = false
 var collectkeyfabrica = false
 var collectkeyascensor = false
 var attackBullet := 30.0
-
 #slide variables
 var slide_timer = 0.0
 var slider_timer_max = 1.0
@@ -113,14 +113,13 @@ func _process(_delta):
 		if currentWeapon < 0:
 			currentWeapon = len(carried_guns) - 1
 		change_gun(currentWeapon)
-	
+
 func _physics_process(delta):
 	if dead:
 		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_foward", "move_backwards")

@@ -1,3 +1,4 @@
+VideoStreamPlayer
 MeshInstance3D
 CSGBox3D
 Timer
@@ -12,4 +13,3 @@ OmniLight3D
 AnimatedSprite3D
 AnimationPlayer
 RigidBody3D
-Sprite2D
