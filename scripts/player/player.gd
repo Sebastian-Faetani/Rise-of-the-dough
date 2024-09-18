@@ -21,6 +21,14 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var stamina_time: Timer = $StaminaTime
 @onready var weapon_handler = $Head/Weapon_handler
 
+@onready var pickup: Label = $mensajes/Pickup
+@onready var doormensaje: Label = $mensajes/doormensaje
+@onready var keypadmensajekeynotobtained: Label = $mensajes/keypadmensajekeynotobtained
+@onready var keypadmensajekeyobtained: Label = $mensajes/keypadmensajekeyobtained2
+@onready var spawnermensaje: Label = $mensajes/spawnermensaje
+
+
+
 #stamina
 @export var max_player_stamina: int = 100
 @onready var current_player_stamina: int = max_player_stamina
@@ -271,7 +279,7 @@ func _on_stamina_time_timeout() -> void:
 	current_player_stamina = min(current_player_stamina + 25, max_player_stamina)
 
 func curar():
-	current_player_health += 25
+	current_player_health += 50
 
 func danio():
 	current_player_health -= attackBullet

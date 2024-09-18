@@ -243,4 +243,111 @@ bus = &"Weapons"
 stream = ExtResource("20_6n66o")
 bus = &"Weapons"
 
+[node name="mensajes" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pickup" type="Label" parent="mensajes"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 626.0
+offset_top = 485.0
+offset_right = 1254.0
+offset_bottom = 555.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 51
+text = "Presione \"E\" para recoger"
+
+[node name="doormensaje" type="Label" parent="mensajes"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 626.0
+offset_top = 485.0
+offset_right = 1254.0
+offset_bottom = 555.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 51
+text = "Presione \"E\" para abrir"
+
+[node name="keypadmensajekeynotobtained" type="Label" parent="mensajes"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 514.5
+offset_top = 485.0
+offset_right = 1365.5
+offset_bottom = 555.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 51
+text = "Necesitas una llave para abrir esto"
+
+[node name="keypadmensajekeyobtained2" type="Label" parent="mensajes"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 626.0
+offset_top = 485.0
+offset_right = 1254.0
+offset_bottom = 555.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 51
+text = "Presione \"E\" para abrir"
+
+[node name="spawnermensaje" type="Label" parent="mensajes"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 383.0
+offset_top = 485.0
+offset_right = 1497.0
+offset_bottom = 555.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 51
+text = "Que ha sido eso, creo que se ha activado algo"
+
 [connection signal="timeout" from="StaminaTime" to="." method="_on_stamina_time_timeout"]

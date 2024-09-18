@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp0phkuwvcpfy"]
+[gd_scene load_steps=5 format=3 uid="uid://bp0phkuwvcpfy"]
 
 [ext_resource type="Script" path="res://scripts/world/keypadproduccion.gd" id="1_m4qa5"]
 [ext_resource type="Texture2D" uid="uid://cj40xuv2pexgp" path="res://assets/enviroment/KeypadRed.jpg" id="2_6xh1i"]
@@ -6,7 +6,10 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_nfr0b"]
 size = Vector3(1.14886, 2.24883, 0.0637512)
 
-[node name="Boton" type="StaticBody3D" groups=["salida3"]]
+[sub_resource type="BoxShape3D" id="BoxShape3D_kgecj"]
+size = Vector3(1, 3, 2.55359)
+
+[node name="keypadproduccion" type="StaticBody3D" groups=["salida3"]]
 script = ExtResource("1_m4qa5")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -15,3 +18,12 @@ texture = ExtResource("2_6xh1i")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00527943, 0.00824133, 0.00480652)
 shape = SubResource("BoxShape3D_nfr0b")
+
+[node name="notified" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="notified"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.776794)
+shape = SubResource("BoxShape3D_kgecj")
+
+[connection signal="body_entered" from="notified" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="notified" to="." method="_on_area_3d_body_exited"]
