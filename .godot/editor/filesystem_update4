@@ -12,5 +12,3 @@ res://scenes/UI/play_menu.tscn
 res://scenes/enemies/enemy_distance.tscn
 res://scenes/weapons/w_clap.tscn
 res://scenes/UI/story_scene.tscn
-res://scripts/UI/story_scene.gd
-res://scripts/player/player.gd
