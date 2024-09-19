@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bto0qbfo0ecsw"]
+
+[ext_resource type="Texture2D" uid="uid://bsaauuwebj0wr" path="res://assets/enviroment/Capi_standee_roto.png" id="1_05qa8"]
+[ext_resource type="Script" path="res://scripts/world/capi.gd" id="1_yhade"]
+[ext_resource type="Texture2D" uid="uid://bpl2i0w202p7l" path="res://assets/enviroment/Capi_standee.png" id="2_ak24y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dix1m"]
+atlas = ExtResource("1_05qa8")
+region = Rect2(0, 0, 792, 470)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tf6kt"]
+atlas = ExtResource("2_ak24y")
+region = Rect2(0, 0, 475, 734)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b6cha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dix1m")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tf6kt")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ns6qq"]
+size = Vector3(4.34955, 7.18916, 0.611626)
+
+[node name="capi" type="StaticBody3D" groups=["destructiblecapi"]]
+script = ExtResource("1_yhade")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." groups=["destructiblecapi"]]
+sprite_frames = SubResource("SpriteFrames_b6cha")
+animation = &"full"
+autoplay = "full"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00967407, 0.0556259, -0.00877762)
+shape = SubResource("BoxShape3D_ns6qq")

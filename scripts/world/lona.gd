@@ -3,7 +3,7 @@ extends StaticBody3D
 @onready var se_rompio = $SeRompio
 
 
-func seRompe():
+func seRompeLona():
 	animation.play("Dead")
 	se_rompio.play()
 	$CollisionShape3D.disabled = true

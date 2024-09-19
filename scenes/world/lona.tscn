@@ -39,7 +39,7 @@ animations = [{
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sn5db"]
 
-[node name="Lona" type="StaticBody3D" groups=["destructibles"]]
+[node name="Lona" type="StaticBody3D" groups=["destructiblelona"]]
 script = ExtResource("1_lrsmt")
 
 [node name="animations" type="AnimatedSprite3D" parent="."]
@@ -47,7 +47,7 @@ sprite_frames = SubResource("SpriteFrames_i6q37")
 animation = &"Full"
 autoplay = "Full"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["destructiblelona"]]
 transform = Transform3D(6.91829, 0, 0, 0, 4.1516, 0, 0, 0, 0.186752, 0, 0, 0)
 shape = SubResource("BoxShape3D_sn5db")
 

@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://k8viq0sjm8j6"]
+
+[ext_resource type="Texture2D" uid="uid://cmph3x8qtalvy" path="res://assets/enviroment/Sprite_masa2_roto.png" id="1_21kvy"]
+[ext_resource type="Script" path="res://scripts/world/masa_2.gd" id="1_j7o0y"]
+[ext_resource type="Texture2D" uid="uid://cc32gv012xaxs" path="res://assets/enviroment/Sprite_masa2.png" id="2_jk3bl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o1pu8"]
+size = Vector3(5, 3.66693, 0.763977)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3cxh"]
+atlas = ExtResource("1_21kvy")
+region = Rect2(0, 0, 466, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66wgf"]
+atlas = ExtResource("2_jk3bl")
+region = Rect2(0, 0, 465, 370)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ukspt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3cxh")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66wgf")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}]
+
+[node name="masa2" type="StaticBody3D" groups=["destructiblemasa2"]]
+script = ExtResource("1_j7o0y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.12, 0, 0.0179749, 0.0294983)
+shape = SubResource("BoxShape3D_o1pu8")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ukspt")
+animation = &"full"
+autoplay = "full"

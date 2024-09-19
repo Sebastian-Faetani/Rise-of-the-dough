@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7atpxf46yo57"]
+
+[ext_resource type="Texture2D" uid="uid://dynbkftl1uxel" path="res://assets/enviroment/Sprite_cajas_roto.png" id="1_0x41o"]
+[ext_resource type="Script" path="res://scripts/world/cajas.gd" id="1_okbfd"]
+[ext_resource type="Texture2D" uid="uid://qb13mwxexme7" path="res://assets/enviroment/Sprite_cajas.png" id="2_6x86k"]
+[ext_resource type="AudioStream" uid="uid://y7qnsk7su8x4" path="res://sounds/environment/box-crash-106687.mp3" id="4_38p4e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_slb81"]
+size = Vector3(2.24756, 4.2478, 0.292664)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh0gk"]
+atlas = ExtResource("1_0x41o")
+region = Rect2(0, 0, 487, 302)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ke5g"]
+atlas = ExtResource("2_6x86k")
+region = Rect2(0, 0, 228, 416)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bywy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh0gk")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ke5g")
+}],
+"loop": true,
+"name": &"Full",
+"speed": 5.0
+}]
+
+[node name="cajas" type="StaticBody3D" groups=["destructiblecaja"]]
+script = ExtResource("1_okbfd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0251465, -0.0657959, -0.0332336)
+shape = SubResource("BoxShape3D_slb81")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." groups=["destructiblecaja"]]
+sprite_frames = SubResource("SpriteFrames_bywy0")
+animation = &"Dead"
+autoplay = "Full"
+
+[node name="boxes falling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_38p4e")

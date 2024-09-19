@@ -59,7 +59,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_fonts/font = ExtResource("2_ipmo5")
 theme_override_font_sizes/font_size = 36
-text = "CONTINUAR"
+text = "SALTAR"
 
 [connection signal="finished" from="cinematic" to="." method="_on_cinematic_finished"]
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

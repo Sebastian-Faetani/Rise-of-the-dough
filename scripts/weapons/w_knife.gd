@@ -18,7 +18,6 @@ var can_shoot = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
-	lona = get_tree().get_first_node_in_group("destructibles")
 
 func check_hit():
 	for ray in gun_rays:
@@ -34,8 +33,8 @@ func check_hit():
 				ray.get_collider().DeathByWater(false)
 				ray.get_collider().DeathByKnife(true)
 				ray.get_collider().enemyTakeDamageWithKnife(gun_damage)
-			elif ray.get_collider().is_in_group("destructibles"):
-				lona.seRompe()
+			elif ray.get_collider().is_in_group("destructiblelona"):
+				ray.get_collider().seRompeLona()
 
 func power_hit():
 	for ray in gun_rays:

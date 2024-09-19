@@ -34,6 +34,17 @@ func check_hit():
 				ray.get_collider().DeathByWater(false)
 				ray.get_collider().DeathByKnife(false)
 				ray.get_collider().enemyTakeDamageWithMopa(gun_damage)
+			elif ray.get_collider().is_in_group("destructiblecaja"):
+				ray.get_collider().SeRompeCaja()
+			elif ray.get_collider().is_in_group("destructiblecapi"):
+				ray.get_collider().SeRompeCapi()
+			elif ray.get_collider().is_in_group("destructiblemasa1"):
+				ray.get_collider().SeRompeMasa1()
+			elif ray.get_collider().is_in_group("destructiblemasa2"):
+				ray.get_collider().SeRompeMasa2()
+			elif ray.get_collider().is_in_group("destructiblemasa3"):
+				ray.get_collider().SeRompeMasa3()
+				
 
 func aoe_hit():
 	for ray in aoe_rays:
