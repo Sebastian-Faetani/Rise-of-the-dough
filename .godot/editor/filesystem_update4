@@ -1,10 +1,8 @@
+res://scenes/maps/Map1.tscn
 res://scenes/player/player.tscn
-res://scripts/player/player.gd
-res://scenes/maps/Map2.tscn
-res://scripts/world/map_2.gd
 res://scenes/weapons/w_clap.tscn
 res://scenes/weapons/w_mop.tscn
-res://scenes/maps/Map1.tscn
+res://scenes/maps/Map2.tscn
 res://scenes/UI/game_over_menu.tscn
 res://scenes/world/capi.tscn
 res://scenes/world/cajas.tscn

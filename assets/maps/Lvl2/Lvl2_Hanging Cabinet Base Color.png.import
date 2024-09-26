@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn7fhk4uferxb"
+uid="uid://bsh7q8j3ayc3m"
 path.s3tc="res://.godot/imported/Lvl2_Hanging Cabinet Base Color.png-60b9855e1320f38be45fe3dc7e125eea.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "f0da697ffc4eef55486f3294253922f4"
 }
 
 [deps]
