@@ -42,6 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.116577, 0.136833, 0.022176
 shape = SubResource("BoxShape3D_xhu6f")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.91094, 0, 0, 0, 1, 0, 1.41515, 0)
 sprite_frames = SubResource("SpriteFrames_t176t")
 animation = &"full"
 autoplay = "full"

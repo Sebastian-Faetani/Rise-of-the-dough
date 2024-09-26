@@ -3,7 +3,6 @@ res://scenes/UI/play_menu.tscn
 res://scenes/enemies/enemy_distance.tscn
 res://scenes/weapons/w_clap.tscn
 res://scenes/weapons/w_mop.tscn
-res://scenes/UI/story_scene.tscn
 res://scenes/world/keypad.tscn
 res://scenes/world/keypadfabrica.tscn
 res://scenes/world/keypadproduccion.tscn
@@ -15,3 +14,8 @@ res://scenes/world/capi.tscn
 res://scenes/world/masa_1.tscn
 res://scenes/world/masa_2.tscn
 res://scenes/world/masa_3.tscn
+res://scenes/UI/game_over_menu.tscn
+res://scenes/player/player.tscn
+res://scripts/world/capi.gd
+res://scripts/world/map_2.gd
+res://scripts/player/player.gd

@@ -5,6 +5,7 @@ extends Node3D
 @onready var boss_timer: Timer = $Enemies/EnemySpawner/BossTimer
 var player
 @onready var gameplay_music = $GameplayMusic
+@onready var spawnermensaje: Area3D = $spawnermensaje
 
 func _ready() -> void:
 	gameplay_music.play()
@@ -36,4 +37,6 @@ func _on_spawnermensaje_body_entered(body: Node3D) -> void:
 func _on_spawnermensaje_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		player.spawnermensaje.hide()
+		spawnermensaje.queue_free()
+		
 		

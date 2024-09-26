@@ -6,6 +6,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_v84yt"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [sub_resource type="Theme" id="Theme_xk88n"]
 default_font = SubResource("SystemFont_v84yt")
@@ -25,15 +26,35 @@ grow_vertical = 2
 theme = SubResource("Theme_xk88n")
 script = ExtResource("1_3q1ia")
 
+[node name="restartbutton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 654.0
+offset_top = 394.815
+offset_right = 1266.0
+offset_bottom = 482.815
+theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_sv7fp")
+text = "Reiniciar"
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 654.0
+offset_top = 568.655
+offset_right = 1266.0
+offset_bottom = 656.655
+theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_sv7fp")
+text = "Menú principal"
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -306.0
-offset_top = 189.0
+offset_top = 124.805
 offset_right = 306.0
-offset_bottom = 528.0
+offset_bottom = 426.31
 grow_horizontal = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
@@ -48,17 +69,5 @@ text = "MORISTE"
 label_settings = SubResource("LabelSettings_tin2c")
 horizontal_alignment = 1
 
-[node name="restartbutton" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
-theme_override_fonts/font = ExtResource("3_sv7fp")
-text = "Reiniciar"
-
-[node name="MenuButton" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
-theme_override_fonts/font = ExtResource("3_sv7fp")
-text = "Menú principal"
-
-[connection signal="pressed" from="CenterContainer/VBoxContainer/restartbutton" to="." method="_on_restartbutton_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="restartbutton" to="." method="_on_restartbutton_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

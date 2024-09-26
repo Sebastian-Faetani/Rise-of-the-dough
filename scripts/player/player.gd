@@ -30,9 +30,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 #stamina
-@export var max_player_stamina: int = 100
+@export var max_player_stamina: int = 200
 @onready var current_player_stamina: int = max_player_stamina
-@onready var staminaTimer: float = 1.5
+@onready var staminaTimer: float = 1
 @onready var can_regen = false
 var is_stamina_regen = false
 
