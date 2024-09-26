@@ -21,11 +21,10 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var stamina_time: Timer = $StaminaTime
 @onready var weapon_handler = $Head/Weapon_handler
 
-@onready var pickup: Label = $mensajes/Pickup
-@onready var doormensaje: Label = $mensajes/doormensaje
+@onready var notif: Label = $mensajes/notif
+@onready var lore_message: Label = $mensajes/loreMessage
 @onready var keypadmensajekeynotobtained: Label = $mensajes/keypadmensajekeynotobtained
 @onready var keypadmensajekeyobtained: Label = $mensajes/keypadmensajekeyobtained2
-@onready var spawnermensaje: Label = $mensajes/spawnermensaje
 
 
 

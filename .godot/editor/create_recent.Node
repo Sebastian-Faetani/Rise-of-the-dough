@@ -1,3 +1,5 @@
+Sprite2D
+Label
 Node3D
 Sprite3D
 AudioStreamPlayer
@@ -6,7 +8,6 @@ AnimatedSprite3D
 StaticBody3D
 Area3D
 Control
-Label
 VideoStreamPlayer
 MeshInstance3D
 CSGBox3D
