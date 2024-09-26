@@ -43,3 +43,9 @@ texture = ExtResource("2_i4uov")
 transform = Transform3D(0.00010967, 0, 0, 0, 0.00010967, 0, 0, 0, 6.33218e-08, 0, 0, -0.000572024)
 visible = false
 shape = SubResource("BoxShape3D_v3kkc")
+
+[node name="BulletBye" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="BulletBye" to="." method="_on_bullet_bye_timeout"]

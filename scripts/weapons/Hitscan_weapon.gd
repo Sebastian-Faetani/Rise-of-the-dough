@@ -39,11 +39,11 @@ func check_hit():
 			elif ray.get_collider().is_in_group("destructiblecapi"):
 				ray.get_collider().SeRompeCapi()
 			elif ray.get_collider().is_in_group("destructiblemasa1"):
-				ray.get_collider().SeRompeMasa1()
+				ray.get_collider().MensajeMasa1()
 			elif ray.get_collider().is_in_group("destructiblemasa2"):
-				ray.get_collider().SeRompeMasa2()
+				ray.get_collider().MensajeMasa2()
 			elif ray.get_collider().is_in_group("destructiblemasa3"):
-				ray.get_collider().SeRompeMasa3()
+				ray.get_collider().MensajeMasa3()
 				
 
 func aoe_hit():

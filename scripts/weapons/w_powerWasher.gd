@@ -7,12 +7,9 @@ extends Node3D
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 @export var gun_damage = 10
 var can_shoot = true
-
 var Bullet = preload("res://scenes/weapons/bullet.tscn")
 @export var bullet_speed: int = 40
 @onready var bullet_position: Marker3D = $bullet_position
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -31,6 +28,7 @@ func shoot_anim_done():
 func shoot(Dir: Vector3):
 	var W = get_tree().get_root()
 	var R = Bullet.instantiate()
+	
 	W.add_child(R)
 	R.set_global_transform(bullet_position.get_global_transform())
 	R.set_linear_velocity(Dir*bullet_speed)

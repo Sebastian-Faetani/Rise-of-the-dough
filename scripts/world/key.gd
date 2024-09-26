@@ -10,9 +10,10 @@ func collectkey():
 
 func _on_notified_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		player.pickup.show()
+		player.notif.show()
+		player.notif.text = "Presione E para juntar la llave"
 
 
 func _on_notified_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		player.pickup.hide()
+		player.notif.hide()

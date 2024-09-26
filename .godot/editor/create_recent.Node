@@ -1,6 +1,9 @@
+Marker3D
+RayCast3D
+Node3D
+Timer
 Sprite2D
 Label
-Node3D
 Sprite3D
 AudioStreamPlayer
 CollisionShape3D
@@ -9,7 +12,3 @@ StaticBody3D
 Area3D
 Control
 VideoStreamPlayer
-MeshInstance3D
-CSGBox3D
-Timer
-CSGPolygon3D

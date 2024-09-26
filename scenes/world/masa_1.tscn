@@ -46,3 +46,8 @@ transform = Transform3D(1, 0, 0, 0, 1.91094, 0, 0, 0, 1, 0, 1.41515, 0)
 sprite_frames = SubResource("SpriteFrames_t176t")
 animation = &"full"
 autoplay = "full"
+
+[node name="HideText" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="HideText" to="." method="_on_hide_text_timeout"]

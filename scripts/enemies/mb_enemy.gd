@@ -71,6 +71,7 @@ func _physics_process(delta):
 	distance = global_position.distance_to(player.global_position)
 	
 	
+	
 	match current_state:
 		EnemyStates.Idle:
 			can_move = true

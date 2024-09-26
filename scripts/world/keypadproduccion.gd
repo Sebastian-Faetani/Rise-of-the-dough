@@ -18,12 +18,13 @@ func bye3():
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		if player.collectkeyascensor == false:
-			player.keypadmensajekeynotobtained.show()
+			player.notif.show()
+			player.notif.text = "Necesitas una llave para abrir esto"
 		elif player.collectkeyascensor == true:
-			player.keypadmensajekeyobtained.show()
+			player.notif.show()
+			player.notif.text = "Presione E para abrir la puerta"
 
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		player.keypadmensajekeynotobtained.hide()
-		player.keypadmensajekeyobtained.hide()
+		player.notif.hide()
