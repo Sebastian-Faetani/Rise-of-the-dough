@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcsfow5r7t024"]
+[gd_scene load_steps=5 format=3 uid="uid://dcsfow5r7t024"]
 
 [ext_resource type="Script" path="res://scripts/UI/game_over_menu.gd" id="1_3q1ia"]
 [ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="2_peblh"]
@@ -10,9 +10,6 @@ subpixel_positioning = 0
 [sub_resource type="Theme" id="Theme_xk88n"]
 default_font = SubResource("SystemFont_v84yt")
 default_font_size = 64
-
-[sub_resource type="LabelSettings" id="LabelSettings_tin2c"]
-font_size = 152
 
 [node name="GameOverMenu" type="Control"]
 process_mode = 3
@@ -61,12 +58,14 @@ custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Moriste" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
 theme_override_fonts/font = ExtResource("2_peblh")
+theme_override_font_sizes/font_size = 191
 text = "MORISTE"
-label_settings = SubResource("LabelSettings_tin2c")
-horizontal_alignment = 1
 
 [connection signal="pressed" from="restartbutton" to="." method="_on_restartbutton_pressed"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

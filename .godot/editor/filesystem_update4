@@ -1,7 +1,7 @@
+res://scenes/maps/Map1.tscn
 res://scenes/player/player.tscn
 res://scenes/weapons/w_clap.tscn
 res://scenes/weapons/w_mop.tscn
-res://scenes/maps/Map1.tscn
 res://scenes/maps/Map2.tscn
 res://scenes/world/capi.tscn
 res://scenes/world/cajas.tscn
@@ -12,3 +12,8 @@ res://scenes/UI/play_menu.tscn
 res://scenes/world/dispenser.tscn
 res://scenes/world/ObjetoCurable.tscn
 res://scenes/enemies/Boss_Enemy.tscn
+res://scenes/weapons/bullet.tscn
+res://scenes/enemies/enemy_distance.tscn
+res://scenes/weapons/w_knife.tscn
+res://scenes/UI/win_menu.tscn
+res://scenes/UI/game_over_menu.tscn

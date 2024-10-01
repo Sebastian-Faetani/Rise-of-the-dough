@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://6ngrvqj01g12"]
+[gd_scene load_steps=3 format=3 uid="uid://6ngrvqj01g12"]
 
 [ext_resource type="Script" path="res://scripts/UI/win_menu.gd" id="1_vhj7j"]
 [ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="2_w4yti"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_j2i7a"]
-font_size = 152
 
 [node name="win_menu" type="Control"]
 process_mode = 3
@@ -32,12 +29,14 @@ custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="YouWin" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
 theme_override_fonts/font = ExtResource("2_w4yti")
+theme_override_font_sizes/font_size = 188
 text = "GANASTE"
-label_settings = SubResource("LabelSettings_j2i7a")
-horizontal_alignment = 1
 
 [node name="MenuButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2

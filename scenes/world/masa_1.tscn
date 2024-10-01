@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b55y2q5yesmmn" path="res://assets/enviroment/Sprite_masa1.png" id="2_04ab4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhu6f"]
-size = Vector3(3.08374, 4.20314, 0.139179)
+size = Vector3(3.18738, 7.31963, 0.139179)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cccrk"]
 atlas = ExtResource("1_nyk38")
@@ -38,7 +38,7 @@ animations = [{
 script = ExtResource("1_mwkvw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.116577, 0.136833, 0.0221767)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.116577, 1.39723, 0.0221767)
 shape = SubResource("BoxShape3D_xhu6f")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
