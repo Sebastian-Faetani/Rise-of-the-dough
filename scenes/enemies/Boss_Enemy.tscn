@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://btnlr8rugdsm0" path="res://sounds/enemies/Enemy dead hidro.mp3" id="4_kgwdf"]
 [ext_resource type="AudioStream" uid="uid://bvs8vrjqjbh73" path="res://sounds/enemies/Enemy dead knife.mp3" id="5_ptyhp"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_lt0p2"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7e4kp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_usnrc"]
 atlas = ExtResource("2_bh5y6")
@@ -335,6 +335,48 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_y2bur"]
+resource_name = "attack_distance"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_dtwto"]
 resource_name = "hit-hidro"
 length = 0.5
@@ -530,48 +572,6 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_y2bur"]
-resource_name = "attack_distance"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite3D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite3D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"shoot"
-}]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sc7jo"]
 _data = {
 "RESET": SubResource("Animation_ocyer"),
@@ -662,11 +662,12 @@ transform = Transform3D(1.01436, 0, 0, 0, 1.01436, 0, 0, 0, 1.01436, 0, 0, 0)
 script = ExtResource("1_xd023")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.96204, 0, 0, 0, 1.96204, 0, 0, 0, 1.96204, 0, 1, 0)
-shape = SubResource("SphereShape3D_lt0p2")
+transform = Transform3D(1.13249, 0, 0, 0, 1.13249, 0, 0, 0, 1.13249, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_7e4kp")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.504676, 0, 0, 0, 0.504676, 0, 0, 0, 0.504676, 0, 1.63261, 0)
+shaded = true
 sprite_frames = SubResource("SpriteFrames_r8ur3")
 animation = &"walk"
 autoplay = "idle"
@@ -698,9 +699,10 @@ stream = ExtResource("5_ptyhp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0729)
 
 [node name="RayCast3D" type="RayCast3D" parent="GunRays"]
-transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0.921744, 0.295823)
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0.921744, -0.513382)
+collision_mask = 2
 
 [node name="bullet_position" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00255727, 0.921873, 2.25312)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00255727, 0.921873, 1.2808)
 
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/UI/play_menu.gd" id="1_72jbf"]
 [ext_resource type="Texture2D" uid="uid://c6hvyr8086o2k" path="res://assets/interfaz/MainMenu_background.png" id="2_2sgs3"]
-[ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="3_kmku4"]
+[ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="3_wvi4b"]
 [ext_resource type="Texture2D" uid="uid://boo5u6oy1x7tf" path="res://assets/ui/Logo_DM.png" id="4_1e7hw"]
 
 [node name="Play_Menu" type="Control"]
@@ -34,7 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_kmku4")
+theme_override_fonts/font = ExtResource("3_wvi4b")
 theme_override_font_sizes/font_size = 55
 text = "Historia"
 flat = true
@@ -54,6 +54,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_wvi4b")
 theme_override_font_sizes/font_size = 55
 text = "Volver"
 flat = true

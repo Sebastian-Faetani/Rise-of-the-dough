@@ -3,7 +3,7 @@ class_name Boss_Enemy
 
 #external variables
 @export var speed = 5.0
-@export var attack_range := 2
+@export var attack_range := 5
 @export var max_hp = 100
 @export var attack_damage := 30
 @export var range_shoot := 20.0
@@ -23,8 +23,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var dead_knife = $DeadKnife
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 @onready var bullet_position: Marker3D = $bullet_position
-
-#internal variables
+var enemyCanShoot = true
 var player
 var distance
 var see_range := 30.0
@@ -74,8 +73,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta):
 	var next_position = navigation_agent_3d.get_next_path_position()
-	distance = global_position.distance_to(player.global_position)
-	
+
 	match current_state:
 		EnemyStates.Idle:
 			can_move = true
@@ -86,9 +84,9 @@ func _physics_process(delta):
 			chase()
 			if distance > see_range:
 				current_state = EnemyStates.Idle
-			elif distance <= attack_range and can_attack == true:
+			elif distance <= attack_range:
 				current_state = EnemyStates.Attacking
-			elif distance <= range_shoot and can_attack == true:
+			elif is_between(distance, attack_range, range_shoot) and can_attack == true:
 				current_state = EnemyStates.Throwing
 		EnemyStates.Attacking:
 			can_attack = false
@@ -124,7 +122,6 @@ func _physics_process(delta):
 	)
 
 	move_and_slide()
-
 func attack() -> void:
 	if distance <= attack_range:
 		#print("damage")
@@ -132,8 +129,6 @@ func attack() -> void:
 
 func chase():
 	navigation_agent_3d.target_position = player.global_position
-
-
 func enemyTakeDamageWithMopa(dmg_amount):
 	playback.travel("hit-mopa")
 	current_state = EnemyStates.Chasing
@@ -154,7 +149,8 @@ func enemyTakeDamageWithKnife(gun_damage):
 	current_state = EnemyStates.Chasing
 	print(gun_damage)
 	hp -= gun_damage
-
+func is_between(value, min_value, max_value):
+	return value > min_value and value <= max_value
 
 func DeathByMop(bool):
 	mopDeath = bool

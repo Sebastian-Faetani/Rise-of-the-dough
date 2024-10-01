@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://brw5t2ykamv7w"]
+[gd_scene load_steps=6 format=3 uid="uid://brw5t2ykamv7w"]
 
 [ext_resource type="Script" path="res://scripts/UI/options_menu.gd" id="1_1ctsv"]
 [ext_resource type="Texture2D" uid="uid://60eiy0ncntlo" path="res://assets/interfaz/Credits background.png" id="2_dnlax"]
 [ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="2_g1wyr"]
 [ext_resource type="PackedScene" uid="uid://bs7bfk6y3maph" path="res://scenes/UI/settings_tab_container.tscn" id="2_mbm0c"]
+[ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="5_a5qcl"]
 
 [node name="Options_menu" type="Control"]
 layout_mode = 3
@@ -56,9 +57,9 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
-theme_override_fonts/font = ExtResource("2_g1wyr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_a5qcl")
 theme_override_font_sizes/font_size = 48
 text = "Volver
 "

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://boo5u6oy1x7tf" path="res://assets/ui/Logo_DM.png" id="2_dr7kf"]
 [ext_resource type="Texture2D" uid="uid://c6hvyr8086o2k" path="res://assets/interfaz/MainMenu_background.png" id="2_w5l5p"]
 [ext_resource type="AudioStream" uid="uid://bpukd8nxflpey" path="res://sounds/interfaz/button.mp3" id="3_gvnkn"]
-[ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="3_wxauy"]
+[ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="4_yoo5s"]
 [ext_resource type="AudioStream" uid="uid://d1jm8dcvc7l58" path="res://sounds/interfaz/MusicaMenu.mp3" id="6_h6aqt"]
 
 [node name="MainMenu" type="Control"]
@@ -42,7 +42,7 @@ grow_vertical = 2
 scale = Vector2(0.996644, 1)
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_wxauy")
+theme_override_fonts/font = ExtResource("4_yoo5s")
 theme_override_font_sizes/font_size = 55
 text = "Jugar"
 flat = true
@@ -62,7 +62,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_wxauy")
+theme_override_fonts/font = ExtResource("4_yoo5s")
 theme_override_font_sizes/font_size = 54
 text = "Opciones"
 flat = true
@@ -82,7 +82,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_wxauy")
+theme_override_fonts/font = ExtResource("4_yoo5s")
 theme_override_font_sizes/font_size = 54
 text = "Créditos"
 flat = true
@@ -102,7 +102,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_wxauy")
+theme_override_fonts/font = ExtResource("4_yoo5s")
 theme_override_font_sizes/font_size = 49
 text = "Salir"
 flat = true

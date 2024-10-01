@@ -15,11 +15,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00967407, 0.0556259, -0.008
 shape = SubResource("BoxShape3D_ns6qq")
 
 [node name="CapiVivo" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 shaded = true
 texture = ExtResource("2_ak24y")
 
 [node name="CapiMuerto" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51117, -1.37265, 0)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.4862, -1.37265, 0)
 visible = false
 shaded = true
 texture = ExtResource("1_05qa8")

@@ -35,11 +35,13 @@ func check_hit():
 			elif ray.get_collider().is_in_group("destructiblecapi"):
 				ray.get_collider().SeRompeCapi()
 			elif ray.get_collider().is_in_group("destructiblemasa1"):
-				ray.get_collider().SeRompeMasa1()
+				ray.get_collider().MensajeMasa1()
 			elif ray.get_collider().is_in_group("destructiblemasa2"):
-				ray.get_collider().SeRompeMasa2()
+				ray.get_collider().MensajeMasa2()
 			elif ray.get_collider().is_in_group("destructiblemasa3"):
-				ray.get_collider().SeRompeMasa3()
+				ray.get_collider().MensajeMasa3()
+			elif ray.get_collider().is_in_group("destructibledispenser"):
+				ray.get_collider().SeRompeDispenser()
 func _process(_delta):
 	if Input.is_action_just_pressed("shoot") and can_shoot == true and player.current_player_stamina >= 0:
 		if Att1Av == true:

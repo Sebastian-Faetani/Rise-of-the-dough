@@ -45,3 +45,8 @@ shape = SubResource("BoxShape3D_o1pu8")
 sprite_frames = SubResource("SpriteFrames_ukspt")
 animation = &"full"
 autoplay = "full"
+
+[node name="hide_text" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="hide_text" to="." method="_on_hide_text_timeout"]

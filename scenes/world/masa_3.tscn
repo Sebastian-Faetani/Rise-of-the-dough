@@ -45,3 +45,8 @@ autoplay = "full"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.34817, 0, 0, 0, 1.34817, 0, 0, 0, 1.34817, 0.0266583, 0.0682811, -0.00748664)
 shape = SubResource("BoxShape3D_5kwow")
+
+[node name="hide_text" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="hide_text" to="." method="_on_hide_text_timeout"]

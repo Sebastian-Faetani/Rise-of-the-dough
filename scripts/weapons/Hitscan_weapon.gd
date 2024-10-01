@@ -44,6 +44,8 @@ func check_hit():
 				ray.get_collider().MensajeMasa2()
 			elif ray.get_collider().is_in_group("destructiblemasa3"):
 				ray.get_collider().MensajeMasa3()
+			elif ray.get_collider().is_in_group("destructibledispenser"):
+				ray.get_collider().SeRompeDispenser()
 				
 
 func aoe_hit():

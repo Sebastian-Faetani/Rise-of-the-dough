@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfw65mbgwb38r"]
+
+[ext_resource type="Script" path="res://scripts/world/dispenser.gd" id="1_18apf"]
+[ext_resource type="Texture2D" uid="uid://bv45xd3ec6kk5" path="res://assets/enviroment/Dispenser.png" id="1_ep25j"]
+[ext_resource type="Texture2D" uid="uid://d1fvfdxllrpc" path="res://assets/enviroment/Dispenser_roto.png" id="2_5wc2q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oll2h"]
+size = Vector3(1.62408, 6.42792, 0.254272)
+
+[node name="Dispenser" type="StaticBody3D" groups=["destructibledispenser"]]
+script = ExtResource("1_18apf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00137329, 0.00680542, -0.0125122)
+shape = SubResource("BoxShape3D_oll2h")
+
+[node name="Dispenser_up" type="Sprite3D" parent="."]
+shaded = true
+texture = ExtResource("1_ep25j")
+
+[node name="Dispenser_down" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78495, -1.15437, -0.00628138)
+visible = false
+shaded = true
+texture = ExtResource("2_5wc2q")

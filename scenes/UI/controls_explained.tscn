@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/UI/controls_explained.gd" id="1_6eq04"]
 [ext_resource type="Texture2D" uid="uid://dylajj52ilery" path="res://assets/interfaz/controls background.png" id="1_qyorn"]
+[ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="3_2keuq"]
 [ext_resource type="Texture2D" uid="uid://ccsbe1nepbqhn" path="res://assets/interfaz/icons/wasd_Sprite.png" id="3_6mgli"]
-[ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="3_b7gnn"]
 [ext_resource type="Texture2D" uid="uid://d1o0wrcvyp36v" path="res://assets/interfaz/icons/shift_sprite.png" id="4_4tupo"]
 [ext_resource type="Texture2D" uid="uid://dwg173cmleohm" path="res://assets/interfaz/icons/E_sprite.png" id="4_vpia1"]
 [ext_resource type="Texture2D" uid="uid://blr0chtjbpmab" path="res://assets/interfaz/icons/Ctrl_sprite.png" id="5_2osvs"]
@@ -41,7 +41,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_hover_color = Color(0.918851, 0.894295, 0.879381, 1)
 theme_override_colors/font_color = Color(0.698039, 0.898039, 0.294118, 1)
-theme_override_fonts/font = ExtResource("3_b7gnn")
+theme_override_fonts/font = ExtResource("3_2keuq")
 theme_override_font_sizes/font_size = 36
 text = "CONTINUAR"
 
@@ -54,7 +54,7 @@ offset_left = -104.0
 offset_top = 156.0
 offset_right = 130.0
 offset_bottom = 206.0
-theme_override_fonts/font = ExtResource("3_b7gnn")
+theme_override_fonts/font = ExtResource("3_2keuq")
 theme_override_font_sizes/font_size = 36
 text = "MOVIMIENTO"
 horizontal_alignment = 1
@@ -69,7 +69,7 @@ offset_left = -117.0
 offset_top = 97.0
 offset_right = 142.0
 offset_bottom = 147.0
-theme_override_fonts/font = ExtResource("3_b7gnn")
+theme_override_fonts/font = ExtResource("3_2keuq")
 theme_override_font_sizes/font_size = 36
 text = "INTERACTUAR"
 horizontal_alignment = 1
@@ -84,7 +84,7 @@ offset_left = -117.0
 offset_top = 94.0
 offset_right = 117.0
 offset_bottom = 144.0
-theme_override_fonts/font = ExtResource("3_b7gnn")
+theme_override_fonts/font = ExtResource("3_2keuq")
 theme_override_font_sizes/font_size = 36
 text = "CORRER"
 horizontal_alignment = 1
@@ -99,7 +99,7 @@ offset_left = -114.0
 offset_top = 95.135
 offset_right = 120.0
 offset_bottom = 145.135
-theme_override_fonts/font = ExtResource("3_b7gnn")
+theme_override_fonts/font = ExtResource("3_2keuq")
 theme_override_font_sizes/font_size = 36
 text = "AGACHARSE"
 horizontal_alignment = 1
@@ -115,7 +115,7 @@ offset_left = -139.0
 offset_top = 222.0
 offset_right = 136.0
 offset_bottom = 378.0
-theme_override_fonts/font = ExtResource("3_b7gnn")
+theme_override_fonts/font = ExtResource("3_2keuq")
 theme_override_font_sizes/font_size = 36
 text = "MIRAR
 DISPARAR
@@ -132,7 +132,7 @@ offset_left = -113.0
 offset_top = 101.0
 offset_right = 121.0
 offset_bottom = 151.0
-theme_override_fonts/font = ExtResource("3_b7gnn")
+theme_override_fonts/font = ExtResource("3_2keuq")
 theme_override_font_sizes/font_size = 36
 text = "PAUSA"
 horizontal_alignment = 1

@@ -20,6 +20,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var stamina_bar: TextureProgressBar = $StaminaBar
 @onready var stamina_time: Timer = $StaminaTime
 @onready var weapon_handler = $Head/Weapon_handler
+@onready var muffineat: AudioStreamPlayer = $muffineat
+
 
 @onready var notif: Label = $mensajes/notif
 @onready var lore_message: Label = $mensajes/loreMessage
@@ -278,6 +280,7 @@ func _on_stamina_time_timeout() -> void:
 	current_player_stamina = min(current_player_stamina + 25, max_player_stamina)
 
 func curar():
+	muffineat.play()
 	current_player_health += 50
 
 func danio():

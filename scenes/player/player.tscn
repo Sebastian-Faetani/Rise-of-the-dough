@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dqeu2j55klbsa"]
+[gd_scene load_steps=28 format=3 uid="uid://dqeu2j55klbsa"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_ipl5t"]
 [ext_resource type="Script" path="res://scripts/player/SmoothCamera.gd" id="2_quloi"]
@@ -20,6 +20,8 @@
 [ext_resource type="AudioStream" uid="uid://u4av65os2k8b" path="res://sounds/player/footsteps.mp3" id="13_xjog0"]
 [ext_resource type="AudioStream" uid="uid://1vtfueyxuqsk" path="res://sounds/weapons/Hit Knife.mp3" id="19_unu1p"]
 [ext_resource type="AudioStream" uid="uid://by5fciodjt4o0" path="res://sounds/weapons/Hit punch.mp3" id="20_6n66o"]
+[ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="21_cpuyu"]
+[ext_resource type="AudioStream" uid="uid://bu4vr4aboqbh3" path="res://sounds/player/MuffinEat.mp3" id="22_wb5cf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s4lsa"]
 
@@ -89,6 +91,8 @@ _data = {
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 process_mode = 1
 transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 2.39766, 0)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_ipl5t")
 
 [node name="Standing_collision" type="CollisionShape3D" parent="."]
@@ -266,6 +270,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("21_cpuyu")
 theme_override_font_sizes/font_size = 51
 text = "Presione \"E\" para recoger"
 
@@ -279,7 +284,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 626.0
 offset_top = 485.0
-offset_right = 1254.0
+offset_right = 1151.0
 offset_bottom = 555.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -287,6 +292,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("21_cpuyu")
 theme_override_font_sizes/font_size = 51
 text = "Presione \"E\" para abrir"
 
@@ -349,5 +355,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 18
 theme_override_font_sizes/font_size = 51
 text = "Que ha sido eso, creo que se ha activado algo"
+
+[node name="muffineat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_wb5cf")
+bus = &"Weapons"
 
 [connection signal="timeout" from="StaminaTime" to="." method="_on_stamina_time_timeout"]

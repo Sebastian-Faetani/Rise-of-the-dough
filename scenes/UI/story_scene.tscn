@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/UI/story_scene.gd" id="1_cerce"]
 [ext_resource type="VideoStream" path="res://videos/Cinematic_intro.ogv" id="2_eggkm"]
-[ext_resource type="FontFile" uid="uid://cninkl25cmlal" path="res://assets/interfaz/Fonts/Lexend-Regular.ttf" id="2_ipmo5"]
+[ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="3_sswh1"]
 
 [node name="Story_scene" type="Control"]
 layout_mode = 3
@@ -39,7 +39,7 @@ offset_right = 1710.0
 offset_bottom = 593.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_ipmo5")
+theme_override_fonts/font = ExtResource("3_sswh1")
 theme_override_font_sizes/font_size = 36
 text = "SOS UN GUARDIA DE SEGURIDAD
 TE ENVIARON DE EMERGENCIA A LA PANIFICADORA EN LA QUE TRABAJAS 
@@ -55,7 +55,7 @@ offset_right = 1881.0
 offset_bottom = 1046.0
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.698039, 0.898039, 0.294118, 1)
-theme_override_fonts/font = ExtResource("2_ipmo5")
+theme_override_fonts/font = ExtResource("3_sswh1")
 theme_override_font_sizes/font_size = 36
 text = "SALTAR"
 

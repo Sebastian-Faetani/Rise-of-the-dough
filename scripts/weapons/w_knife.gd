@@ -35,6 +35,12 @@ func check_hit():
 				ray.get_collider().enemyTakeDamageWithKnife(gun_damage)
 			elif ray.get_collider().is_in_group("destructiblelona"):
 				ray.get_collider().seRompeLona()
+			elif ray.get_collider().is_in_group("destructiblemasa1"):
+				ray.get_collider().MensajeMasa1()
+			elif ray.get_collider().is_in_group("destructiblemasa2"):
+				ray.get_collider().MensajeMasa2()
+			elif ray.get_collider().is_in_group("destructiblemasa3"):
+				ray.get_collider().MensajeMasa3()
 
 func power_hit():
 	for ray in gun_rays:

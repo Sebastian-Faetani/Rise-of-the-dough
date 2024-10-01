@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cl872lohvng0r"]
+[gd_scene load_steps=4 format=3 uid="uid://cl872lohvng0r"]
 
 [ext_resource type="Script" path="res://scripts/world/credit_menu.gd" id="1_c7bj8"]
 [ext_resource type="Texture2D" uid="uid://c6hvyr8086o2k" path="res://assets/interfaz/MainMenu_background.png" id="2_mhn2a"]
+[ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="3_56e1f"]
 
 [node name="credit_menu" type="Control"]
 layout_mode = 3
@@ -32,6 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.17295, 1.17295)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_56e1f")
 theme_override_font_sizes/font_size = 30
 text = "Sebastian Faetani
 Agustín Iñiguez"
@@ -50,6 +52,7 @@ offset_right = 621.0
 offset_bottom = 212.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_56e1f")
 theme_override_font_sizes/font_size = 60
 text = "Programadores"
 horizontal_alignment = 1
@@ -70,6 +73,7 @@ offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_56e1f")
 theme_override_font_sizes/font_size = 60
 text = "Artista"
 horizontal_alignment = 1
@@ -91,6 +95,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.19103, 1.19103)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_56e1f")
 theme_override_font_sizes/font_size = 30
 text = "Sasha Flory"
 horizontal_alignment = 1
@@ -113,6 +118,7 @@ grow_vertical = 0
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_56e1f")
 theme_override_font_sizes/font_size = 49
 text = "Volver
 "
@@ -133,8 +139,9 @@ offset_bottom = 131.28
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_56e1f")
 theme_override_font_sizes/font_size = 60
-text = "Diseñador"
+text = "Disenador"
 horizontal_alignment = 1
 
 [node name="designer name" type="Label" parent="."]
@@ -153,6 +160,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.10722, 1.10722)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_56e1f")
 theme_override_font_sizes/font_size = 30
 text = "Sebastian Faetani
 "
