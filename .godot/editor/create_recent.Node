@@ -1,6 +1,7 @@
 AudioStreamPlayer
-Sprite3D
 CollisionShape3D
+Area3D
+Sprite3D
 StaticBody3D
 Timer
 Marker3D
@@ -9,6 +10,5 @@ Node3D
 Sprite2D
 Label
 AnimatedSprite3D
-Area3D
 Control
 VideoStreamPlayer

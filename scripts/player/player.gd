@@ -219,6 +219,12 @@ func _physics_process(delta):
 				collectkey = false
 				open_door.play()
 				collider.bye()
+	if Input.is_action_just_pressed("interact") and collectkey == false:
+		var collider = interact.get_collider()
+		if collider != null:
+			if collider.is_in_group("exit"):
+				collectkey = false
+				collider.error()
 	if Input.is_action_just_pressed("interact"):
 		var collider = interact.get_collider()
 		if collider != null:
@@ -238,6 +244,12 @@ func _physics_process(delta):
 			if collider.is_in_group("exit2"):
 				collectkeyfabrica = false
 				collider.bye2()
+	if Input.is_action_just_pressed("interact") and collectkeyfabrica == false:
+		var collider = interact.get_collider()
+		if collider != null:
+			if collider.is_in_group("exit2"):
+				collectkeyfabrica = false
+				collider.error2()
 	if Input.is_action_just_pressed("interact"):
 		var collider = interact.get_collider()
 		if collider != null:
@@ -250,6 +262,11 @@ func _physics_process(delta):
 			if collider.is_in_group("salida3"):
 				collider.bye3()
 				collectkeyfabrica = false
+	if Input.is_action_just_pressed("interact") and collectkeyascensor == false:
+		var collider = interact.get_collider()
+		if collider != null:
+			if collider.is_in_group("salida3"):
+				collider.error3()
 	if Input.is_action_just_pressed("interact"):
 		var collider = interact.get_collider()
 		if collider != null:

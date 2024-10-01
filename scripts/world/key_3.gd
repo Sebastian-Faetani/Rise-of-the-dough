@@ -19,4 +19,4 @@ func _on_notified_body_entered(body: Node3D) -> void:
 
 func _on_notified_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		player.pickup.hide()
+		player.notif.hide()

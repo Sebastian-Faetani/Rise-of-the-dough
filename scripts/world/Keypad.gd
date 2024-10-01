@@ -1,6 +1,8 @@
 extends StaticBody3D
 var exit
 var player
+@onready var errorSound: AudioStreamPlayer = $error
+
 func _ready():
 		exit = get_tree().get_first_node_in_group("salida2")
 		player = get_tree().get_first_node_in_group("player")
@@ -10,6 +12,9 @@ func _process(_delta):
 func bye():
 	queue_free()
 	exit.bye()
+
+func error():
+	errorSound.play()
 
 
 func _on_notified_body_entered(body: Node3D) -> void:

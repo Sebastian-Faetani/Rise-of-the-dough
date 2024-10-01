@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp0phkuwvcpfy"]
+[gd_scene load_steps=6 format=3 uid="uid://bp0phkuwvcpfy"]
 
 [ext_resource type="Script" path="res://scripts/world/keypadproduccion.gd" id="1_m4qa5"]
 [ext_resource type="Texture2D" uid="uid://cj40xuv2pexgp" path="res://assets/enviroment/KeypadRed.jpg" id="2_6xh1i"]
+[ext_resource type="AudioStream" uid="uid://dpc4vmvhmgmgc" path="res://sounds/environment/errorSound.mp3" id="3_t0l6n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nfr0b"]
 size = Vector3(1.14886, 2.24883, 0.0637512)
@@ -24,6 +25,10 @@ shape = SubResource("BoxShape3D_nfr0b")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="notified"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.776794)
 shape = SubResource("BoxShape3D_kgecj")
+
+[node name="errorSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_t0l6n")
+bus = &"Weapons"
 
 [connection signal="body_entered" from="notified" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="notified" to="." method="_on_area_3d_body_exited"]
