@@ -2,14 +2,14 @@ extends CharacterBody3D
 class_name Boss_Enemy
 
 #external variables
-@export var speed = 5.0
-@export var attack_range := 5
+@export var speed = 5
+@export var attack_range := 8.0
 @export var max_hp = 100
-@export var attack_damage := 30
-@export var range_shoot := 20.0
+@export var attack_damage := 30.0
+@export var range_shoot := 60.0
 @export var cooldown_time = 2
 @export var aggro_range := 15.0
-var Bullet = preload("res://scenes/enemies/bullet_enemy.tscn")
+var Bullet = preload("res://scenes/enemies/bullet_enemyBoss.tscn")
 var bullet_speed = 10
 #Declared variables
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -26,7 +26,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var enemyCanShoot = true
 var player
 var distance
-var see_range := 30.0
+var see_range := 100.0
 var can_move := true
 var can_attack := true
 var enemyDead := false
@@ -73,6 +73,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta):
 	var next_position = navigation_agent_3d.get_next_path_position()
+	distance = global_position.distance_to(player.global_position)
 
 	match current_state:
 		EnemyStates.Idle:
@@ -98,8 +99,9 @@ func _physics_process(delta):
 			can_attack = false
 			playback.travel("attack_distance")
 			attack_cooldown.start(cooldown_time)
+			
 			if can_attack == false:
-				current_state = EnemyStates.Chasing
+				current_state = EnemyStates.Idle
 		
 		EnemyStates.Death:
 			pass
@@ -129,6 +131,8 @@ func attack() -> void:
 
 func chase():
 	navigation_agent_3d.target_position = player.global_position
+
+
 func enemyTakeDamageWithMopa(dmg_amount):
 	playback.travel("hit-mopa")
 	current_state = EnemyStates.Chasing
@@ -160,6 +164,12 @@ func DeathByWater(bool):
 
 func DeathByKnife(bool):
 	knifeDeath = bool
+	
+func slowdown():
+	speed = 0.0
+
+func speedup():
+	speed = 5.0
 
 func _on_attack_cooldown_timeout():
 	can_attack = true

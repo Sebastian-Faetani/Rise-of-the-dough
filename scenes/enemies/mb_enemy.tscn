@@ -1,7 +1,7 @@
 [gd_scene load_steps=63 format=3 uid="uid://2lk1q4ru0cmx"]
 
 [ext_resource type="Script" path="res://scripts/enemies/mb_enemy.gd" id="1_i3ts0"]
-[ext_resource type="Texture2D" uid="uid://bl2frcmtk0xx6" path="res://assets/enemies/BossEnemy/Enemy_spritesheet_baguette_miniboss.png" id="1_xgtr1"]
+[ext_resource type="Texture2D" uid="uid://bl2frcmtk0xx6" path="res://assets/enemies/MiniBossEnemy/Enemy_spritesheet_baguette_miniboss.png" id="1_xgtr1"]
 [ext_resource type="AudioStream" uid="uid://b8ty5tqe01ddm" path="res://sounds/enemies/Enemy dead mopa.mp3" id="3_pouvi"]
 [ext_resource type="AudioStream" uid="uid://btnlr8rugdsm0" path="res://sounds/enemies/Enemy dead hidro.mp3" id="4_tv161"]
 [ext_resource type="AudioStream" uid="uid://bvs8vrjqjbh73" path="res://sounds/enemies/Enemy dead knife.mp3" id="5_wwydp"]
