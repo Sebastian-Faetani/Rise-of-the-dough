@@ -3,12 +3,12 @@ class_name Boss_Enemy
 
 #external variables
 @export var speed = 5
-@export var attack_range := 8.0
+@export var attack_range := 6.0
 @export var max_hp = 100
 @export var attack_damage := 30.0
 @export var range_shoot := 60.0
 @export var cooldown_time = 2
-@export var aggro_range := 15.0
+@export var aggro_range := 30.0
 var Bullet = preload("res://scenes/enemies/bullet_enemyBoss.tscn")
 var bullet_speed = 10
 #Declared variables
@@ -85,7 +85,7 @@ func _physics_process(delta):
 			chase()
 			if distance > see_range:
 				current_state = EnemyStates.Idle
-			elif distance <= attack_range:
+			elif distance <= attack_range and can_attack == true:
 				current_state = EnemyStates.Attacking
 			elif is_between(distance, attack_range, range_shoot) and can_attack == true:
 				current_state = EnemyStates.Throwing

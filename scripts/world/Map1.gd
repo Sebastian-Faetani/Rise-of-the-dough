@@ -1,6 +1,7 @@
 extends Node3D
 var level2 = preload("res://scenes/maps/Map2.tscn")
 
+
 @onready var pause_menu = $Pause_menu
 @onready var gameplay_music = $Gameplay_Music
 @onready var clocktick = $Maps/Level1/TicTac

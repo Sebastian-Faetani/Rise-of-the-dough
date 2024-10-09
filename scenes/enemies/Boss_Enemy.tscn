@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bvs8vrjqjbh73" path="res://sounds/enemies/Enemy dead knife.mp3" id="5_ptyhp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7e4kp"]
+height = 1.52011
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_phkes"]
 atlas = ExtResource("2_vifir")
@@ -772,7 +773,7 @@ transform = Transform3D(1.01436, 0, 0, 0, 1.01436, 0, 0, 0, 1.01436, 0, 0, 0)
 script = ExtResource("1_xd023")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2.96847, 0, 0, 0, 2.96847, 0, 0, 0, 2.96847, 0, 1.77207, 0)
+transform = Transform3D(2.96847, 0, 0, 0, 2.96847, 0, 0, 0, 2.96847, 0, 0.978739, 0)
 shape = SubResource("CapsuleShape3D_7e4kp")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
@@ -809,7 +810,7 @@ stream = ExtResource("5_ptyhp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0729)
 
 [node name="RayCast3D" type="RayCast3D" parent="GunRays"]
-transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0.921744, -0.513382)
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0.921744, 0.0945424)
 collision_mask = 2
 
 [node name="bullet_position" type="Marker3D" parent="."]
