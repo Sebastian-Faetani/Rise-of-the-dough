@@ -619,6 +619,7 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_postprocessing = 1
 
 [node name="AttackCooldown" type="Timer" parent="."]
 

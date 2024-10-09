@@ -4,7 +4,7 @@ class_name Boss_Enemy
 #external variables
 @export var speed = 5
 @export var attack_range := 6.0
-@export var max_hp = 100
+@export var max_hp = 200
 @export var attack_damage := 30.0
 @export var range_shoot := 60.0
 @export var cooldown_time = 2
@@ -164,6 +164,9 @@ func DeathByWater(bool):
 
 func DeathByKnife(bool):
 	knifeDeath = bool
+	
+func fast():
+	speed = 10.0
 	
 func slowdown():
 	speed = 0.0

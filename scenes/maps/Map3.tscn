@@ -781,68 +781,11 @@ shape = SubResource("BoxShape3D_is807")
 
 [node name="Pickups" type="Node3D" parent="."]
 
-[node name="ObjetoCurable" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 121.284)
-
-[node name="ObjetoCurable2" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 119.82)
-
-[node name="ObjetoCurable3" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 118.383)
-
-[node name="ObjetoCurable4" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 116.781)
-
-[node name="ObjetoCurable5" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 115.467)
-
-[node name="ObjetoCurable6" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 114.067)
-
-[node name="ObjetoCurable7" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 112.771)
-
-[node name="ObjetoCurable8" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 111.307)
-
 [node name="ObjetoCurable9" parent="Pickups" instance=ExtResource("4_odq7a")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 109.876)
 
 [node name="ObjetoCurable10" parent="Pickups" instance=ExtResource("4_odq7a")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 108.326)
 
-[node name="ObjetoCurable11" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 106.655)
-
 [node name="ObjetoCurable12" parent="Pickups" instance=ExtResource("4_odq7a")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 94.8087)
-
-[node name="ObjetoCurable13" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 93.19)
-
-[node name="ObjetoCurable14" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 91.6557)
-
-[node name="ObjetoCurable15" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 90.2042)
-
-[node name="ObjetoCurable16" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 88.5518)
-
-[node name="ObjetoCurable17" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 87.0641)
-
-[node name="ObjetoCurable18" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 85.4034)
-
-[node name="ObjetoCurable19" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 84.0039)
-
-[node name="ObjetoCurable20" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 82.5943)
-
-[node name="ObjetoCurable21" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 81.2395)
-
-[node name="ObjetoCurable22" parent="Pickups" instance=ExtResource("4_odq7a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106.252, -21.3633, 79.5287)
