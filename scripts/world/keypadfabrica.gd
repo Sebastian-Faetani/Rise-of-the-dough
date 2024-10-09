@@ -3,6 +3,7 @@ var exit2
 var player
 @onready var error_sound: AudioStreamPlayer = $errorSound
 
+
 func _ready():
 	exit2 = get_tree().get_first_node_in_group("salida")
 	player = get_tree().get_first_node_in_group("player")

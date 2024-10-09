@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d07s78tt0qff1"]
+[gd_scene load_steps=6 format=3 uid="uid://d07s78tt0qff1"]
 
 [ext_resource type="Texture2D" uid="uid://ofbl5hn46pl0" path="res://assets/enviroment/Sprite_boton_emergencia.png" id="1_ecx21"]
 [ext_resource type="Script" path="res://scripts/world/emergency_button.gd" id="1_tqmxp"]
+[ext_resource type="Texture2D" uid="uid://cfrf3f3qo0mnc" path="res://assets/enviroment/Sprite_boton_emergencia_presionado.png" id="3_pyaur"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rbdcy"]
 size = Vector3(1.07178, 1.63257, 0.179688)
@@ -12,7 +13,7 @@ size = Vector3(3.38204, 2, 2.92877)
 [node name="OffButton" type="StaticBody3D" groups=["EmergencyButton"]]
 script = ExtResource("1_tqmxp")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="ButtonNoPressed" type="Sprite3D" parent="."]
 shaded = true
 texture = ExtResource("1_ecx21")
 
@@ -25,6 +26,12 @@ shape = SubResource("BoxShape3D_rbdcy")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="notified"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104855, 0.254883, 0.042572)
 shape = SubResource("BoxShape3D_1frxq")
+
+[node name="ButtonPressed" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00757396, -0.0808093, 0)
+visible = false
+shaded = true
+texture = ExtResource("3_pyaur")
 
 [connection signal="body_entered" from="notified" to="." method="_on_notified_body_entered"]
 [connection signal="body_exited" from="notified" to="." method="_on_notified_body_exited"]

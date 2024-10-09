@@ -1,9 +1,9 @@
-Node3D
 Sprite3D
+AudioStreamPlayer
+Node3D
 CollisionShape3D
 Area3D
 NavigationRegion3D
-AudioStreamPlayer
 StaticBody3D
 Timer
 Marker3D

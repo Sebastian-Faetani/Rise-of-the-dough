@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dqeu2j55klbsa"]
+[gd_scene load_steps=29 format=3 uid="uid://dqeu2j55klbsa"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_ipl5t"]
 [ext_resource type="Script" path="res://scripts/player/SmoothCamera.gd" id="2_quloi"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://by5fciodjt4o0" path="res://sounds/weapons/Hit punch.mp3" id="20_6n66o"]
 [ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="21_cpuyu"]
 [ext_resource type="AudioStream" uid="uid://bu4vr4aboqbh3" path="res://sounds/player/MuffinEat.mp3" id="22_wb5cf"]
+[ext_resource type="AudioStream" uid="uid://dr8xfd112e2dn" path="res://sounds/environment/ConfirmationSound.mp3" id="23_aven1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s4lsa"]
 
@@ -358,6 +359,10 @@ text = "Que ha sido eso, creo que se ha activado algo"
 
 [node name="muffineat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_wb5cf")
+bus = &"Weapons"
+
+[node name="ConfirmationSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_aven1")
 bus = &"Weapons"
 
 [connection signal="timeout" from="StaminaTime" to="." method="_on_stamina_time_timeout"]

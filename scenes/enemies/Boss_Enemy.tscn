@@ -769,7 +769,7 @@ transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-311.925, 35)
 
 [node name="Boss_Enemy" type="CharacterBody3D" groups=["bossEnemy"]]
-transform = Transform3D(1.01436, 0, 0, 0, 1.01436, 0, 0, 0, 1.01436, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_xd023")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -784,6 +784,8 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 5.0
+target_desired_distance = 5.0
 
 [node name="AttackCooldown" type="Timer" parent="."]
 

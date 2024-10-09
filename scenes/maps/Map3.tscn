@@ -735,7 +735,7 @@ shape = SubResource("ConcavePolygonShape3D_io3tf")
 [node name="Enemy" type="Node3D" parent="."]
 
 [node name="Boss_Enemy" parent="Enemy" instance=ExtResource("1_krq06")]
-transform = Transform3D(0.0266767, 0, -1.01401, 0, 1.01436, 0, 1.01401, 0, 0.0266767, -69.1616, -22.9593, 98.5048)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -74.419, -22.1515, 100.061)
 
 [node name="Deco" type="Node3D" parent="."]
 

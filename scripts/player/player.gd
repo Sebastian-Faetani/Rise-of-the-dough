@@ -21,6 +21,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var stamina_time: Timer = $StaminaTime
 @onready var weapon_handler = $Head/Weapon_handler
 @onready var muffineat: AudioStreamPlayer = $muffineat
+@onready var confirmation_sound: AudioStreamPlayer = $ConfirmationSound
 
 
 @onready var notif: Label = $mensajes/notif
@@ -216,6 +217,7 @@ func _physics_process(delta):
 		var collider = interact.get_collider()
 		if collider != null:
 			if collider.is_in_group("exit"):
+				confirmation_sound.play()
 				collectkey = false
 				open_door.play()
 				collider.bye()
@@ -239,10 +241,14 @@ func _physics_process(delta):
 				collectkeyfabrica = true
 				collider.collectkeyFabrica()
 	if Input.is_action_just_pressed("interact") and collectkeyfabrica == true:
+		confirmation_sound.play()
 		var collider = interact.get_collider()
 		if collider != null:
 			if collider.is_in_group("exit2"):
+				confirmation_sound.play()
 				collectkeyfabrica = false
+				open_door.play()
+				
 				collider.bye2()
 	if Input.is_action_just_pressed("interact") and collectkeyfabrica == false:
 		var collider = interact.get_collider()
@@ -260,6 +266,8 @@ func _physics_process(delta):
 		var collider = interact.get_collider()
 		if collider != null:
 			if collider.is_in_group("salida3"):
+				confirmation_sound.play()
+				open_door.play()
 				collider.bye3()
 				collectkeyfabrica = false
 	if Input.is_action_just_pressed("interact") and collectkeyascensor == false:

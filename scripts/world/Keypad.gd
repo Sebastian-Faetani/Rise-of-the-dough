@@ -17,6 +17,7 @@ func error():
 	errorSound.play()
 
 
+
 func _on_notified_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		if player.collectkey == false:

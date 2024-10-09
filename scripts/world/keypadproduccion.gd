@@ -16,8 +16,8 @@ func error3():
 
 func bye3():
 	print("Puerta desbloqueada")
-	queue_free()
 	salida3.bye3()
+	queue_free()
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
