@@ -643,7 +643,7 @@ data = PackedVector3Array(-1, -0.876801, 17.2636, -1, 0.876801, 0.184934, -1, 0.
 [sub_resource type="BoxShape3D" id="BoxShape3D_is807"]
 size = Vector3(7.68158, 5.80402, 0.116943)
 
-[node name="Level3" type="Node3D"]
+[node name="Level3" type="Node3D" groups=["Map3"]]
 script = ExtResource("1_gfq5q")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

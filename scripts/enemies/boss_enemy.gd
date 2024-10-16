@@ -4,7 +4,7 @@ class_name Boss_Enemy
 #external variables
 @export var speed = 5
 @export var attack_range := 6.0
-@export var max_hp = 200
+@export var max_hp = 300
 @export var attack_damage := 30.0
 @export var range_shoot := 60.0
 @export var cooldown_time = 2
@@ -23,10 +23,10 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var dead_knife = $DeadKnife
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 @onready var bullet_position: Marker3D = $bullet_position
+@onready var level3 = preload("res://scenes/maps/Map3.tscn")
 var enemyCanShoot = true
 var player
 var distance
-var level3
 var see_range := 100.0
 var can_move := true
 var can_attack := true
@@ -42,6 +42,7 @@ var hp: int = max_hp:
 			can_move = false
 			attack_cooldown.stop()
 			current_state = EnemyStates.Death
+			level3.motherDoorOpen()
 			playback.stop()
 			if mopDeath == true:
 				playback.travel("mopDeath")

@@ -1,3 +1,5 @@
+Button
+VideoStreamPlayer
 CollisionShape3D
 Area3D
 AudioStreamPlayer
@@ -11,4 +13,3 @@ Timer
 Marker3D
 RayCast3D
 Label
-AnimatedSprite3D
