@@ -30,3 +30,6 @@ res://scripts/UI/story_scene.gd
 res://scenes/UI/win_menu.tscn
 res://scripts/UI/win_menu.gd
 res://scripts/world/Pause_menu.gd
+res://scripts/world/map_3.gd
+res://scripts/enemies/boss_enemy.gd
+res://scenes/enemies/Boss_Enemy.tscn

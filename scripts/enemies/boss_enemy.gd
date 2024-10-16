@@ -26,10 +26,11 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var enemyCanShoot = true
 var player
 var distance
+var level3
 var see_range := 100.0
 var can_move := true
 var can_attack := true
-var enemyDead := false
+@export var enemyDead := false
 var mopDeath = false
 var waterDeath = false
 var knifeDeath = false
@@ -67,6 +68,7 @@ var current_state = initial_state
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
+	level3  = get_tree().get_first_node_in_group("Map3")
 
 func _process(delta: float) -> void:
 	look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
