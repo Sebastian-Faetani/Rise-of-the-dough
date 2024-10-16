@@ -336,7 +336,13 @@ graph_offset = Vector2(-519.977, 16)
 [node name="w_clap" type="Node3D"]
 script = ExtResource("1_xy7da")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(238, 901)
+texture = ExtResource("3_836ny")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -352,10 +358,6 @@ scale = Vector2(0.964873, 0.964873)
 sprite_frames = SubResource("SpriteFrames_2187p")
 animation = &"Idle"
 autoplay = "idle"
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(238, 901)
-texture = ExtResource("3_836ny")
 
 [node name="GunRays" type="Node3D" parent="."]
 

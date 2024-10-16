@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dqeu2j55klbsa"]
+[gd_scene load_steps=30 format=3 uid="uid://dqeu2j55klbsa"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_ipl5t"]
 [ext_resource type="Script" path="res://scripts/player/SmoothCamera.gd" id="2_quloi"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://1vtfueyxuqsk" path="res://sounds/weapons/Hit Knife.mp3" id="19_unu1p"]
 [ext_resource type="AudioStream" uid="uid://by5fciodjt4o0" path="res://sounds/weapons/Hit punch.mp3" id="20_6n66o"]
 [ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="21_cpuyu"]
+[ext_resource type="Texture2D" uid="uid://8yb164k2byah" path="res://assets/ui/rectangle_text.png" id="22_b2toa"]
 [ext_resource type="AudioStream" uid="uid://bu4vr4aboqbh3" path="res://sounds/player/MuffinEat.mp3" id="22_wb5cf"]
 [ext_resource type="AudioStream" uid="uid://dr8xfd112e2dn" path="res://sounds/environment/ConfirmationSound.mp3" id="23_aven1"]
 
@@ -218,7 +219,7 @@ grow_vertical = 2
 script = ExtResource("11_5kdx0")
 
 [node name="Sprite2D" type="Sprite2D" parent="UI"]
-position = Vector2(-685, 384)
+position = Vector2(-688, 380)
 scale = Vector2(0.188098, 0.151662)
 texture = ExtResource("12_7qogr")
 
@@ -262,10 +263,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 626.0
-offset_top = 485.0
-offset_right = 1254.0
-offset_bottom = 555.0
+offset_left = 686.0
+offset_top = 354.0
+offset_right = 1314.0
+offset_bottom = 424.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -275,6 +276,12 @@ theme_override_fonts/font = ExtResource("21_cpuyu")
 theme_override_font_sizes/font_size = 51
 text = "Presione \"E\" para recoger"
 
+[node name="TextBackground" type="Sprite2D" parent="mensajes"]
+visible = false
+position = Vector2(987, 721)
+scale = Vector2(2.48775, 0.89801)
+texture = ExtResource("22_b2toa")
+
 [node name="loreMessage" type="Label" parent="mensajes"]
 visible = false
 layout_mode = 1
@@ -283,10 +290,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 626.0
-offset_top = 485.0
-offset_right = 1151.0
-offset_bottom = 555.0
+offset_left = 732.0
+offset_top = 640.0
+offset_right = 1257.0
+offset_bottom = 710.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -296,66 +303,6 @@ theme_override_constants/outline_size = 18
 theme_override_fonts/font = ExtResource("21_cpuyu")
 theme_override_font_sizes/font_size = 51
 text = "Presione \"E\" para abrir"
-
-[node name="keypadmensajekeynotobtained" type="Label" parent="mensajes"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 514.5
-offset_top = 485.0
-offset_right = 1365.5
-offset_bottom = 555.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 18
-theme_override_font_sizes/font_size = 51
-text = "Necesitas una llave para abrir esto"
-
-[node name="keypadmensajekeyobtained2" type="Label" parent="mensajes"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 626.0
-offset_top = 485.0
-offset_right = 1254.0
-offset_bottom = 555.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 18
-theme_override_font_sizes/font_size = 51
-text = "Presione \"E\" para abrir"
-
-[node name="spawnermensaje" type="Label" parent="mensajes"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 383.0
-offset_top = 485.0
-offset_right = 1497.0
-offset_bottom = 555.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 18
-theme_override_font_sizes/font_size = 51
-text = "Que ha sido eso, creo que se ha activado algo"
 
 [node name="muffineat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_wb5cf")

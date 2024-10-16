@@ -28,6 +28,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var lore_message: Label = $mensajes/loreMessage
 @onready var keypadmensajekeynotobtained: Label = $mensajes/keypadmensajekeynotobtained
 @onready var keypadmensajekeyobtained: Label = $mensajes/keypadmensajekeyobtained2
+@onready var text_background: Sprite2D = $mensajes/TextBackground
+
 
 
 

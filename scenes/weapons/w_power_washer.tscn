@@ -187,24 +187,8 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 [node name="w_powerWasher" type="Node3D"]
 script = ExtResource("1_1lqhd")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
-
-[node name="GunAnim" type="AnimatedSprite2D" parent="CanvasLayer/Control"]
-texture_filter = 1
-position = Vector2(1193, 591)
-scale = Vector2(1.09176, 1.09176)
-sprite_frames = SubResource("SpriteFrames_dhm42")
-animation = &"Idle"
-autoplay = "Idle"
-
-[node name="W_selected" type="TextureRect" parent="CanvasLayer"]
+[node name="W_selected" type="TextureRect" parent="."]
+z_index = 1
 texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -223,6 +207,24 @@ size_flags_vertical = 4
 texture = ExtResource("3_8ihwh")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="GunAnim" type="AnimatedSprite2D" parent="CanvasLayer/Control"]
+texture_filter = 1
+position = Vector2(1193, 591)
+scale = Vector2(1.09176, 1.09176)
+sprite_frames = SubResource("SpriteFrames_dhm42")
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

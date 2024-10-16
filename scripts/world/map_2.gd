@@ -26,9 +26,10 @@ func lower_elevator() -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		$EnemyBegginer/CollisionShape3D.disabled = true
+		$MapHandler2/lvl2/EnemyBegginer/CollisionShape3D.disabled = true
 		timer.start()
 		boss_timer.start()
+		player.text_background.show()
 		player.lore_message.show()
 		player.lore_message.text= "Que ha sido eso, creo que se ha activado algo"
 		
@@ -36,6 +37,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		player.lore_message.hide()
+		player.text_background.hide()
 		enemy_begginer.queue_free()
 		
 

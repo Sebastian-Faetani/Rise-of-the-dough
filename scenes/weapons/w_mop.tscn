@@ -315,7 +315,13 @@ graph_offset = Vector2(-292.196, 11)
 [node name="mop" type="Node3D"]
 script = ExtResource("1_u1k55")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(266, 900)
+texture = ExtResource("3_ryxmt")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -330,10 +336,6 @@ position = Vector2(1039, 560)
 sprite_frames = SubResource("SpriteFrames_hkejt")
 animation = &"Idle"
 autoplay = "Idle"
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(266, 900)
-texture = ExtResource("3_ryxmt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
