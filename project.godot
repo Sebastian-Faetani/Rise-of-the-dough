@@ -17,6 +17,11 @@ boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/image="res://assets/ui/Logos_juntos.png"
 config/icon="res://assets/ui/HealthBarOverPart.png"
 
+[autoload]
+
+MusicMenu="*res://scenes/UI/music_menu.tscn"
+ButtonSound="*res://scenes/UI/button_sound.tscn"
+
 [display]
 
 window/size/viewport_width=1920

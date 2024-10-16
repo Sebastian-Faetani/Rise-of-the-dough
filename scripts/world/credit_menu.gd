@@ -12,4 +12,5 @@ func _process(delta):
 
 
 func _on_back_button_pressed():
+	ButtonSound.play_button()
 	get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")

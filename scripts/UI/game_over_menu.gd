@@ -7,9 +7,11 @@ func game_over() -> void:
 
 func _on_restartbutton_pressed():
 	get_tree().paused = false
+	ButtonSound.play_button()
 	get_tree().reload_current_scene()
 
 
 func _on_menu_button_pressed():
 	get_tree().paused = false
+	ButtonSound.play_button()
 	get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")

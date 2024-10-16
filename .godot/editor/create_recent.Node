@@ -1,6 +1,7 @@
+AudioStreamPlayer
+Node
 Sprite2D
 Sprite3D
-AudioStreamPlayer
 Node3D
 CollisionShape3D
 Area3D
@@ -11,4 +12,3 @@ Marker3D
 RayCast3D
 Label
 AnimatedSprite3D
-Control

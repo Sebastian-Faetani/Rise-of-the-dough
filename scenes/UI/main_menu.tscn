@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b311qc0ldm0ij"]
+[gd_scene load_steps=5 format=3 uid="uid://b311qc0ldm0ij"]
 
 [ext_resource type="Script" path="res://scenes/UI/main_menu.gd" id="1_1gr01"]
 [ext_resource type="Texture2D" uid="uid://boo5u6oy1x7tf" path="res://assets/ui/Logo_DM.png" id="2_dr7kf"]
 [ext_resource type="Texture2D" uid="uid://c6hvyr8086o2k" path="res://assets/interfaz/MainMenu_background.png" id="2_w5l5p"]
-[ext_resource type="AudioStream" uid="uid://bpukd8nxflpey" path="res://sounds/interfaz/button.mp3" id="3_gvnkn"]
 [ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="4_yoo5s"]
-[ext_resource type="AudioStream" uid="uid://d1jm8dcvc7l58" path="res://sounds/interfaz/MusicaMenu.mp3" id="6_h6aqt"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -106,13 +104,6 @@ theme_override_fonts/font = ExtResource("4_yoo5s")
 theme_override_font_sizes/font_size = 49
 text = "Salir"
 flat = true
-
-[node name="Button_Sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_gvnkn")
-
-[node name="Music_Menu" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_h6aqt")
-bus = &"Musica"
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]
