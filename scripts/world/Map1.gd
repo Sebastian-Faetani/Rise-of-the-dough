@@ -12,10 +12,9 @@ var level2 = preload("res://scenes/maps/Map2.tscn")
 
 @onready var load_trigger: Area3D = $Maps/Level1/LoadTrigger
 
-
+var player
 var paused = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	#gameplay_music.play()
 	alarm_sound.play()
@@ -23,6 +22,10 @@ func _ready():
 	gameplay_music.play()
 	Input.MOUSE_MODE_CAPTURED
 	get_tree().paused = false
+	player = get_tree().get_first_node_in_group("player")
+
+
+	
 	#gameplay_music.play()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -42,6 +45,7 @@ func PauseMenu():
 
 
 func _on_load_trigger_body_entered(body) -> void:
+	
 	level_2_transition.show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	skip_lvl_2.show()

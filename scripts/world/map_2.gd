@@ -19,7 +19,7 @@ func _ready() -> void:
 	ascensorDoor = get_tree().get_first_node_in_group("salidaAscensor")
 
 func lower_elevator() -> void:
-	var elev_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	var elev_tween = get_tree().create_twseen().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	elev_tween.tween_property(lift, "position:y", -20, 7).set_delay(1)
 	elev_tween.set_parallel()
 	elev_tween.tween_property(puerta_ascensor, "position:y", -20, 7.5).set_delay(1)

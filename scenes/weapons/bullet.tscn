@@ -15,6 +15,8 @@ height = 1.13653
 [sub_resource type="BoxShape3D" id="BoxShape3D_v3kkc"]
 
 [node name="Bullet" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 4
 lock_rotation = true
 script = ExtResource("1_a4has")
 

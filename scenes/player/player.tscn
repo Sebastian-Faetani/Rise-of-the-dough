@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dqeu2j55klbsa"]
+[gd_scene load_steps=32 format=3 uid="uid://dqeu2j55klbsa"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_ipl5t"]
 [ext_resource type="Script" path="res://scripts/player/SmoothCamera.gd" id="2_quloi"]
@@ -17,7 +17,9 @@
 [ext_resource type="AudioStream" uid="uid://dqj6pgjdg0wol" path="res://sounds/weapons/shoot hidro.mp3" id="11_ntgnf"]
 [ext_resource type="Texture2D" uid="uid://dylajj52ilery" path="res://assets/interfaz/controls background.png" id="12_7qogr"]
 [ext_resource type="AudioStream" uid="uid://bbjse0fyivsv7" path="res://sounds/environment/open door.mp3" id="12_vgaog"]
+[ext_resource type="Script" path="res://scripts/UI/secret_controller.gd" id="13_kb1xt"]
 [ext_resource type="AudioStream" uid="uid://u4av65os2k8b" path="res://sounds/player/footsteps.mp3" id="13_xjog0"]
+[ext_resource type="Texture2D" uid="uid://c84dg3qxy6chr" path="res://assets/enviroment/KeypadGreen.jpg" id="17_364dk"]
 [ext_resource type="AudioStream" uid="uid://1vtfueyxuqsk" path="res://sounds/weapons/Hit Knife.mp3" id="19_unu1p"]
 [ext_resource type="AudioStream" uid="uid://by5fciodjt4o0" path="res://sounds/weapons/Hit punch.mp3" id="20_6n66o"]
 [ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="21_cpuyu"]
@@ -189,6 +191,71 @@ visible = false
 [node name="win_menu" parent="." instance=ExtResource("10_q6cyu")]
 visible = false
 
+[node name="SecretController" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_kb1xt")
+
+[node name="BackGround" type="Sprite2D" parent="SecretController"]
+z_index = 1
+position = Vector2(959, 539)
+texture = ExtResource("12_7qogr")
+
+[node name="TextBackground" type="Sprite2D" parent="SecretController"]
+z_index = 1
+position = Vector2(1359, 544)
+scale = Vector2(1.71646, -4.51868)
+texture = ExtResource("22_b2toa")
+
+[node name="SecretText" type="Label" parent="SecretController"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1026.0
+offset_top = 105.0
+offset_right = 1654.0
+offset_bottom = 970.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("21_cpuyu")
+theme_override_font_sizes/font_size = 51
+text = "Secret Text "
+autowrap_mode = 3
+
+[node name="SecretImage" type="TextureRect" parent="SecretController"]
+z_index = 2
+layout_mode = 0
+offset_left = 279.0
+offset_top = 277.0
+offset_right = 495.0
+offset_bottom = 706.0
+scale = Vector2(1.35367, 1.35367)
+texture = ExtResource("17_364dk")
+
+[node name="Back" type="Button" parent="SecretController"]
+process_mode = 3
+z_index = 1
+layout_mode = 0
+offset_left = 1288.0
+offset_top = 865.0
+offset_right = 1418.0
+offset_bottom = 928.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 40
+text = "Volver"
+flat = true
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
@@ -313,3 +380,4 @@ stream = ExtResource("23_aven1")
 bus = &"Weapons"
 
 [connection signal="timeout" from="StaminaTime" to="." method="_on_stamina_time_timeout"]
+[connection signal="pressed" from="SecretController/Back" to="SecretController" method="_on_back_pressed"]

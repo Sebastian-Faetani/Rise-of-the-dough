@@ -22,6 +22,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var weapon_handler = $Head/Weapon_handler
 @onready var muffineat: AudioStreamPlayer = $muffineat
 @onready var confirmation_sound: AudioStreamPlayer = $ConfirmationSound
+@onready var secret_controller: Control = $SecretController
 
 
 @onready var notif: Label = $mensajes/notif
@@ -260,6 +261,11 @@ func _physics_process(delta):
 				collider.error2()
 	if Input.is_action_just_pressed("interact"):
 		var collider = interact.get_collider()
+		if collider !=null:
+			if collider.is_in_group("SecretCamion"):
+				collider.AparecerMensaje()
+	if Input.is_action_just_pressed("interact"):
+		var collider = interact.get_collider()
 		if collider != null:
 			if collider.is_in_group("interaction3"):
 				collectkeyascensor = true
@@ -300,7 +306,6 @@ func change_gun(gun):
 
 func puerta_desbloqueada():
 	pass
-
 
 func _on_stamina_time_timeout() -> void:
 	is_stamina_regen = false

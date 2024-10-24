@@ -21,6 +21,7 @@ config/icon="res://assets/ui/HealthBarOverPart.png"
 
 MusicMenu="*res://scenes/UI/music_menu.tscn"
 ButtonSound="*res://scenes/UI/button_sound.tscn"
+Global="*res://scripts/world/Global.gd"
 
 [display]
 
@@ -105,8 +106,3 @@ pause={
 [physics]
 
 3d/default_gravity_vector=Vector3(0, -2, 0)
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

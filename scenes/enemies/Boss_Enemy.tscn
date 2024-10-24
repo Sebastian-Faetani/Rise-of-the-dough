@@ -776,6 +776,8 @@ graph_offset = Vector2(-311.925, 35)
 
 [node name="Boss_Enemy" type="CharacterBody3D" groups=["bossEnemy"]]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_xd023")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
