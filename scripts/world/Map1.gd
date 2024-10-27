@@ -11,6 +11,7 @@ var level2 = preload("res://scenes/maps/Map2.tscn")
 @onready var skip_lvl_2: Button = $SkipLvl2
 
 @onready var load_trigger: Area3D = $Maps/Level1/LoadTrigger
+@onready var player_position = $MapHandler2/lvl2/PlayerPosition
 
 var player
 var paused = false
@@ -45,7 +46,6 @@ func PauseMenu():
 
 
 func _on_load_trigger_body_entered(body) -> void:
-	
 	level_2_transition.show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	skip_lvl_2.show()

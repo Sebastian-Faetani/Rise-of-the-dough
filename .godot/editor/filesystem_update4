@@ -1,8 +1,1 @@
-res://scenes/player/player.tscn
-res://scenes/weapons/w_clap.tscn
-res://scenes/weapons/w_mop.tscn
-res://scenes/world/masa_2.tscn
-res://scenes/world/masa_1.tscn
-res://scenes/maps/Map1.tscn
-res://scenes/enemies/Boss_Enemy.tscn
-res://scenes/maps/Map2.tscn
+res://scenes/maps/Map3.tscn

@@ -21,7 +21,6 @@ config/icon="res://assets/ui/HealthBarOverPart.png"
 
 MusicMenu="*res://scenes/UI/music_menu.tscn"
 ButtonSound="*res://scenes/UI/button_sound.tscn"
-Global="*res://scripts/world/Global.gd"
 
 [display]
 

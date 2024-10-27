@@ -1,3 +1,6 @@
+AnimationPlayer
+AudioStreamPlayer
+Marker3D
 StaticBody3D
 CollisionShape3D
 Area3D
@@ -10,6 +13,3 @@ Label
 Control
 Node3D
 VideoStreamPlayer
-AudioStreamPlayer
-Node
-NavigationRegion3D

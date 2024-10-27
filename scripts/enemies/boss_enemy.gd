@@ -4,8 +4,8 @@ class_name Boss_Enemy
 #external variables
 @export var speed = 5
 @export var attack_range := 6.0
-@export var max_hp = 100
-@export var attack_damage := 30.0
+@export var max_hp = 250
+@export var attack_damage := 35.0
 @export var range_shoot := 60.0
 @export var cooldown_time = 2
 @export var aggro_range := 30.0
@@ -24,6 +24,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 @onready var bullet_position: Marker3D = $bullet_position
 @onready var level3 = preload("res://scenes/maps/Map3.tscn")
+@onready var boss_roar: AudioStreamPlayer = $BossRoar
+@onready var boss_slice: AudioStreamPlayer = $BossSlice
+
 var enemyCanShoot = true
 var player
 var distance
@@ -176,6 +179,12 @@ func slowdown():
 
 func speedup():
 	speed = 5.0
+
+func bossRoar():
+	boss_roar.play()
+
+func bossSlice():
+	boss_slice.play()
 
 func _on_attack_cooldown_timeout():
 	can_attack = true

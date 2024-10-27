@@ -113,7 +113,7 @@ target_position = Vector3(0, 1, 0)
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="SmoothCamera" type="Camera3D" parent="Head"]
+[node name="SmoothCamera" type="Camera3D" parent="Head" groups=["camera"]]
 top_level = true
 current = true
 script = ExtResource("2_quloi")

@@ -23,6 +23,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var muffineat: AudioStreamPlayer = $muffineat
 @onready var confirmation_sound: AudioStreamPlayer = $ConfirmationSound
 @onready var secret_controller: Control = $SecretController
+@onready var animation_player: AnimationPlayer = $Head/SmoothCamera/AnimationPlayer
 
 
 @onready var notif: Label = $mensajes/notif
@@ -75,7 +76,7 @@ var walking = false
 var running = false
 var crouching = false
 var sliding = false
-
+var camera
 #Life and death
 var dead = false
 @export var max_player_health = 100
@@ -83,6 +84,7 @@ var dead = false
 	set(value):
 		if value < current_player_health:
 			damage_animation_player.stop(false)
+			camera.apply_shake()
 			damage_animation_player.play("take_damage")
 		current_player_health = value
 		healthChanged.emit()
@@ -93,6 +95,8 @@ var dead = false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	camera = get_tree().get_first_node_in_group("camera")
+
 
 func _input(event: InputEvent):
 	if dead:
@@ -244,7 +248,6 @@ func _physics_process(delta):
 				collectkeyfabrica = true
 				collider.collectkeyFabrica()
 	if Input.is_action_just_pressed("interact") and collectkeyfabrica == true:
-		confirmation_sound.play()
 		var collider = interact.get_collider()
 		if collider != null:
 			if collider.is_in_group("exit2"):
