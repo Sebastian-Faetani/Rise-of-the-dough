@@ -218,10 +218,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1026.0
-offset_top = 105.0
-offset_right = 1654.0
-offset_bottom = 970.0
+offset_left = 950.0
+offset_top = 112.0
+offset_right = 1740.0
+offset_bottom = 846.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -255,6 +255,9 @@ theme_override_constants/outline_size = 18
 theme_override_font_sizes/font_size = 40
 text = "Volver"
 flat = true
+
+[node name="Timer" type="Timer" parent="SecretController"]
+wait_time = 3.0
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -345,8 +348,8 @@ text = "Presione \"E\" para recoger"
 
 [node name="TextBackground" type="Sprite2D" parent="mensajes"]
 visible = false
-position = Vector2(987, 721)
-scale = Vector2(2.48775, 0.89801)
+position = Vector2(960.5, 721)
+scale = Vector2(3.45436, 0.89801)
 texture = ExtResource("22_b2toa")
 
 [node name="loreMessage" type="Label" parent="mensajes"]
@@ -381,3 +384,4 @@ bus = &"Weapons"
 
 [connection signal="timeout" from="StaminaTime" to="." method="_on_stamina_time_timeout"]
 [connection signal="pressed" from="SecretController/Back" to="SecretController" method="_on_back_pressed"]
+[connection signal="timeout" from="SecretController/Timer" to="SecretController" method="_on_timer_timeout"]

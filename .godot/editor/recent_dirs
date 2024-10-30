@@ -1,11 +1,11 @@
 res://scripts/world
+res://scenes/world
 res://assets/enviroment
 res://scripts/UI
 res://scenes/UI
 res://scenes/maps
 res://scripts/enemies
 res://assets/enemies/BossEnemy
-res://scenes/world
 res://assets/maps
 res://assets/enemies/CañoncitoEnemy
 res://assets/enemies/BaguetteEnemy

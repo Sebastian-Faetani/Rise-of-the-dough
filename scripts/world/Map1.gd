@@ -12,6 +12,7 @@ var level2 = preload("res://scenes/maps/Map2.tscn")
 
 @onready var load_trigger: Area3D = $Maps/Level1/LoadTrigger
 @onready var player_position = $MapHandler2/lvl2/PlayerPosition
+@onready var laptop_screen: MeshInstance3D = $"Maps/Level1/NavigationRegion3D/Lvl2/Laptop Screen"
 
 var player
 var paused = false
