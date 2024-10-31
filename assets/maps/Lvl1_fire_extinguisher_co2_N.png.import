@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chdypvx2vhfin"
+uid="uid://cbe20kkpsacaa"
 path.s3tc="res://.godot/imported/Lvl1_fire_extinguisher_co2_N.png-8910c0c2e719dcd2a51a34b4aec7baf6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "bd12f93de722ea00459569b844646d88"
 }
 
 [deps]

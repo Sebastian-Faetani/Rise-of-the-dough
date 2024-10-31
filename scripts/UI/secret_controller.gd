@@ -1,6 +1,6 @@
 extends Control
 @onready var secret_text: Label = $SecretText
-@onready var secret_image: TextureRect = $SecretImage
+@onready var secret_image: TextureRect = $BoxContainer/SecretImage
 var truckSecret = Image.load_from_file("res://assets/placeholders/CeluPlace.png")
 var hidrosecret = Image.load_from_file("res://assets/placeholders/post it place.png")
 var officesecret = Image.load_from_file("res://assets/placeholders/pcPlace.png")
@@ -60,5 +60,6 @@ func _on_back_pressed() -> void:
 
 
 func _on_timer_timeout() -> void:
-	player.lore_message.hide()
 	player.text_background.hide()
+	player.lore_message.hide()
+	

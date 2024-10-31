@@ -6,3 +6,4 @@ res://scenes/world/masa_2.tscn
 res://scenes/world/secret_hidro.tscn
 res://scenes/maps/Map1.tscn
 res://scenes/maps/Map3.tscn
+res://scripts/UI/secret_controller.gd

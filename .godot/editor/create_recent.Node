@@ -1,3 +1,8 @@
+Sprite2D
+CenterContainer
+Container
+VBoxContainer
+BoxContainer
 Sprite3D
 Timer
 MeshInstance3D
@@ -7,8 +12,3 @@ Area3D
 StaticBody3D
 AnimationPlayer
 AudioStreamPlayer
-Marker3D
-RigidBody3D
-TextureRect
-Button
-Sprite2D
