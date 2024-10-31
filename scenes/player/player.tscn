@@ -207,7 +207,7 @@ script = ExtResource("13_kb1xt")
 
 [node name="BackGround" type="Sprite2D" parent="SecretController"]
 z_index = 1
-position = Vector2(959, 539)
+position = Vector2(960, 540)
 texture = ExtResource("12_7qogr")
 
 [node name="TextBackground" type="Sprite2D" parent="SecretController"]

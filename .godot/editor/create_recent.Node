@@ -1,3 +1,8 @@
+CollisionShape3D
+Area3D
+VideoStreamPlayer
+OmniLight3D
+SpotLight3D
 Node3D
 Sprite3D
 Sprite2D
@@ -7,8 +12,3 @@ VBoxContainer
 BoxContainer
 Timer
 MeshInstance3D
-MultiMeshInstance3D
-CollisionShape3D
-Area3D
-StaticBody3D
-AnimationPlayer

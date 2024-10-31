@@ -1,8 +1,8 @@
-res://scenes/world
+res://scenes/UI
 res://scripts/world
+res://scenes/world
 res://assets/enviroment
 res://scripts/UI
-res://scenes/UI
 res://scenes/maps
 res://scripts/enemies
 res://assets/enemies/BossEnemy
