@@ -16,9 +16,9 @@ func _ready() -> void:
 func SeRompeMasa3():
 	alive.hide()
 	dead.show()
-	$CollisionShape3D.disabled = true
-	$BulletDetector/AreaCol.disabled = true
-	bullet_detector.queue_free()
+	$CollisionShape3D.queue_free()
+	$BulletDetector/AreaCol.queue_free()
+	$BulletDetector.queue_free()
 	
 func MensajeMasa3():
 	player.lore_message.show()

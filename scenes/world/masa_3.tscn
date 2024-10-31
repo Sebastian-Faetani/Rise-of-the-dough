@@ -11,8 +11,8 @@ size = Vector3(3.65992, 2.29364, 1.42897)
 size = Vector3(2.58374, 1.52463, 0.438356)
 
 [node name="masa3" type="StaticBody3D" groups=["destructiblemasa3"]]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_fy6j4")
 
 [node name="Alive" type="Sprite3D" parent="."]
@@ -24,8 +24,7 @@ visible = false
 texture = ExtResource("1_lsvfg")
 
 [node name="BulletDetector" type="Area3D" parent="."]
-collision_layer = 4
-collision_mask = 4
+collision_mask = 6
 
 [node name="AreaCol" type="CollisionShape3D" parent="BulletDetector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000711441, -0.0444641, 0.0510483)

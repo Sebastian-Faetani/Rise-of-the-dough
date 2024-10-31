@@ -12,9 +12,9 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 func SeRompeMasa2():
 	animation.play("dead")
-	$CollisionShape3D.disabled = true
-	$BulletDetector/AreaCol.disabled = true
-	bullet_detector.queue_free()
+	$CollisionShape3D.queue_free()
+	$BulletDetector/AreaCol.queue_free()
+	$BulletDetector.queue_free()
 	
 func MensajeMasa2():
 	player.lore_message.show()

@@ -38,8 +38,8 @@ animations = [{
 }]
 
 [node name="masa2" type="StaticBody3D" groups=["destructiblemasa2"]]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_j7o0y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -47,8 +47,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0181885, 0.0085761, -0.0811
 shape = SubResource("BoxShape3D_o1pu8")
 
 [node name="BulletDetector" type="Area3D" parent="."]
-collision_layer = 4
-collision_mask = 4
+collision_mask = 6
 
 [node name="AreaCol" type="CollisionShape3D" parent="BulletDetector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0374298, -0.00109863, -0.0125504)
