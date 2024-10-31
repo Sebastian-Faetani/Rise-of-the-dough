@@ -22,13 +22,10 @@ func check_hit():
 				ray.get_collider().enemyTakeDamageWithHidro(gun_damage)
 				queue_free()
 			elif ray.get_collider().is_in_group("destructiblemasa1"):
-				ray.get_collider().SeRompeMasa1()
 				queue_free()
 			elif ray.get_collider().is_in_group("destructiblemasa2"):
-				ray.get_collider().SeRompeMasa2()
 				queue_free()
 			elif ray.get_collider().is_in_group("destructiblemasa3"):
-				ray.get_collider().SeRompeMasa3()
 				queue_free()
 			
 

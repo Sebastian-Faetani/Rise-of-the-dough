@@ -1,11 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://k8viq0sjm8j6"]
+[gd_scene load_steps=9 format=3 uid="uid://k8viq0sjm8j6"]
 
 [ext_resource type="Texture2D" uid="uid://cmph3x8qtalvy" path="res://assets/enviroment/Sprite_masa2_roto.png" id="1_21kvy"]
 [ext_resource type="Script" path="res://scripts/world/masa_2.gd" id="1_j7o0y"]
 [ext_resource type="Texture2D" uid="uid://cc32gv012xaxs" path="res://assets/enviroment/Sprite_masa2.png" id="2_jk3bl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o1pu8"]
-size = Vector3(5, 3.66693, 6.52433)
+size = Vector3(4.6272, 3.46539, 1.17552)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0bx6r"]
+size = Vector3(4.82068, 3.63989, 1.82082)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3cxh"]
 atlas = ExtResource("1_21kvy")
@@ -35,11 +38,21 @@ animations = [{
 }]
 
 [node name="masa2" type="StaticBody3D" groups=["destructiblemasa2"]]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_j7o0y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.12, 0, 0.0179749, -0.0675895)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0181885, 0.0085761, -0.0811288)
 shape = SubResource("BoxShape3D_o1pu8")
+
+[node name="BulletDetector" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="AreaCol" type="CollisionShape3D" parent="BulletDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0374298, -0.00109863, -0.0125504)
+shape = SubResource("BoxShape3D_0bx6r")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ukspt")
@@ -49,4 +62,5 @@ autoplay = "full"
 [node name="hide_text" type="Timer" parent="."]
 wait_time = 3.0
 
+[connection signal="body_entered" from="BulletDetector" to="." method="_on_bullet_detector_body_entered"]
 [connection signal="timeout" from="hide_text" to="." method="_on_hide_text_timeout"]

@@ -15,3 +15,9 @@ res://scenes/world/secret_se_busca.tscn
 res://scripts/world/map_2.gd
 res://scenes/world/masa_3.tscn
 res://scripts/world/masa_3.gd
+res://scenes/world/masa_1.tscn
+res://scripts/world/masa_1.gd
+res://scenes/weapons/bullet.tscn
+res://scripts/weapons/bullet.gd
+res://scenes/world/masa_2.tscn
+res://scripts/world/masa_2.gd
