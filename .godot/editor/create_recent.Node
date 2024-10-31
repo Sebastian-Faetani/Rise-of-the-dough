@@ -1,9 +1,10 @@
+Node3D
+Sprite3D
 Sprite2D
 CenterContainer
 Container
 VBoxContainer
 BoxContainer
-Sprite3D
 Timer
 MeshInstance3D
 MultiMeshInstance3D
@@ -11,4 +12,3 @@ CollisionShape3D
 Area3D
 StaticBody3D
 AnimationPlayer
-AudioStreamPlayer

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dqeu2j55klbsa"]
+[gd_scene load_steps=38 format=3 uid="uid://dqeu2j55klbsa"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_ipl5t"]
 [ext_resource type="Script" path="res://scripts/player/SmoothCamera.gd" id="2_quloi"]
@@ -19,12 +19,19 @@
 [ext_resource type="AudioStream" uid="uid://bbjse0fyivsv7" path="res://sounds/environment/open door.mp3" id="12_vgaog"]
 [ext_resource type="Script" path="res://scripts/UI/secret_controller.gd" id="13_kb1xt"]
 [ext_resource type="AudioStream" uid="uid://u4av65os2k8b" path="res://sounds/player/footsteps.mp3" id="13_xjog0"]
+[ext_resource type="Texture2D" uid="uid://cta4w3ilrsno1" path="res://assets/placeholders/CeluPlace.png" id="17_ttxns"]
+[ext_resource type="Texture2D" uid="uid://d15rh606tf7n" path="res://assets/placeholders/pcPlace.png" id="18_pjpsq"]
+[ext_resource type="Texture2D" uid="uid://dfa6f4clm70js" path="res://assets/placeholders/post it place.png" id="19_5f524"]
 [ext_resource type="AudioStream" uid="uid://1vtfueyxuqsk" path="res://sounds/weapons/Hit Knife.mp3" id="19_unu1p"]
 [ext_resource type="AudioStream" uid="uid://by5fciodjt4o0" path="res://sounds/weapons/Hit punch.mp3" id="20_6n66o"]
+[ext_resource type="Texture2D" uid="uid://dq05pmrj82ioc" path="res://assets/placeholders/LibroMaicena.png" id="20_kcuhf"]
 [ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="21_cpuyu"]
+[ext_resource type="Texture2D" uid="uid://mqji0wmwnyh7" path="res://assets/placeholders/SeBusca.png" id="21_en3im"]
+[ext_resource type="Texture2D" uid="uid://c8260n0u6k463" path="res://assets/placeholders/TubeLabel.png" id="21_lbic0"]
 [ext_resource type="Texture2D" uid="uid://8yb164k2byah" path="res://assets/ui/rectangle_text.png" id="22_b2toa"]
 [ext_resource type="AudioStream" uid="uid://bu4vr4aboqbh3" path="res://sounds/player/MuffinEat.mp3" id="22_wb5cf"]
 [ext_resource type="AudioStream" uid="uid://dr8xfd112e2dn" path="res://sounds/environment/ConfirmationSound.mp3" id="23_aven1"]
+[ext_resource type="Texture2D" uid="uid://cafpdr3eqkdf0" path="res://assets/placeholders/TubeProta.png" id="23_u1vna"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s4lsa"]
 
@@ -191,6 +198,7 @@ visible = false
 visible = false
 
 [node name="SecretController" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -240,6 +248,7 @@ offset_right = 1418.0
 offset_bottom = 928.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("21_cpuyu")
 theme_override_font_sizes/font_size = 40
 text = "Volver"
 flat = true
@@ -248,8 +257,53 @@ flat = true
 wait_time = 3.0
 
 [node name="Celu" type="Sprite2D" parent="SecretController"]
+visible = false
+z_index = 1
+position = Vector2(526, 522)
+scale = Vector2(1.27855, 1.27855)
+texture = ExtResource("17_ttxns")
 
 [node name="Notebook" type="Sprite2D" parent="SecretController"]
+visible = false
+z_index = 2
+position = Vector2(476, 539)
+scale = Vector2(0.877432, 0.877432)
+texture = ExtResource("18_pjpsq")
+
+[node name="HidroNota" type="Sprite2D" parent="SecretController"]
+visible = false
+z_index = 2
+position = Vector2(498, 510)
+scale = Vector2(1.34366, 1.34366)
+texture = ExtResource("19_5f524")
+
+[node name="Maicena" type="Sprite2D" parent="SecretController"]
+visible = false
+z_index = 2
+position = Vector2(482, 539)
+scale = Vector2(1.14552, 1.14552)
+texture = ExtResource("20_kcuhf")
+
+[node name="SeBusca" type="Sprite2D" parent="SecretController"]
+visible = false
+z_index = 2
+position = Vector2(482, 539)
+scale = Vector2(1.27057, 1.27057)
+texture = ExtResource("21_en3im")
+
+[node name="TubeLabel" type="Sprite2D" parent="SecretController"]
+visible = false
+z_index = 2
+position = Vector2(482, 539)
+scale = Vector2(0.986421, 0.986421)
+texture = ExtResource("21_lbic0")
+
+[node name="TubeProta" type="Sprite2D" parent="SecretController"]
+visible = false
+z_index = 2
+position = Vector2(482, 539)
+scale = Vector2(0.986421, 0.986421)
+texture = ExtResource("23_u1vna")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

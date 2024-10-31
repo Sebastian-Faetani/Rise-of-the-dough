@@ -265,18 +265,29 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interact"):
 		var collider = interact.get_collider()
 		if collider !=null:
-			if collider.is_in_group("SecretCamion"):
-				collider.AparecerMensaje()
-	if Input.is_action_just_pressed("interact"):
-		var collider = interact.get_collider()
-		if collider !=null:
 			if collider.is_in_group("secretOffice"):
 				collider.AparecerMensaje()
-	if Input.is_action_just_pressed("interact"):
-		var collider = interact.get_collider()
-		if collider !=null:
-			if collider.is_in_group("secretHidro"):
+			elif collider.is_in_group("SecretCamion"):
 				collider.AparecerMensaje()
+			elif collider.is_in_group("secretHidro"):
+				collider.AparecerMensaje()
+			elif collider.is_in_group("secretMaicena"):
+				collider.AparecerMensaje()
+			elif collider.is_in_group("secretSeBusca"):
+				collider.AparecerMensaje()
+			elif collider.is_in_group("secretProtaTube"):
+				collider.AparecerMensaje()
+			elif collider.is_in_group("secretTubeMissing"):
+				collider.AparecerMensaje()
+			elif collider.is_in_group("secretTubeCamionero"):
+				collider.AparecerMensaje()
+			elif collider.is_in_group("secretTubeMasaEgg"):
+				collider.AparecerMensaje()
+			elif collider.is_in_group("secretTube2"):
+				collider.AparecerMensaje()
+			elif collider.is_in_group("secretTube3"):
+				collider.AparecerMensaje()
+				
 	if Input.is_action_just_pressed("interact"):
 		var collider = interact.get_collider()
 		if collider != null:
