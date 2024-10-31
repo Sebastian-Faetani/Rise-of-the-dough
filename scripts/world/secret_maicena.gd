@@ -7,15 +7,11 @@ func _ready() -> void:
 
 func AparecerMensaje():
 	queue_free()
-	player.secret_controller.SecretMaicena()
+	player.secret_controller.SecretKitchen()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-
-
 
 func _on_notified_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):

@@ -17,7 +17,7 @@ func SeRompeMasa3():
 	dead.show()
 	$CollisionShape3D.disabled = true
 	
-func MensajeMasa1():
+func MensajeMasa3():
 	player.lore_message.show()
 	player.lore_message.text = "Esto sería más facil con un poco de agua"
 	hide_text.start()
