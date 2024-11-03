@@ -1,3 +1,4 @@
+AudioStreamPlayer
 CollisionShape3D
 Area3D
 VideoStreamPlayer
@@ -11,4 +12,3 @@ Container
 VBoxContainer
 BoxContainer
 Timer
-MeshInstance3D

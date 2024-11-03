@@ -4,7 +4,7 @@ class_name Boss_Enemy
 #external variables
 @export var speed = 5
 @export var attack_range := 6.0
-@export var max_hp = 250
+@export var max_hp = 2
 @export var attack_damage := 35.0
 @export var range_shoot := 60.0
 @export var cooldown_time = 2
@@ -26,6 +26,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var level3 = preload("res://scenes/maps/Map3.tscn")
 @onready var boss_roar: AudioStreamPlayer = $BossRoar
 @onready var boss_slice: AudioStreamPlayer = $BossSlice
+@onready var boss_death: AudioStreamPlayer = $BossDeath
+@onready var boss_fall: AudioStreamPlayer = $BossFall
 
 var enemyCanShoot = true
 var player
@@ -48,12 +50,15 @@ var hp: int = max_hp:
 			level3.motherDoorOpen()
 			playback.stop()
 			if mopDeath == true:
+				boss_death.play()
 				playback.travel("mopDeath")
 				dead_mopa.play()
 			elif waterDeath == true:
+				boss_death.play()
 				playback.travel("waterDeath")
 				dead_hidro.play()
 			elif knifeDeath == true:
+				boss_death.play()
 				playback.travel("knifeDeath")
 				dead_knife.play()
 			$CollisionShape3D.disabled = true
@@ -161,6 +166,9 @@ func enemyTakeDamageWithKnife(gun_damage):
 	hp -= gun_damage
 func is_between(value, min_value, max_value):
 	return value > min_value and value <= max_value
+
+func BossFallSound():
+	boss_fall.play()
 
 func DeathByMop(bool):
 	mopDeath = bool

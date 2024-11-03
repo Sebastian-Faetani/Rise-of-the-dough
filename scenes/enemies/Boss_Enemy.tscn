@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://csjie6wd0oo8y"]
+[gd_scene load_steps=85 format=3 uid="uid://csjie6wd0oo8y"]
 
 [ext_resource type="Script" path="res://scripts/enemies/boss_enemy.gd" id="1_xd023"]
 [ext_resource type="Texture2D" uid="uid://dheyv1x8tcvtf" path="res://assets/enemies/BossEnemy/Enemy_spritesheet_boss.png" id="2_vifir"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://bvs8vrjqjbh73" path="res://sounds/enemies/Enemy dead knife.mp3" id="5_ptyhp"]
 [ext_resource type="AudioStream" uid="uid://c82qar50a6pto" path="res://sounds/enemies/BossRoar.mp3" id="6_wr504"]
 [ext_resource type="AudioStream" uid="uid://bmgj6pl11yat2" path="res://sounds/enemies/BossSlice.mp3" id="7_cstdr"]
+[ext_resource type="AudioStream" uid="uid://dlx11h6ol6ftw" path="res://sounds/enemies/BossDeathSound.mp3" id="8_o58i0"]
+[ext_resource type="AudioStream" uid="uid://coawoekf1ncb7" path="res://sounds/enemies/BossFall.mp3" id="9_atmly"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7e4kp"]
 radius = 0.325437
@@ -613,6 +615,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"BossFallSound"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_llnm1"]
 resource_name = "mopDeath"
@@ -640,6 +656,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"BossFallSound"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_2vgse"]
@@ -696,6 +726,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [1, 2, 3, 4, 5, 6]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"BossFallSound"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sc7jo"]
@@ -842,5 +886,12 @@ bus = &"Weapons"
 [node name="BossSlice" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_cstdr")
 bus = &"Weapons"
+
+[node name="BossDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_o58i0")
+
+[node name="BossFall" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_atmly")
+volume_db = 20.0
 
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
