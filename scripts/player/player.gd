@@ -46,6 +46,7 @@ var is_stamina_regen = false
 @onready var CLAP = preload("res://scenes/weapons/w_clap.tscn")
 @onready var MOP = preload("res://scenes/weapons/w_mop.tscn")
 @onready var POWERWASHER = preload("res://scenes/weapons/w_power_washer.tscn")
+@onready var KNIFE = preload("res://scenes/weapons/w_knife.tscn")
 
 @onready var carried_guns = [CLAP]
 var currentWeapon = 0

@@ -17,7 +17,7 @@ func SeRompeMasa1():
 
 func MensajeMasa1():
 	player.lore_message.show()
-	player.lore_message.text = "Esto sería más facil con un poco de agaua"
+	player.lore_message.text = "Esto sería más facil con un poco de agua"
 	hide_text.start()
 	
 func _on_hide_text_timeout() -> void:

@@ -1,3 +1,4 @@
+Sprite2D
 AudioStreamPlayer
 CollisionShape3D
 Area3D
@@ -6,7 +7,6 @@ OmniLight3D
 SpotLight3D
 Node3D
 Sprite3D
-Sprite2D
 CenterContainer
 Container
 VBoxContainer
