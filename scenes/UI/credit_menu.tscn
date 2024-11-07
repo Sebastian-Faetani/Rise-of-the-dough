@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cl872lohvng0r"]
 
 [ext_resource type="Script" path="res://scripts/world/credit_menu.gd" id="1_c7bj8"]
-[ext_resource type="Texture2D" uid="uid://c6hvyr8086o2k" path="res://assets/interfaz/MainMenu_background.png" id="2_mhn2a"]
+[ext_resource type="Texture2D" uid="uid://d1vnmgnbfy4gk" path="res://assets/ui/MainMenu_background_CENTRO (1).png" id="2_dpd52"]
 [ext_resource type="FontFile" uid="uid://d1635fsmss0u5" path="res://Fonts/Comico.ttf" id="3_56e1f"]
 [ext_resource type="Texture2D" uid="uid://0ng8ycgb68c0" path="res://assets/ui/logo unraf.png" id="4_15835"]
 
@@ -14,9 +14,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c7bj8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("2_mhn2a")
+texture = ExtResource("2_dpd52")
 
 [node name="names" type="Label" parent="."]
 clip_contents = true
@@ -26,10 +26,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 66.0
-offset_top = -327.0
-offset_right = 494.0
-offset_bottom = -186.0
+offset_left = -231.0
+offset_top = -263.0
+offset_right = 197.0
+offset_bottom = -122.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.17295, 1.17295)
@@ -47,10 +47,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 23.0
-offset_top = 142.0
-offset_right = 623.0
-offset_bottom = 252.0
+offset_left = -274.0
+offset_top = 206.0
+offset_right = 326.0
+offset_bottom = 316.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_56e1f")
@@ -67,10 +67,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 192.0
-offset_top = -176.0
-offset_right = 449.0
-offset_bottom = -66.0
+offset_left = -105.0
+offset_top = -112.0
+offset_right = 152.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -88,10 +88,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 148.0
-offset_top = -80.0
-offset_right = 423.0
-offset_bottom = -11.0
+offset_left = -149.0
+offset_top = -16.0
+offset_right = 126.0
+offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.19103, 1.19103)
@@ -110,10 +110,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 241.0
-offset_top = -227.0
-offset_right = 399.0
-offset_bottom = -151.0
+offset_left = -56.0
+offset_top = -217.0
+offset_right = 102.0
+offset_bottom = -141.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_hover_color = Color(0.698039, 0.898039, 0.294118, 1)
@@ -133,10 +133,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 124.5
-offset_top = 21.28
-offset_right = 521.5
-offset_bottom = 131.28
+offset_left = -172.5
+offset_top = 85.28
+offset_right = 224.5
+offset_bottom = 195.28
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -153,10 +153,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 90.0
-offset_top = 103.0
-offset_right = 518.0
-offset_bottom = 172.0
+offset_left = -207.0
+offset_top = 167.0
+offset_right = 221.0
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.10722, 1.10722)
@@ -168,8 +168,34 @@ text = "Sebastian Faetani
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="logochancho" type="Sprite2D" parent="."]
-position = Vector2(1284, 92)
+[node name="Catedra info" type="Label" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -525.0
+offset_right = 849.0
+offset_bottom = -338.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.10722, 1.10722)
+theme_override_colors/font_color = Color(0.439049, 0.439049, 0.439049, 1)
+theme_override_fonts/font = ExtResource("3_56e1f")
+theme_override_font_sizes/font_size = 30
+text = "Lic.  en Producción de Videojuegos y Entretenimiento Digital
+Cátedra: Taller de Diseño de Juegos 3
+Docentes: Maximiliano Pedro Cadenazzi, Diego Porello, Andres Rossi
+3er año
+2024"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="logounraf" type="Sprite2D" parent="."]
+position = Vector2(261, 66)
 scale = Vector2(1.19325, 1.19325)
 texture = ExtResource("4_15835")
 
